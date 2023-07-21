@@ -23,7 +23,7 @@
 		"molang": "^2.0.1",
 		"molangjs": "^1.5.2",
 		"prismjs": "^1.29.0",
-		"vite": "^3.2.4",
+		"vite": "^3.2.7",
 		"vue-prism-editor": "^2.0.0-alpha.2"
 	},
 	"devDependencies": {
