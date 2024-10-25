@@ -281,6 +281,8 @@ _Edited sample glyph_E1.png for free-use shared by @zheaEvyline:_
 
 ![](/assets/images/concepts/emojis/custom/edited/glyph_E1.png)
 
+If you'd like to add existing Vanilla items to the glyph and use them as emojis in-game, you can easily do so with the **[Items to Glyph Web Tool](https://minato-mba.github.io/content/Items%20to%20Glyph.html)** created by *@Minato*
+
 Your filepath should look like this:
 
 <FolderView
