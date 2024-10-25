@@ -76,6 +76,7 @@ Important links have a ⭐.
 -   [Dialogue Generator](https://mcbe-essentials.github.io/dialogue-editor/)
 -   [Foxynotail Tools](https://www.foxynotail.com/tools/)
 -   [Glyph Tools](https://nhanaz.github.io/glyph/)
+-   [Items to Glyph Tool](https://minato-mba.github.io/content/Items%20to%20Glyph.html)
 -   [.lang File Generator](https://solveddev.github.io/AnyLanguage/)
 -   [Manifest Generator](https://tools.pixelpoly.co/manifest-generator)
 -   [MCBE Essentials](https://mcbe-essentials.github.io/)
@@ -116,11 +117,11 @@ These packs are maintained and published by Mojang.
 -   [Vanilla Behavior Pack (BETA)](https://aka.ms/MinecraftBetaBehaviors)
 -   [Pack Archive (old versions)](https://bedrock.dev/packs)
 
-These packs are published by the open-source community
+These packs are published by the open-source community.
 
 -   [wiki-addon](https://github.com/Bedrock-OSS/wiki-addon)
 -   [Enchantment Details](https://github.com/supercam19/EnchantmentDetails)
--   [Commands developer-packs](https://github.com/BedrockCommands/developer-packs)
+-   [Function Pack Templates](https://github.com/BedrockCommands/developer-packs)
 
 ## Scripting Resources
 
