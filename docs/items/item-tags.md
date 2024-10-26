@@ -12,13 +12,13 @@ Item tags can be used to ensure that a item meets certain conditions.
 
 ## Applying Tags
 
-### From 1.20.50 and onwards
+### From 1.20.50 and Onwards
 
 <CodeHeader></CodeHeader>
 
 ```json
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.40",
     "minecraft:item": {
         "description": {
             "identifier": "wiki:my_item"
@@ -38,7 +38,7 @@ Item tags can be used to ensure that a item meets certain conditions.
 
 ```json
 {
-    "format_version": "1.21.40",
+    "format_version": "1.20.40",
     "minecraft:item": {
         "description": {
             "identifier": "wiki:my_item"
