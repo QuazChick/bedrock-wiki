@@ -31,7 +31,7 @@ Minecraft servers allow players to play online or via a local area network with 
 [You can download the official Mojang BDS software here](https://www.minecraft.net/en-us/download/server/bedrock).
 
 Alongside the Vanilla BDS offering, many community projects exist, in a variety of languages.
-These other projects get seperated into Custom Server Software (Custom) and BDS-Based.
+These other projects get separated into Custom Server Software (Custom) and BDS-Based.
 
 Types of Server Software:
 - Custom Server Software = Server Software that is build from completely scratch.
