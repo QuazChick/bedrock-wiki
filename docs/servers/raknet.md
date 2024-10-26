@@ -27,18 +27,18 @@ Bedrock uses the port `19132` (Ipv4, use `19133` for ipv6) as its default RakNet
 
 ### Datatypes
 
-| Type                 | Size | Range           | Notes                                                               |
-|----------------------|------|-----------------|---------------------------------------------------------------------|
-| u8 (byte)            | 1    | 0-255           | A single Byte                                                       |
-| i16 (short)          | 2    | -32768 - 32767  | Signed 16-bit integer                                               |
-| u16 (unsigned short) | 2    | 0 - 65535       | Unsigned 16-bit integer                                             |
-| u24 (unsigned int24) | 3    | 0 - 2^24-1      | Unsigned 21-bit integer                                             |
-| i64 (long)           | 8    | -2^63 to 2^63-1 | Signed 64-bit integer                                               |
-| bool (boolean)       | 1    | 0 - 1           | `0` is `false`, while `1` is `true`                                 |
-| String               | N/A  |                 | A String prefixed by a unsigned short which depicts the length      |
-| Guid                 | 8    |                 | A Globally Unique Identifier that is stored as an i64               |
-| Socket Address       | 7    |                 | 1 byte for the ip version 4/6, 4 for the IP and 2 for the port      |
-| Magic                | 16   |                 | Special constant byte sequence `0x00ffff00fefefefefdfdfdfd12345678` |
+| Type                 | Size | Range           | Notes                                                                         |
+|----------------------|------|-----------------|-------------------------------------------------------------------------------|
+| u8 (byte)            | 1    | 0-255           | A single Byte                                                                 |
+| i16 (short)          | 2    | -32768 - 32767  | Signed 16-bit integer                                                         |
+| u16 (unsigned short) | 2    | 0 - 65535       | Unsigned 16-bit integer                                                       |
+| u24 (unsigned int24) | 3    | 0 - 2^24-1      | Unsigned 21-bit integer                                                       |
+| i64 (long)           | 8    | -2^63 to 2^63-1 | Signed 64-bit integer                                                         |
+| bool (boolean)       | 1    | 0 - 1           | `0` is `false`, while `1` is `true`                                           |
+| String               | N/A  |                 | A String prefixed by an u16 (encoded as Big Endian), which depicts the length |
+| Guid                 | 8    |                 | A Globally Unique Identifier that is stored as an i64                         |
+| Socket Address       | 7    |                 | 1 byte for the ip version 4/6, 4 for the IP and 2 for the port                |
+| Magic                | 16   |                 | Special constant byte sequence `0x00ffff00fefefefefdfdfdfd12345678`           |
 
 ## Contents
 
