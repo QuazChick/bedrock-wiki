@@ -38,7 +38,7 @@ By making [JSON UI](/json-ui/json-ui-intro) edits you can change the background 
 
 ![](/assets/images/visuals/structure-presentation/structure-block-1.png)
 
-Or you can use **Structure Presentation Pack** by @minato4743 to simplify the process. It include some default colors and gradient as will as toggle to hide the preview arrows.
+Or you can use the **Structure Presentation Pack** by @minato4743 to simplify the process. It includes some default colors and gradients as well as a toggle to hide the preview arrows.
 
 <Button link="/assets/packs/visuals/structure-presentation/structure_presentation_pack.mcpack" download>
     Download Pack
