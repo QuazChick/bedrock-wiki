@@ -67,13 +67,19 @@ In this case, the file in the `mystructure` folder is the one that "wins," resul
 > > > > >
 > > > > > > ![String][string] `name`: The block's identifier, such as `minecraft:planks`.
 > > > > > > ![Compound][compound] `states`: The block's states as keys and values. Examples: `wood_type:"acacia"`, `bite_counter:3`, `open_bit:1b`. The values are the appropriate NBT type for the state: strings for enum values, integers for scalar numbers, and bytes for boolean values.
-> > > > > > ![Integer][int] `version`: Compatibility versioning number for this block (currently `17959425` as of writing, in 1.19).
+> > > > > > ![Integer][int] `version`: Compatibility versioning number for this block (currently `17959425` as of writing, in 1.19). For example, `17879555` is hex `01 10 D2 03`, meaning 1.16.210.03.
 > > > >
 > > > > ![Compound][compound] `block_position_data`: Contains additional data for individual blocks in the structure. Each key is an integer index into the flattened list of blocks inside of `block_indices`. Layer is unspecified as it is irrelevant.
 > > > >
-> > > > > ![Compound][compound] `<index>`: A single piece of additional block data, applied to the block at its index position.
-> > > > >
-> > > > > > ![Compound][compound] `block_entity_data`: Block entity data as NBT, stored the same as block entities in the world file itself. Position tags are saved, but replaced upon loading. No other objects seem to exist adjacent to this one at this time.
+> > > > > ![Compound][compound] `<index>`: A single piece of additional block data, relevant to the block at its index position.
+> > > > > 
+> > > > > > ![Compound][compound] `block_entity_data`: Block entity data as NBT, stored exactly the same as block entities in the world file itself. Position tags are saved, but replaced upon loading. Layer is unspecified, as multiple block entities cannot coexist in a block space.
+> > > > > >
+> > > > > > ![List][list] `tick_queue_data`: Contains one more compounds of scheduled tick information. This is used for blocks like coral to make it die, water to make it flow, and other various scheduled updates.
+> > > > > > 
+> > > > > > > ![Compound][compound] A single pending tick.
+> > > > > > > 
+> > > > > > > > ![Integer][int] `tick_delay`: The amount of ticks remaining until this block should be updated. No other values seem to exist adjacent to this one at this time.
 >
 > ![List][list] `structure_world_origin`: List of three integers describing where in the world the structure was initially saved. Equal to the position of the saving structure block, plus its offset settings. This is used to determine where entities should be placed when loading. An entity's new absolute position is equal to its old position, minus these values, plus the origin of the structure's loading position.
 >
