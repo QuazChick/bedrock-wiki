@@ -106,6 +106,7 @@ _For use with the `menu_category` parameter, `group`._
 | itemGroup.name.bed                |
 | itemGroup.name.boat               |
 | itemGroup.name.boots              |
+| itemGroup.name.bundles            |
 | itemGroup.name.buttons            |
 | itemGroup.name.candles            |
 | itemGroup.name.chalkboard         |
