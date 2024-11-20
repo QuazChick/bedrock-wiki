@@ -18,7 +18,7 @@ mentions:
     - LeGend077
     - mark-wiemer
     - TheItsNameless
-    -
+    - ThomasOrs
     - QuazChick
 description: Introduction to JSON UI.
 ---
