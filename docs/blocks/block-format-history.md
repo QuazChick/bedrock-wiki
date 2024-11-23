@@ -16,6 +16,23 @@ mentions:
 -   Updated `minecraft:destructible_by_mining`
     -   Released `item_specific_speeds` parameter from experimental
 
+<Tag name="experimental" />
+<Label color="blue">Upcoming Creator Features</Label>
+
+-   Added `minecraft:item_visual`
+    -   Determines how this block is displayed as an item.
+    -   Contains `geometry` which determines the displayed geometry component.
+    -   Contains `material_instances` which determines the displayed material instances component.
+-   Added `minecraft:liquid_detection`
+    -   Determines how this blocks behaves with different types of liquid.
+    -   Contains `detection_rules` which each contain the following parameters:
+        -   `liquid_type` determines which type of liquid this rule applies to. Currently only `water` is supported.
+        -   `can_contain_liquid` determines whether the liquid type can occupy the same space as this block e.g., waterlogging.
+        -   `on_liquid_touches` determines what happens when the liquid type flows into the block.
+        -   `stops_liquid_flowing_from_direction` determines an array of directions that the liquid cannot flow out of this block from.
+-   Updated `minecraft:material_instances`
+    -   Updated `ambient_occlusion` instance parameter to require a float which determines ambient occlusion intensity.
+
 ## 1.21.40
 
 ### Components
@@ -31,11 +48,11 @@ mentions:
 <Tag name="experimental" />
 <Label color="blue">Upcoming Creator Features</Label>
 
--   Updated `minecraft:destructible_by_mining`
-    -   Added `item_specific_speeds` which determines the `destroy_speed` for each `item` descriptor in an array.
 -   Added `minecraft:redstone_conductivity`
     -   Contains `redstone_conductor` which determines whether this block conducts redstone.
     -   Contains `allows_wire_to_step_down` which determines whether redstone wire can travel down the side of this block.
+-   Updated `minecraft:destructible_by_mining`
+    -   Added `item_specific_speeds` which determines the `destroy_speed` for each `item` descriptor in an array.
 
 ## 1.21.10
 

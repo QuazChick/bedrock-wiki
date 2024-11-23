@@ -642,7 +642,7 @@ Most people use them by giving them the same value:
 	width=782
 />
 
-However, what happens when they have different values? Let's look at happens when `anchor_from: center` and `anchor_from: top_left`. It's the best example to demonstrate what's really happening.
+However, what happens when they have different values? Let's look at what happens when `anchor_from: center` and `anchor_to: top_left`. It's the best example to demonstrate what's really happening.
 
 <CodeHeader>RP/ui/example_file.json</CodeHeader>
 
