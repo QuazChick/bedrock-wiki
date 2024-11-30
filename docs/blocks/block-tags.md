@@ -21,7 +21,7 @@ Block tags can be used to ensure that a block meets certain conditions.
 
 ## Applying Tags
 
-Block tags can be applied in the same way as items - in the block's `components` - as seen below:
+Block tags can be applied in the block's `components`, prefixed with `tag:`, as seen below:
 
 <CodeHeader>BP/blocks/tree_stump.json</CodeHeader>
 
@@ -46,16 +46,42 @@ Block tags can be applied in the same way as items - in the block's `components`
 
 ## Testing for Tags
 
-Tags can be queried with:
+### From Block Descriptors
 
 -   `q.all_tags`
 -   `q.any_tag`
--   `q.block_has_all_tags`
--   `q.block_has_any_tag`
--   `q.block_neighbor_has_all_tags`
--   `q.block_neighbor_has_any_tag`
+
+<CodeHeader>Block Descriptor</CodeHeader>
+
+```json
+{
+    "tags": "q.any_tag('wiki:glowing') && q.all_tags('wiki:custom_ore', 'stone')"
+}
+```
+
+### From Entities
+
 -   `q.relative_block_has_all_tags`
 -   `q.relative_block_has_any_tag`
+-   `q.block_has_all_tags`
+-   `q.block_has_any_tag`
+
+<CodeHeader>minecraft:client_entity > description</CodeHeader>
+
+```json
+"scripts": {
+    "pre_animation": [
+        "v.is_on_sand = q.relative_block_has_any_tag(0, -1, 0, 'sand');"
+    ]
+}
+```
+
+### Additional Queries
+
+**NOTE:** The following query functions have no known use cases.
+
+-   `q.block_neighbor_has_all_tags`
+-   `q.block_neighbor_has_any_tag`
 
 Example of an item querying a block's tags:
 
