@@ -1,9 +1,10 @@
 ---
 title: Advanced Molang
-description: Advanced MoLang.
+description: Learn about more advanced topics within Molang.
 mentions:
     - Ciosciaa
     - TheItsNameless
+    - QuazChick
 ---
 
 ## Values
@@ -53,12 +54,10 @@ The complete precedence list, from first to last evaluated:
 
 -   Assignments return the value assigned. You can therefore chain assignments if you need separate variables to work with from a single value, such as with `v.iterator_x = (v.iterator_z = math.random_integer(16, 32));`.
 -   The last statement inside a brace scope does not need to end with a `;`.
--   Brace scopes can be used anywhere an expression can be used. `v.spawn_point ?? {v.target = false;};`, for example, would set `v.target` to `false` if `v.spawn_point` were not defined.
+-   Brace scopes can be used anywhere an expression can be used. `v.spawn_point ?? { v.target = false; };`, for example, would set `v.target` to `false` if `v.spawn_point` were not defined.
 
 ## Collections
 
--   Entity iterables (such as the result of `q.get_nearby_entities`) are their own "type". They are not compatible with subscripts.
--   Arrays, likewise, are not compatible with entity iterable operations, such as `q.count`.
 -   The result of array subscripts cannot directly be an argument to `+`, `-`, `*`, or `/` but may still be used directly as function parameters (even math functions) or with other operators.
 
 ## Evaluation

@@ -83,9 +83,7 @@ As an example, a "cold steel sword" might be crafted using the following [shaped
 The [format version](/guide/format-version) is intended to version the schema used for the body of a recipe. It is provided with the top-level `"format_version"` property.
 
 <CodeHeader>#/</CodeHeader>
-```json
-"format_version": "1.17.41"
-```
+```json "format_version": "1.17.41" ```
 
 In practice, the format version can be set to any value or even omitted.
 
@@ -115,9 +113,7 @@ It's strongly recommended to use a namespace. Namespaces are a standard in other
 Recipes are linked to crafting interfaces using the required `"tags"` array property, which must be placed within any recipe type. These tags will make the recipe be shared across different blocks that uses the `minecraft:crafting_table` component. When the recipe does not inlcude the `crafting_table` tag, or any vanilla tag, but a tag from your custom block, the recipe will only be shared to that custom block and not the crafting table/stonecutter/etc. At least one tag must be provided.
 
 <CodeHeader>#/minecraft:recipe_shaped/</CodeHeader>
-```json
-"tags": ["crafting_table", "altar"]
-```
+```json "tags": ["crafting_table", "altar"] ```
 
 Vanilla interfaces are exposed to tags for each set of recipe types.
 
@@ -127,7 +123,7 @@ Crafting:
 -   `stonecutter`
 -   `smithing_table`
 
-::: 
+:::
 warning Note that if you want to make a smithing recipe, you will need to use `<namespace>:netherite_ingot` for the second slot, though using a different identifier will not work. **This no longer works after 1.18.30**.
 :::
 
@@ -147,7 +143,7 @@ Education:
 
 -   `material_reducer`
 
-::: tip 
+::: tip
 Additionally, [custom crafting tables](/blocks/block-components#crafting-table) can declare a custom tag for crafting recipes to use. Custom cooking and smelting blocks and custom brewing stands are not currently available.
 :::
 
@@ -156,7 +152,9 @@ To effectively disable a recipe (useful for [overriding](#overrides) a prior rec
 :::
 
 ### Recipe Unlocking
+
 Minecraft 1.20.30 added recipe unlocking to the game. In order to have your recipes use this function, your `manifest.json` must have a `min_engine_version` of 1.20.11 (1.20.30 is recommender). You also need to add the `unlock` array with its objects to your recipe.
+
 ```json
 		"unlock": [
 			{
@@ -171,6 +169,7 @@ Minecraft 1.20.30 added recipe unlocking to the game. In order to have your reci
 			}
           ]
 ```
+
 Each object in this array contains `"item"` and this tells the recipe what item the player needs in their inventory in order for this recipe to be unlocked. It also accepts data values. `"context"` is used to determine what event unlocks this recipe. `"PlayerInWater"` will unlock this recipe when the player enters water. This is also the only known context for recipes.
 
 ### Item Descriptors
@@ -182,16 +181,12 @@ Working with recipes entails referencing items across a number of properties. It
 Generally, a string reference is just the namespace and identifier combination for that item:
 
 <CodeHeader>#/minecraft:recipe_shapeless/ingredients/0</CodeHeader>
-```json
-"minecraft:planks"
-```
+```json "minecraft:planks" ```
 
 String references additionally support specification of a data value as a suffix:
 
 <CodeHeader>#/minecraft:recipe_shapeless/ingredients/0</CodeHeader>
-```json
-"minecraft:planks:2"
-```
+```json "minecraft:planks:2" ```
 
 #### Item Object
 
@@ -206,7 +201,7 @@ The item object is a more explicit construct for referencing items.
 }
 ```
 
-The required `"item"` property functions the same as the string reference format. Although an explicit data field is available, the data suffix string format is still supported in the `"item"` property. However, unlike the suffix form, `"data"` can accept Molang. The Molang here is evaluated once on world load, not per-crafting attempt. Variables cannot be used to pass data between properties in a recipe. Furthermore, the nature of input items cannot be queried. Currently, the only known usable query in the `"data"` property is `q.get_actor_info_id`, used to look up the ID of an entity's spawn egg by its identifier:
+The required `"item"` property functions the same as the string reference format. Although an explicit data field is available, the data suffix string format is still supported in the `"item"` property. However, unlike the suffix form, `"data"` can accept Molang. The Molang here is evaluated once on world load, not per-crafting attempt. Variables cannot be used to pass data between properties in a recipe. Furthermore, the nature of input items cannot be queried. Currently, the only known usable query in the `"data"` property is `q.get_actor_info_id`, used to look up the ID of an entity's spawn egg by its identifier, however this can also be achieved by simply setting the `"item"` to the spawn egg's ID (e.g. `minecraft:chicken_spawn_egg`).
 
 <CodeHeader>#/minecraft:recipe_shapeless/result</CodeHeader>
 ```json
@@ -231,9 +226,7 @@ Despite having similarities to trade [table item descriptors](/loot/trade-tables
 Additional identifiers not typically usable are available to recipes to describe basic potions.
 
 <CodeHeader>#/minecraft:recipe_brewing_mix/input</CodeHeader>
-```json
-"minecraft:potion_type:strength"
-```
+```json "minecraft:potion_type:strength" ```
 
 These identifiers are not usable in the object notation, only the string notation. Variants are unavailable for splash and lingering potions. All such identifiers follow the format: <code>minecraft:potion_type:<em>potion_effect</em></code>, where <code><em>potion_effect</em></code> can be one of the following:
 
@@ -266,9 +259,7 @@ Crafting operations instantly transform inputs to outputs using crafting grids. 
 Crafting recipes support both crafting tables and stonecutters:
 
 <CodeHeader>#/minecraft:recipe_shapeless/</CodeHeader>
-```json
-"tags": ["crafting_table", "stonecutter"]
-```
+```json "tags": ["crafting_table", "stonecutter"] ```
 
 `"crafting_table"` applies to both vanilla crafting tables and the player 2 × 2 crafting grid in their inventory. There is currently no way to opt into one but not the other. Crafting recipes additionally support custom tags, linking recipes to a [crafting grid provided by a custom block](/blocks/block-components#crafting-table).
 
@@ -397,13 +388,7 @@ Shaped recipes enforce that the ingredients used during crafting conform to a st
 The required `"pattern"` array property establishes the shape used for the recipe.
 
 <CodeHeader>#/minecraft:recipe_shaped/</CodeHeader>
-```json
-"pattern": [
-	"SSS",
-	"I I",
-	"I I"
-]
-```
+```json "pattern": [ "SSS", "I I", "I I" ] ```
 
 Each entry in the array is a string representing a row in the crafting grid. Each character in each string represents a slot within that row. Spaces by default represent slots that should be empty.
 
@@ -418,22 +403,10 @@ If the pattern is only comprised of spaces, empty crafting interfaces able to fi
 The pattern grid must be at most 3 × 3 but may be smaller. If string lengths are mismatched, Minecraft will automatically extend shorter strings, implying spaces in filled slots. The following two are equivalent:
 
 <CodeHeader>#/minecraft:recipe_shaped/</CodeHeader>
-```json
-"pattern": [
-	"MA",
-	"IFI",
-	"M"
-]
-```
+```json "pattern": [ "MA", "IFI", "M" ] ```
 
 <CodeHeader>#/minecraft:recipe_shaped/</CodeHeader>
-```json
-"pattern": [
-	"MA ",
-	"IFI",
-	"M  "
-]
-```
+```json "pattern": [ "MA ", "IFI", "M " ] ```
 
 ::: tip NOTE
 Currently, no crafting grids, including those configurable from custom blocks, may be larger than 3 × 3. If the expressed pattern is unusable within the current crafting interface, the recipe will automatically be unavailable in the recipe book.
@@ -444,73 +417,31 @@ Currently, no crafting grids, including those configurable from custom blocks, m
 Spaces are not automatically implied to fill in any remaining slots in the 3 × 3 space. If a provided pattern is smaller than the crafting grid being used, the pattern can be used anywhere so long as the structure and contents are maintained. As an example, consider the following pattern on a crafting table:
 
 <CodeHeader>#/minecraft:recipe_shaped/</CodeHeader>
-```json
-"pattern": [
-	"O"
-	"OO"
-]
-```
+```json "pattern": [ "O" "OO" ] ```
 
 The "L" shape isn't restricted to the upper-left corner of the crafting grid. Using a 3 × 3 grid as an example, the pattern would be usable with any of these configurations:
 
 <Spoiler title="Possible Configurations">
-*Underscores represent empty slots.*
-```txt
-O__
-OO_
-___
-```
-```txt
-_O_
-_OO
-___
-```
-```txt
-___
-O__
-OO_
-```
-```txt
-___
-_O_
-_OO
-```
+    *Underscores represent empty slots.* ```txt O__ OO_ ___ ``` ```txt _O_ _OO ___ ``` ```txt ___
+    O__ OO_ ``` ```txt ___ _O_ _OO ```
 </Spoiler>
 
 To restrict placements to a particular location, use explicit spaces, which enforce empty slots in certain locations. The following is only usable in the upper-left corner of a grid:
 
 <CodeHeader>#/minecraft:recipe_shaped/</CodeHeader>
-```json
-"pattern": [
-	"O  "
-	"OO "
-	"   "
-]
-```
+```json "pattern": [ "O " "OO " " " ] ```
 
 ##### Symmetry
 
 All shaped recipes are innately horizontally symmetric:
 
 <CodeHeader>#/minecraft:recipe_shaped/</CodeHeader>
-```json
-"pattern": [
-	"Z  "
-	" Z "
-	"  Z"
-]
-```
+```json "pattern": [ "Z " " Z " " Z" ] ```
 
 The preceding recipe may also be used by a player as though it were set to:
 
 <CodeHeader>#/minecraft:recipe_shaped/</CodeHeader>
-```json
-"pattern": [
-	"  Z"
-	" Z "
-	"Z  "
-]
-```
+```json "pattern": [ " Z" " Z " "Z " ] ```
 
 #### Keys
 
@@ -535,7 +466,9 @@ If a character in the pattern is not present in the key map, it will be treated 
 :::
 
 ### Recipe Unlocking
+
 Minecraft 1.20.30 added recipe unlocking to the game. In order to have your recipes use this function, you `manifest.json` must have a `min_engine_version` of 1.20.11 (1.20.30 is recommender). You also need to add the `unlock` array with its objects to your recipe.
+
 ```json
 		"unlock": [
 			{
@@ -550,6 +483,7 @@ Minecraft 1.20.30 added recipe unlocking to the game. In order to have your reci
 			}
 		]
 ```
+
 Each object in this array contains `"item"` and this tells the recipe what item the player needs in their inventory in order for this recipe to be unlocked. `"context"` is used to determine what event unlocks this recipe. `"PlayerInWater"` will unlock this recipe when the player enters water. This is also the only known context for recipes.
 
 #### Shaped Results
@@ -591,9 +525,7 @@ When comparing a shaped recipe to a shapeless recipe, the rules for comparing sh
 This section is included informatively. Groups are present in crafting recipes in vanilla definitions, given with the optional `"group"` string property.
 
 <CodeHeader>#/minecraft:recipe_shaped/</CodeHeader>
-```json
-"group": "slingshots"
-```
+```json "group": "slingshots" ```
 
 It is currently unknown what, if anything, this property achieves. Presumably, it would be used with the [recipe book](#recipe-book). Neither using new custom groups nor reusing groups from vanilla definitions appear to achieve anything.
 
@@ -602,9 +534,7 @@ It is currently unknown what, if anything, this property achieves. Presumably, i
 Crafting recipes support an additional property for handling input collisions, `"priority"`, which primarily acts as a [tiebreaker](#prioritization) when multiple recipes could possibly apply to the given situation. Priorities are provided directly within the crafting recipe type object.
 
 <CodeHeader>#/minecraft:recipe_shaped/</CodeHeader>
-```json
-"priority": 2
-```
+```json "priority": 2 ```
 
 Crafting recipes with lower priority values take precedence. So, if all else is equal, a recipe with a priority of `0` would be used over a recipe with priority `1`. Priorities may be negative if necessary. If `"priority"` is not provided, a priority of `0` is implied.
 
@@ -635,9 +565,7 @@ Furnace recipes are used to transform an item using a heat source over a period 
 All vanilla heating blocks are supported via tags.
 
 <CodeHeader>#/minecraft:recipe_furnace/</CodeHeader>
-```json
-"tags": ["furnace", "blast_furnace", "smoker", "campfire", "soul_campfire"]
-```
+```json "tags": ["furnace", "blast_furnace", "smoker", "campfire", "soul_campfire"] ```
 
 ### Heating Transactions
 
@@ -661,20 +589,14 @@ Brewing recipes are used to transform an item using another item as a catalyst. 
 Only one interface supports brewing recipes:
 
 <CodeHeader>#/minecraft:recipe_brewing_container/</CodeHeader>
-```json
-"tags": ["brewing_stand"]
-```
+```json "tags": ["brewing_stand"] ```
 
 ### Brewing Transactions
 
 Brewing transactions are similar to [heating transactions](#heating-transactions), requiring an input and output, each pointing to a single [item descriptor](#item-descriptors). Brewing recipes, however, also require the `"reagent"` property as a catalyst, which also can only point to a single item descriptor.
 
 <CodeHeader>#/minecraft:recipe_brewing_mix/</CodeHeader>
-```json
-"input": "wiki:flask",
-"reagent": "wiki:jade",
-"output": "wiki:insanity_resistance"
-```
+```json "input": "wiki:flask", "reagent": "wiki:jade", "output": "wiki:insanity_resistance" ```
 
 Provided count values are ignored in these brewing properties. Items are meant to transform one at a time in a brew.
 
