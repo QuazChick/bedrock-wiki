@@ -1,5 +1,5 @@
 ---
-title: Starting Scripting
+title: Intro to Scripting
 category: General
 nav_order: 1
 mentions:
@@ -9,7 +9,8 @@ mentions:
     - SmokeyStack
     - kumja1
     - SimpleDevMCBE
-description: Start scripting in MCBE.
+    - QuazChick
+description: Learn how to modify your world through the use of JavaScript files.
 ---
 
 ::: tip
@@ -22,7 +23,7 @@ The Script API is currently in active development, and breaking changes are freq
 
 ## Overview
 
-The Script API (formerly GameTests, and not to be confused with the [Legacy Scripting API](/scripting/scripting-intro)) is a feature that allows for a new variety of creations, these are built with JavaScript files in the behavior pack folder. Some parts of the Script API are not experimental.
+The Script API (formerly GameTests) is a feature that allows for a new variety of creations, these are built with JavaScript files in the behavior pack folder. Some parts of the Script API are not experimental.
 
 This page will give you an introduction to the 80% of Minecraft's Creator API concepts that you will use on a daily basis.
 
@@ -98,9 +99,9 @@ If your project needs other module to run your code, add the other dependencies 
 **Stable API modules**, these do not require the Beta APIs experiment to be turned on. Most features are included in stable APIs, and will not break or be changed when Minecraft is updated.
 
 -   `@minecraft/server`:
-  
+
     -   [`1.15.0`](https://www.npmjs.com/package/@minecraft/server/v/1.15.0) (Latest version)
-    -   [`1.14.0`](https://www.npmjs.com/package/@minecraft/server/v/1.14.0) 
+    -   [`1.14.0`](https://www.npmjs.com/package/@minecraft/server/v/1.14.0)
     -   [`1.13.0`](https://www.npmjs.com/package/@minecraft/server/v/1.13.0)
     -   [`1.12.0`](https://www.npmjs.com/package/@minecraft/server/v/1.12.0)
     -   [`1.11.0`](https://www.npmjs.com/package/@minecraft/server/v/1.11.0)

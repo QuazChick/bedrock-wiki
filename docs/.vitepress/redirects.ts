@@ -50,6 +50,7 @@ export default {
 
   "/scripting/gametest-qna": "/meta/gametest-qna",
   "/scripting/scripting-editor-qna": "/meta/scripting-editor-qna",
+  "/scripting/starting-scripts": "/scripting/scripting-intro",
 
   "/troubleshooting/entities": "/entities/troubleshooting-entities",
   "/troubleshooting/items": "/items/troubleshooting-items",
