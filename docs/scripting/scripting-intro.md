@@ -14,7 +14,7 @@ description: Learn how to modify your world through the use of JavaScript files.
 ---
 
 ::: tip
-This script API page assumes basic knowledge of pack setup for add-ons. For information on how to set up behaviour packs, please see the [Introduction to Add-ons](/guide/introduction) page.
+This script API page assumes basic knowledge of pack setup for add-ons. For information on how to set up behaviour packs, please see the [Introduction to Add-Ons](/guide/introduction) page.
 :::
 
 ::: warning
@@ -159,7 +159,7 @@ In order to use the `eval()` function or `Function()` constructors within your c
 
 The entry point file can contain scripts and/or imports to other script files. Only one entry point file can be specified.
 
-## Writing scripts with JS
+## Writing Scripts with JS
 
 Minecraft's scripting engine only runs JavaScript, like any other JavaScript projects. Check out [Scripting with TypeScript](/scripting/typescript#script-api) for compiling TS directly to JavaScript.
 
