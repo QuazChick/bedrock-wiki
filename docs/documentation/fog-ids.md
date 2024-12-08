@@ -5,6 +5,7 @@ mentions:
     - MedicalJewel105
     - TheItsNameless
 description: Fog IDs documentation.
+show_outline: false
 ---
 
 <!-- page_dumper_start -->
