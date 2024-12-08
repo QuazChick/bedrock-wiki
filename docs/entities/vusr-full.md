@@ -8,7 +8,7 @@ hidden: true
 ---
 
 This page was created with [Wiki Content Generator](https://github.com/Bedrock-OSS/bedrock-wiki-content-generator). If there are issues, contact us on [Bedrock OSS](https://discord.gg/XjV87YN) Discord server.
-Includes all examples. Namespace `minecraft` and some formatting has been removed to make the page load quickly. *Last updated for 1.21.0*
+Includes all examples. Namespace `minecraft` and some formatting has been removed to make the page load quickly. *Last updated for 1.21.50*
 
 ## biome_filter
 
@@ -66,9 +66,18 @@ bat
 
 ```json
 "minecraft:biome_filter": {
-    "test": "has_biome_tag",
-    "operator": "==",
-    "value": "animal"
+    "any_of": [
+        {
+            "test": "has_biome_tag",
+            "operator": "==",
+            "value": "caves"
+        },
+        {
+            "test": "has_biome_tag",
+            "operator": "==",
+            "value": "animal"
+        }
+    ]
 }
 ```
 
@@ -1839,7 +1848,7 @@ drowned
 
 ```json
 "minecraft:density_limit": {
-    "surface": 2
+    "underground": 5
 }
 ```
 
@@ -2283,15 +2292,6 @@ tropicalfish
 
 ## height_filter
 
-bat
-
-```json
-"minecraft:height_filter": {
-    "min": -63,
-    "max": 63
-}
-```
-
 cod
 
 ```json
@@ -2425,8 +2425,8 @@ bat
 
 ```json
 "minecraft:herd": {
-    "min_size": 2,
-    "max_size": 2
+    "min_size": 8,
+    "max_size": 8
 }
 ```
 
@@ -2511,8 +2511,8 @@ drowned
 
 ```json
 "minecraft:herd": {
-    "min_size": 2,
-    "max_size": 4
+    "min_size": 1,
+    "max_size": 1
 }
 ```
 
@@ -3562,16 +3562,10 @@ armadillo
         "name": "minecraft:grass_block"
     },
     {
-        "name": "minecraft:sand",
-        "states": {
-            "sand_type": "red"
-        }
+        "name": "minecraft:red_sand"
     },
     {
-        "name": "minecraft:dirt",
-        "states": {
-            "dirt_type": "coarse"
-        }
+        "name": "minecraft:coarse_dirt"
     },
     {
         "name": "minecraft:brown_terracotta"
@@ -3603,16 +3597,10 @@ armadillo
         "name": "minecraft:grass_block"
     },
     {
-        "name": "minecraft:sand",
-        "states": {
-            "sand_type": "red"
-        }
+        "name": "minecraft:red_sand"
     },
     {
-        "name": "minecraft:dirt",
-        "states": {
-            "dirt_type": "coarse"
-        }
+        "name": "minecraft:coarse_dirt"
     },
     {
         "name": "minecraft:brown_terracotta"
@@ -3644,16 +3632,10 @@ armadillo
         "name": "minecraft:grass_block"
     },
     {
-        "name": "minecraft:sand",
-        "states": {
-            "sand_type": "red"
-        }
+        "name": "minecraft:red_sand"
     },
     {
-        "name": "minecraft:dirt",
-        "states": {
-            "dirt_type": "coarse"
-        }
+        "name": "minecraft:coarse_dirt"
     },
     {
         "name": "minecraft:brown_terracotta"
@@ -3685,26 +3667,39 @@ axolotl
 "minecraft:spawns_on_block_filter": "minecraft:clay"
 ```
 
+bat
+
+```json
+"minecraft:spawns_on_block_filter": [
+    "minecraft:stone",
+    "minecraft:granite",
+    "minecraft:diorite",
+    "minecraft:andesite",
+    "minecraft:tuff",
+    "minecraft:deepslate"
+]
+```
+
 chicken
 
 ```json
-"minecraft:spawns_on_block_filter": "minecraft:grass"
+"minecraft:spawns_on_block_filter": "minecraft:grass_block"
 ```
 
 cow
 
 ```json
-"minecraft:spawns_on_block_filter": "minecraft:grass"
+"minecraft:spawns_on_block_filter": "minecraft:grass_block"
 ```
 
 donkey
 
 ```json
-"minecraft:spawns_on_block_filter": "minecraft:grass"
+"minecraft:spawns_on_block_filter": "minecraft:grass_block"
 ```
 
 ```json
-"minecraft:spawns_on_block_filter": "minecraft:grass"
+"minecraft:spawns_on_block_filter": "minecraft:grass_block"
 ```
 
 goat
@@ -3712,6 +3707,12 @@ goat
 ```json
 "minecraft:spawns_on_block_filter": [
     "minecraft:stone",
+    "minecraft:granite",
+    "minecraft:polished_granite",
+    "minecraft:diorite",
+    "minecraft:polished_diorite",
+    "minecraft:andesite",
+    "minecraft:polished_andesite",
     "minecraft:snow",
     "minecraft:powder_snow",
     "minecraft:snow_layer",
@@ -3723,49 +3724,49 @@ goat
 horse
 
 ```json
-"minecraft:spawns_on_block_filter": "minecraft:grass"
+"minecraft:spawns_on_block_filter": "minecraft:grass_block"
 ```
 
 ```json
-"minecraft:spawns_on_block_filter": "minecraft:grass"
+"minecraft:spawns_on_block_filter": "minecraft:grass_block"
 ```
 
 llama
 
 ```json
-"minecraft:spawns_on_block_filter": "minecraft:grass"
+"minecraft:spawns_on_block_filter": "minecraft:grass_block"
 ```
 
 ```json
-"minecraft:spawns_on_block_filter": "minecraft:grass"
+"minecraft:spawns_on_block_filter": "minecraft:grass_block"
 ```
 
 ocelot
 
 ```json
-"minecraft:spawns_on_block_filter": "minecraft:grass"
+"minecraft:spawns_on_block_filter": "minecraft:grass_block"
 ```
 
 panda
 
 ```json
-"minecraft:spawns_on_block_filter": "minecraft:grass"
+"minecraft:spawns_on_block_filter": "minecraft:grass_block"
 ```
 
 ```json
-"minecraft:spawns_on_block_filter": "minecraft:grass"
+"minecraft:spawns_on_block_filter": "minecraft:grass_block"
 ```
 
 parrot
 
 ```json
-"minecraft:spawns_on_block_filter": "minecraft:grass"
+"minecraft:spawns_on_block_filter": "minecraft:grass_block"
 ```
 
 pig
 
 ```json
-"minecraft:spawns_on_block_filter": "minecraft:grass"
+"minecraft:spawns_on_block_filter": "minecraft:grass_block"
 ```
 
 polar_bear
@@ -3778,7 +3779,7 @@ rabbit
 
 ```json
 "minecraft:spawns_on_block_filter": [
-    "minecraft:grass",
+    "minecraft:grass_block",
     "minecraft:snow",
     "minecraft:sand",
     "minecraft:snow_layer"
@@ -3787,7 +3788,7 @@ rabbit
 
 ```json
 "minecraft:spawns_on_block_filter": [
-    "minecraft:grass",
+    "minecraft:grass_block",
     "minecraft:snow",
     "minecraft:sand",
     "minecraft:snow_layer"
@@ -3796,7 +3797,7 @@ rabbit
 
 ```json
 "minecraft:spawns_on_block_filter": [
-    "minecraft:grass",
+    "minecraft:grass_block",
     "minecraft:snow",
     "minecraft:sand",
     "minecraft:snow_layer"
@@ -3805,7 +3806,7 @@ rabbit
 
 ```json
 "minecraft:spawns_on_block_filter": [
-    "minecraft:grass",
+    "minecraft:grass_block",
     "minecraft:snow",
     "minecraft:sand",
     "minecraft:snow_layer"
@@ -3815,11 +3816,11 @@ rabbit
 sheep
 
 ```json
-"minecraft:spawns_on_block_filter": "minecraft:grass"
+"minecraft:spawns_on_block_filter": "minecraft:grass_block"
 ```
 
 ```json
-"minecraft:spawns_on_block_filter": "minecraft:grass"
+"minecraft:spawns_on_block_filter": "minecraft:grass_block"
 ```
 
 turtle
@@ -3851,10 +3852,7 @@ wolf
         "name": "minecraft:grass_block"
     },
     {
-        "name": "minecraft:dirt",
-        "states": {
-            "dirt_type": "coarse"
-        }
+        "name": "minecraft:coarse_dirt"
     }
 ]
 ```
@@ -3868,10 +3866,7 @@ wolf
         "name": "minecraft:grass_block"
     },
     {
-        "name": "minecraft:dirt",
-        "states": {
-            "dirt_type": "coarse"
-        }
+        "name": "minecraft:coarse_dirt"
     }
 ]
 ```
@@ -3898,10 +3893,7 @@ wolf
         "name": "minecraft:grass_block"
     },
     {
-        "name": "minecraft:dirt",
-        "states": {
-            "dirt_type": "coarse"
-        }
+        "name": "minecraft:coarse_dirt"
     }
 ]
 ```
@@ -4047,10 +4039,6 @@ donkey
 ```
 
 drowned
-
-```json
-"minecraft:spawns_on_surface": {}
-```
 
 ```json
 "minecraft:spawns_on_surface": {}
@@ -4349,6 +4337,12 @@ bat
 ```
 
 creeper
+
+```json
+"minecraft:spawns_underground": {}
+```
+
+drowned
 
 ```json
 "minecraft:spawns_underground": {}
@@ -4688,7 +4682,7 @@ drowned
 
 ```json
 "minecraft:weight": {
-    "default": 100
+    "default": 95
 }
 ```
 
