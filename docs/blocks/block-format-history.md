@@ -7,6 +7,14 @@ mentions:
     - QuazChick
 ---
 
+## 1.21.60
+
+### Components
+
+<Label color="green">Versioned</Label>
+
+-   Released `minecraft:liquid_detection` from experimental
+
 ## 1.21.50
 
 ### Components
