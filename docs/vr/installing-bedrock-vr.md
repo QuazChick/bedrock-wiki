@@ -11,11 +11,12 @@ tags:
 description: Turn on VR in Minecraft.
 ---
 
-
 Minecraft VR was formerly available for download via the Oculus store, but that version hasn't been updated in a long time. This article will show you how to enable VR in the most recent version of Minecraft on your Windows PC.
+
 :::warning
-Minecraft will officially stop supporting all virtual reality headsets after March 2025, 
+Minecraft will officially stop supporting all virtual reality headsets after March 2025.
 :::
+
 :::tip
 If you are on Playstation you don't need to follow this guide.
 :::
