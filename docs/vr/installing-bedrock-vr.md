@@ -5,6 +5,7 @@ nav_order: 1
 mentions:
     - TheDoctor15
     - MedicalJewel105
+    - hhhwi
 tags:
     - guide
 description: Turn on VR in Minecraft.
