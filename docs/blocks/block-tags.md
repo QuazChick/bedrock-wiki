@@ -118,8 +118,9 @@ Example of an item querying a block's tags:
 
 ## Lists of Block Tags
 
+| Tag    | Vanilla Usage        |
+| ------ | -------------------- |
 | acacia | minecraft:acacia_log |
-|---|---|
 | birch | minecraft:birch_log |
 | dark_oak | minecraft:dark_oak_log |
 | diamond_pick_diggable | minecraft:coal_ore, minecraft:deepslate_coal_ore, minecraft:deepslate_diamond_ore, minecraft:deepslate_emerald_ore, minecraft:deepslate_gold_ore, minecraft:deepslate_iron_ore, minecraft:deepslate_redstone_ore, minecraft:diamond_ore, minecraft:emerald_ore, minecraft:gold_ore, minecraft:iron_ore, minecraft:lapis_ore, minecraft:lit_deepslate_redstone_ore, minecraft:lit_redstone_ore, minecraft:obsidian, minecraft:raw_gold_block, minecraft:raw_iron_block, minecraft:redstone_ore |
