@@ -1,8 +1,7 @@
 ---
 title: Entity Properties
+description: Entity properties allow data to be stored on entities without needing the use of components or attributes in the server-side of the entity, similar to block states.
 category: General
-tags:
-    - experimental
 mentions:
     - SirLich
     - sermah
@@ -11,11 +10,10 @@ mentions:
     - stirante
     - TheItsNameless
     - SmokeyStack
-description: Entity Properties were implemented to save data or store values on entities efficiently without needing the use of components or attributes in server-side of the entity, similar to Block Properties.
+    - QuazChick
 ---
 
-Documentation on the new Entity Properties, also known as Actor Properties, introduced in the 1.16.230.52 Minecraft: Bedrock Edition beta version.
-Entity Properties were implemented to save data or store values on entities efficiently without needing the use of components or attributes (For example, "minecraft:variant") in server-side of the entity (Behavior Pack), similar to Block Properties.
+Entity properties (also known as actor properties) allow data to be stored on entities without needing the use of components or attributes (such as `minecraft:variant`) in the server-side of the entity, similar to block states.
 
 ## Entity Properties Definition
 
@@ -31,19 +29,19 @@ Entity Properties Definition:
         "description": {
             "identifier": "wiki:properties_example",
             "properties": {
-                "property:number_range_example": {
+                "wiki:number_range_example": {
                     "values": {
                         "min": 0,
                         "max": 100
                     }
                 },
-                "property:number_enum_example": {
+                "wiki:number_enum_example": {
                     "values": [1, 2]
                 },
-                "property:string_enum_example": {
+                "wiki:string_enum_example": {
                     "values": ["first", "second", "third"]
                 },
-                "property:boolean_enum_example": {
+                "wiki:boolean_enum_example": {
                     "values": [true, false]
                 }
             }
@@ -65,7 +63,7 @@ Entity Properties Definition:
 <CodeHeader></CodeHeader>
 
 ```json
-"property:range_example": {
+"wiki:range_example": {
     "values": {
       "min": 0,
       "max": 5
@@ -78,7 +76,7 @@ Entity Properties Definition:
 <CodeHeader></CodeHeader>
 
 ```json
-"property:enum_example":{
+"wiki:enum_example":{
     "values":[
         1,
         2
@@ -93,7 +91,7 @@ You can set the default value of the entity property (by default, the first valu
 <CodeHeader></CodeHeader>
 
 ```json
-"property:default_value_example":{
+"wiki:default_value_example":{
     "values":[
         true,
         false
@@ -111,7 +109,7 @@ To sync through the Resource Pack (client-side), `client_sync` field can be used
 <CodeHeader></CodeHeader>
 
 ```json
-"property:client_sync_example": {
+"wiki:client_sync_example": {
     "values": {
       "min": 0,
       "max": 20
@@ -134,11 +132,11 @@ With entity events, you may set the entity property to a value with the `set_pro
 
 ```json
 "events":{
-    "event:set_entity_property":{
+    "wiki:set_entity_property":{
         "set_property":{
-            "property:number_enum_example":2,
-            "property:string_enum_example":"'second'",
-            "property:boolean_enum_example":"!q.property('property:boolean_enum_example')"
+            "wiki:number_enum_example":2,
+            "wiki:string_enum_example":"'second'",
+            "wiki:boolean_enum_example":"!q.property('wiki:boolean_enum_example')"
         }
     }
 }
@@ -146,8 +144,8 @@ With entity events, you may set the entity property to a value with the `set_pro
 
 ## Entity Aliases
 
-:::warning
-This feature has been deprecated a format_version of 1.21.10 or higher is specified
+:::danger DEPRECATED
+This feature has been deprecated for format versions 1.21.10 and higher.
 :::
 
 You can define aliases for your entity to summon the entity with set entity property values through the `summon` command.
@@ -165,7 +163,7 @@ Entity can have various aliases with custom entity identifier to use:
             "is_summonable": true,
             "is_experimental": false,
             "properties": {
-                "property:property_index": {
+                "wiki:property_index": {
                     "client_sync": true,
                     "values": {
                         "min": 0,
@@ -177,10 +175,10 @@ Entity can have various aliases with custom entity identifier to use:
             "aliases": {
                 "wiki:default_alias": {},
                 "wiki:first_alias": {
-                    "property:property_index": 1
+                    "wiki:property_index": 1
                 },
                 "wiki:second_alias": {
-                    "property:property_index": 2
+                    "wiki:property_index": 2
                 }
             }
         }
@@ -188,4 +186,4 @@ Entity can have various aliases with custom entity identifier to use:
 }
 ```
 
-Now, the entity has multiple aliases, and you can use the defined alias identifier through the `summon` command to spawn the entity with the properties set: `/summon ewiki:first_alias` will spawn the entity with the entity property `property:property_index` set to 1.
+Now, the entity has multiple aliases, and you can use the defined alias identifier through the `summon` command to spawn the entity with the properties set: `/summon wiki:first_alias` will spawn the entity with the entity property `wiki:property_index` set to 1.
