@@ -15,6 +15,8 @@ mentions:
 
 -   Released `minecraft:item_visual` from experimental
 -   Released `minecraft:liquid_detection` from experimental
+-   Updated `minecraft:material_instances`
+    -   Updated `ambient_occlusion` instance parameter to require a float which determines ambient occlusion intensity.
 
 ## 1.21.50
 
