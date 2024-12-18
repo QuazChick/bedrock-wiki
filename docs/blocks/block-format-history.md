@@ -13,6 +13,7 @@ mentions:
 
 <Label color="green">Versioned</Label>
 
+-   Released `minecraft:item_visual` from experimental
 -   Released `minecraft:liquid_detection` from experimental
 
 ## 1.21.50
