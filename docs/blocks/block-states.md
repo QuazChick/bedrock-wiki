@@ -53,7 +53,7 @@ Listed below are ways to get the current value of block states in different cont
 
 State values are returned by the `block_state` query function.
 
-<CodeHeader></CodeHeader>
+<CodeHeader>Molang Expression</CodeHeader>
 
 ```c
 q.block_state('wiki:string_state_example') == 'blue'
@@ -63,7 +63,7 @@ q.block_state('wiki:string_state_example') == 'blue'
 
 The [block states argument](/commands/block-states) is included in commands such as `execute` and `testforblock`, and can be used to check the value of block states.
 
-<CodeHeader></CodeHeader>
+<CodeHeader>Command</CodeHeader>
 
 ```c
 execute if block ~~~ wiki:custom_block["wiki:string_state_example"="blue", "wiki:integer_state_example"=4] run kill
@@ -73,7 +73,7 @@ execute if block ~~~ wiki:custom_block["wiki:string_state_example"="blue", "wiki
 
 The [`BlockPermutation.getState()`](https://learn.microsoft.com/minecraft/creator/scriptapi/minecraft/server/blockpermutation#getstate) method allows you to get the current value of different states.
 
-<CodeHeader></CodeHeader>
+<CodeHeader>Script</CodeHeader>
 
 ```js
 customBlock.permutation.getState("wiki:integer_state_example") === 3;
@@ -85,7 +85,7 @@ customBlock.permutation.getState("wiki:integer_state_example") === 3;
 
 The [block states argument](/commands/block-states) is included in commands such as `setblock` and `fill`, and can be used to change states away from their default values.
 
-<CodeHeader></CodeHeader>
+<CodeHeader>Command</CodeHeader>
 
 ```c
 setblock ~~~ wiki:custom_block["wiki:string_state_example"="blue", "wiki:integer_state_example"=4]
@@ -95,7 +95,7 @@ setblock ~~~ wiki:custom_block["wiki:string_state_example"="blue", "wiki:integer
 
 The [`BlockPermutation.withState()`](https://learn.microsoft.com/minecraft/creator/scriptapi/minecraft/server/blockpermutation#withstate) method returns a new block permutation with the specified state value changed. This permutation can be applied to the block using the [`Block.setPermutation()`](https://learn.microsoft.com/minecraft/creator/scriptapi/minecraft/server/block#setpermutation) method, as seen below.
 
-<CodeHeader></CodeHeader>
+<CodeHeader>Script</CodeHeader>
 
 ```js
 customBlock.setPermutation(customBlock.permutation.withState("wiki:boolean_state_example", false));
