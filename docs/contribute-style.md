@@ -338,7 +338,7 @@ We have snippets for our components. To see them, start typing `wiki.` in Markdo
 
 ### Accent Colors
 
-Some components support a `color` attribute which can be used to add more visual flare!
+Some components support a `color` attribute which can be used to add more visual flair!
 Here are the values that the wiki currently supports:
 
 -   <Label color="red">red</Label>
@@ -673,13 +673,26 @@ Well, its hard to realise that. And we don't want perfectly and consistently for
 
 1.  For naming packages, folders, etc. consult our [Style-Guide](/meta/style-guide).
 
+### Title Case
+
+Title case is a casing style that must be used in page titles and headings.
+
+1. Most words should be capitalised regardless of length.
+2. Articles (a, an, the), coordinating conjunctions (and, but, or), and prepositions (in, on, at, of, to) should not be capitalised unless any of the following are true:
+    - They're the first or last word of the title.
+    - They make up a noun (such as add-**_on_**).
+
+Some examples:
+
+-   `Welcome to the Wiki!`
+-   `Your First Add-On`
+-   `How It Works`
+
 ### Headings
 
 1.  Don't use level-1 headings. Your page starts with a level-1 heading which has the same title as written in the Front Matter.
 2.  Try to avoid heading levels higher 4. They wont show in the right sidebar (only level-2 headings appear there) and won't have proper styling.
-3.  Use the `Title Case` style. For example,
-    -   `Welcome to the Wiki!`
-    -   `How it Works`
+3.  Use the `Title Case` style.
 4.  Don't use `:` in your headings!
 
 Some examples:
@@ -716,7 +729,7 @@ Example:
 
 ```json
 {
-    "format_version": "1.21.10",
+    "format_version": "1.21.40",
     "minecraft:item": {
         "description": {
             // Describing an object with components.
@@ -760,13 +773,13 @@ The above steps will be done automatically if you install the [Prettier](https:/
 
 ✔️
 
-```:no-line-numbers
+```md
 -   list
 ```
 
 ❌
 
-```:no-line-numbers
+```
 - list
 ```
 

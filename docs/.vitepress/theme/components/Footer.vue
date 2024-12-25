@@ -12,13 +12,13 @@ const { site } = useData();
       <small>
         by
         <a href="https://github.com/Bedrock-OSS" target="_blank" rel="noopener noreferrer">
-          Bedrock-OSS
+          Bedrock OSS
         </a>
       </small>
     </p>
     <p>"Minecraft" is a trademark of Mojang AB.</p>
     <p>
-      Bedrock-OSS, {{ site.title }} and
+      Bedrock OSS, {{ site.title }} and
       <a href="https://bedrock.dev" target="_blank" rel="noopener noreferrer">bedrock.dev</a>
       are not affiliated in any way with Microsoft or Mojang AB.
     </p>

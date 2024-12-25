@@ -20,8 +20,8 @@ mentions:
     - QuazChick
 ---
 
-:::tip FORMAT & MIN ENGINE VERSION `1.21.20`
-Using the latest format version when creating custom blocks provides access to fresh features and improvements. The wiki aims to share up-to-date information about custom blocks, and currently targets format version `1.21.20`.
+:::tip FORMAT & MIN ENGINE VERSION `1.21.40`
+Using the latest format version when creating custom blocks provides access to fresh features and improvements. The wiki aims to share up-to-date information about custom blocks, and currently targets format version `1.21.40`.
 :::
 :::danger OVERRIDING COMPONENTS
 Only one instance of each component can be active at once. Duplicate components will be overridden by the latest [permutations](/blocks/block-permutations) entry.
@@ -35,7 +35,7 @@ Block components are used to change how your block appears and functions in the 
 
 ```json
 {
-    "format_version": "1.21.20",
+    "format_version": "1.21.40",
     "minecraft:block": {
         "description": {
             "identifier": "wiki:lamp",
@@ -440,7 +440,7 @@ Render methods essentially control how a block appears in the world, much like e
 #### Custom Instance Names
 
 :::tip
-Custom material instance names can be defined on the faces of cubes within Blockbench by right-clicking ona cube and opening its `Material Instances`.
+Custom material instance names can be defined on the faces of cubes within Blockbench by right-clicking on a cube and opening its `Material Instances`.
 :::
 
 Custom instance names can be defined within material instances, and can be referenced by built-in instance names, or within the block model.
@@ -518,6 +518,28 @@ A BlockDescriptor is an object that allows you to reference a block (or multiple
 ```
 
 See [this](/blocks/block-tags) page for a list of vanilla tags and relevant blocks.
+
+### Redstone Conductivity
+
+Defines a block's ability to conduct redstone power.
+
+_Released from experiment `Upcoming Creator Features` for format versions 1.21.40 and higher._
+
+Type: Object
+
+-   `redstone_conductor`: Boolean
+    -   Determines whether this block conducts direct redstone power.
+-   `allows_wire_to_step_down`: Boolean
+    -   Determines whether redstone wire can travel down the side of this block.
+
+<CodeHeader>minecraft:block > components</CodeHeader>
+
+```json
+"minecraft:redstone_conductivity": {
+    "redstone_conductor": true,
+    "allows_wire_to_step_down": false
+}
+```
 
 ### Selection Box
 

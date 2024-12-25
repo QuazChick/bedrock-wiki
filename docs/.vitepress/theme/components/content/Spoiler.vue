@@ -50,13 +50,23 @@ defineProps<{
 
   &__content {
     display: none;
-    margin-top: 0.5em;
+    background-color: var(--light-bg-color);
+    padding: 0.5em 1em;
+
+    border: var(--border);
+    border-top: none;
+
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
   }
 
   &[open] {
     & > summary {
       background-color: var(--bg-color);
       font-weight: 600;
+
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
 
       svg {
         transform: rotate(90deg);

@@ -7,7 +7,7 @@ description: Automatically generated list of spawn rules components used in vani
 ---
 
 This page was created with [Wiki Content Generator](https://github.com/Bedrock-OSS/bedrock-wiki-content-generator). If there are issues, contact us on [Bedrock OSS](https://discord.gg/XjV87YN) Discord server.
-Note that not more than 8 examples are shown for each component to keep this page fast to load. Namespace `minecraft` was also removed.If you want to see full page, you can do it [here](/entities/vusr-full). *Last updated for 1.21.0*
+Note that not more than 8 examples are shown for each component to keep this page fast to load. Namespace `minecraft` was also removed.If you want to see full page, you can do it [here](/entities/vusr-full). *Last updated for 1.21.50*
 
 ## biome_filter
 
@@ -77,9 +77,18 @@ bat
 
 ```json
 "minecraft:biome_filter": {
-    "test": "has_biome_tag",
-    "operator": "==",
-    "value": "animal"
+    "any_of": [
+        {
+            "test": "has_biome_tag",
+            "operator": "==",
+            "value": "caves"
+        },
+        {
+            "test": "has_biome_tag",
+            "operator": "==",
+            "value": "animal"
+        }
+    ]
 }
 ```
 
@@ -358,7 +367,7 @@ drowned
 
 ```json
 "minecraft:density_limit": {
-    "surface": 2
+    "underground": 5
 }
 ```
 
@@ -556,17 +565,6 @@ tropicalfish
 
 <Spoiler title="Show">
 
-bat
-
-<CodeHeader></CodeHeader>
-
-```json
-"minecraft:height_filter": {
-    "min": -63,
-    "max": 63
-}
-```
-
 cod
 
 <CodeHeader></CodeHeader>
@@ -642,6 +640,17 @@ stray
 }
 ```
 
+tropicalfish
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:height_filter": {
+    "min": 0,
+    "max": 64
+}
+```
+
 </Spoiler>
 
 ## herd
@@ -696,8 +705,8 @@ bat
 
 ```json
 "minecraft:herd": {
-    "min_size": 2,
-    "max_size": 2
+    "min_size": 8,
+    "max_size": 8
 }
 ```
 
@@ -912,16 +921,10 @@ armadillo
         "name": "minecraft:grass_block"
     },
     {
-        "name": "minecraft:sand",
-        "states": {
-            "sand_type": "red"
-        }
+        "name": "minecraft:red_sand"
     },
     {
-        "name": "minecraft:dirt",
-        "states": {
-            "dirt_type": "coarse"
-        }
+        "name": "minecraft:coarse_dirt"
     },
     {
         "name": "minecraft:brown_terracotta"
@@ -955,16 +958,10 @@ armadillo
         "name": "minecraft:grass_block"
     },
     {
-        "name": "minecraft:sand",
-        "states": {
-            "sand_type": "red"
-        }
+        "name": "minecraft:red_sand"
     },
     {
-        "name": "minecraft:dirt",
-        "states": {
-            "dirt_type": "coarse"
-        }
+        "name": "minecraft:coarse_dirt"
     },
     {
         "name": "minecraft:brown_terracotta"
@@ -998,16 +995,10 @@ armadillo
         "name": "minecraft:grass_block"
     },
     {
-        "name": "minecraft:sand",
-        "states": {
-            "sand_type": "red"
-        }
+        "name": "minecraft:red_sand"
     },
     {
-        "name": "minecraft:dirt",
-        "states": {
-            "dirt_type": "coarse"
-        }
+        "name": "minecraft:coarse_dirt"
     },
     {
         "name": "minecraft:brown_terracotta"
@@ -1041,12 +1032,27 @@ axolotl
 "minecraft:spawns_on_block_filter": "minecraft:clay"
 ```
 
+bat
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:spawns_on_block_filter": [
+    "minecraft:stone",
+    "minecraft:granite",
+    "minecraft:diorite",
+    "minecraft:andesite",
+    "minecraft:tuff",
+    "minecraft:deepslate"
+]
+```
+
 chicken
 
 <CodeHeader></CodeHeader>
 
 ```json
-"minecraft:spawns_on_block_filter": "minecraft:grass"
+"minecraft:spawns_on_block_filter": "minecraft:grass_block"
 ```
 
 cow
@@ -1054,7 +1060,7 @@ cow
 <CodeHeader></CodeHeader>
 
 ```json
-"minecraft:spawns_on_block_filter": "minecraft:grass"
+"minecraft:spawns_on_block_filter": "minecraft:grass_block"
 ```
 
 donkey
@@ -1062,13 +1068,7 @@ donkey
 <CodeHeader></CodeHeader>
 
 ```json
-"minecraft:spawns_on_block_filter": "minecraft:grass"
-```
-
-<CodeHeader></CodeHeader>
-
-```json
-"minecraft:spawns_on_block_filter": "minecraft:grass"
+"minecraft:spawns_on_block_filter": "minecraft:grass_block"
 ```
 
 </Spoiler>
@@ -1255,6 +1255,14 @@ creeper
 "minecraft:spawns_underground": {}
 ```
 
+drowned
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:spawns_underground": {}
+```
+
 enderman
 
 <CodeHeader></CodeHeader>
@@ -1276,14 +1284,6 @@ enderman
 ```
 
 ghast
-
-<CodeHeader></CodeHeader>
-
-```json
-"minecraft:spawns_underground": {}
-```
-
-glow_squid
 
 <CodeHeader></CodeHeader>
 

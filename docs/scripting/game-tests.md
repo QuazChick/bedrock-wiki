@@ -15,6 +15,7 @@ mentions:
     - Fabrimat
     - Herobrine643928
     - kumja1
+    - QuazChick
 description: The GameTest Framework allows us to create unit tests ("GameTests") which make it easier to test if game mechanics work.
 ---
 
@@ -39,7 +40,7 @@ GameTests can be used with the `/gametest` command.
 
 ## Get started with GameTest
 
-To get started, you'll want to begin with your own behavior pack and decent knowledge of scripting and API. If you're getting started check out [this article](/scripting/starting-scripts).
+To get started, you'll want to begin with your own behavior pack and decent knowledge of scripting and API. If you're getting started check out [this article](/scripting/scripting-intro).
 
 To use the GameTest Framework, the `@minecraft/server-gametest` module is required. The GameTest API module also requires the `@minecraft/server` module, so in your dependency in your manifest.json requires the following:
 
@@ -67,9 +68,10 @@ import * as GameTest from "@minecraft/server-gametest";
 
 // Registration Code for our test
 GameTest.register(
-    "wiki",         // Name of the class of tests.
-    "simpleTest",   // Name of this test.
-    (test) => {     // Implementation of the test
+    "wiki", // Name of the class of tests.
+    "simpleTest", // Name of this test.
+    (test) => {
+        // Implementation of the test
         /**
          * @type {import("@minecraft/server").Vector3}
          * location from the test of where the cow should spawn in
@@ -78,7 +80,7 @@ GameTest.register(
         const cow = test.spawn("minecraft:cow", location); // returns Entity instance
 
         test.succeedWhen(() => {
-          test.assertEntityPresentInArea("minecraft:cow", true);
+            test.assertEntityPresentInArea("minecraft:cow", true);
         });
     }
 )

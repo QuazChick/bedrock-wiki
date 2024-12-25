@@ -31,7 +31,7 @@ Create a chest piece:
 
 ```json
 {
-    "format_version": "1.21.10",
+    "format_version": "1.21.40",
     "minecraft:item": {
         "description": {
             "identifier": "wiki:my_chest",
@@ -158,7 +158,7 @@ So while the chest piece alone is great, you probably want a whole set, so from 
 
 ```json
 {
-    "format_version": "1.21.10",
+    "format_version": "1.21.40",
     "minecraft:item": {
         "description": {
             "identifier": "wiki:my_leggings",
@@ -254,7 +254,7 @@ This is just like the chest piece, just we change some of the categories and slo
 
 ```json
 {
-    "format_version": "1.21.10",
+    "format_version": "1.21.40",
     "minecraft:item": {
         "description": {
             "identifier": "wiki:my_helm",
@@ -348,7 +348,7 @@ You already know the pattern so lets make the item and attachable json files.
 
 ```json
 {
-    "format_version": "1.21.10",
+    "format_version": "1.21.40",
     "minecraft:item": {
         "description": {
             "identifier": "wiki:my_boots",
@@ -531,7 +531,7 @@ As you can see from the comments, there is a lot there but really all we are doi
 				},
 				{
 					"queue_command": {
-						"command": "tellraw @s{\"rawtext\":[{\"text\":\"§aYour Armor Glows And The Enemy Vanishes\"}]}"
+						"command": "tellraw @s{\"rawtext\":[{\"text\":\"§aYour Armor Glows and the Enemy Vanishes\"}]}"
 					}
 				}
 			]

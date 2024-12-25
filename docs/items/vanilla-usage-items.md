@@ -8,7 +8,7 @@ description: Automatically generated list of item components used in vanilla.
 
 This page was created with [Wiki Content Generator](https://github.com/Bedrock-OSS/bedrock-wiki-content-generator). If there are issues, contact us on [Bedrock OSS](https://discord.gg/XjV87YN) Discord server.
 Note that not more than 8 examples are shown for each component to keep this page fast to load. Namespace `minecraft` was also removed.
-If you want to see full page, you can do it [here](/items/vui-full). _Last updated for 1.21.0_
+If you want to see full page, you can do it [here](/items/vui-full). *Last updated for 1.21.50*
 
 ## block
 
@@ -20,6 +20,92 @@ camera
 
 ```json
 "minecraft:block": "minecraft:camera"
+```
+
+</Spoiler>
+
+## bundle_interaction
+
+<Spoiler title="Show">
+
+black_bundle
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:bundle_interaction": {
+    "num_viewable_slots": 12
+}
+```
+
+blue_bundle
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:bundle_interaction": {
+    "num_viewable_slots": 12
+}
+```
+
+brown_bundle
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:bundle_interaction": {
+    "num_viewable_slots": 12
+}
+```
+
+bundle
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:bundle_interaction": {
+    "num_viewable_slots": 12
+}
+```
+
+cyan_bundle
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:bundle_interaction": {
+    "num_viewable_slots": 12
+}
+```
+
+gray_bundle
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:bundle_interaction": {
+    "num_viewable_slots": 12
+}
+```
+
+green_bundle
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:bundle_interaction": {
+    "num_viewable_slots": 12
+}
+```
+
+light_blue_bundle
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:bundle_interaction": {
+    "num_viewable_slots": 12
+}
 ```
 
 </Spoiler>
@@ -168,7 +254,7 @@ appleEnchanted
             "name": "regeneration",
             "chance": 1.0,
             "duration": 30,
-            "amplifier": 4
+            "amplifier": 1
         },
         {
             "name": "absorption",
@@ -273,6 +359,14 @@ appleEnchanted
 "minecraft:hand_equipped": false
 ```
 
+breeze_rod
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:hand_equipped": true
+```
+
 </Spoiler>
 
 ## icon
@@ -289,6 +383,30 @@ apple
 }
 ```
 
+black_bundle
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:icon": {
+    "textures": {
+        "default": "bundle_black"
+    }
+}
+```
+
+blue_bundle
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:icon": {
+    "textures": {
+        "default": "bundle_blue"
+    }
+}
+```
+
 breeze_rod
 
 <CodeHeader></CodeHeader>
@@ -299,33 +417,51 @@ breeze_rod
 }
 ```
 
-ominous_trial_key
+brown_bundle
 
 <CodeHeader></CodeHeader>
 
 ```json
 "minecraft:icon": {
-    "texture": "ominous_trial_key"
+    "textures": {
+        "default": "bundle_brown"
+    }
 }
 ```
 
-trial_key
+bundle
 
 <CodeHeader></CodeHeader>
 
 ```json
 "minecraft:icon": {
-    "texture": "trial_key"
+    "textures": {
+        "default": "bundle"
+    }
 }
 ```
 
-wind_charge
+cyan_bundle
 
 <CodeHeader></CodeHeader>
 
 ```json
 "minecraft:icon": {
-    "texture": "wind_charge"
+    "textures": {
+        "default": "bundle_cyan"
+    }
+}
+```
+
+gray_bundle
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:icon": {
+    "textures": {
+        "default": "bundle_gray"
+    }
 }
 ```
 
@@ -397,15 +533,7 @@ beetroot_soup
 "minecraft:max_stack_size": 1
 ```
 
-honey_bottle
-
-<CodeHeader></CodeHeader>
-
-```json
-"minecraft:max_stack_size": 16
-```
-
-mushroom_stew
+black_bundle
 
 <CodeHeader></CodeHeader>
 
@@ -413,7 +541,7 @@ mushroom_stew
 "minecraft:max_stack_size": 1
 ```
 
-rabbit_stew
+blue_bundle
 
 <CodeHeader></CodeHeader>
 
@@ -421,7 +549,39 @@ rabbit_stew
 "minecraft:max_stack_size": 1
 ```
 
-suspicious_stew
+brown_bundle
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:max_stack_size": 1
+```
+
+bundle
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:max_stack_size": 1
+```
+
+cyan_bundle
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:max_stack_size": 1
+```
+
+gray_bundle
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:max_stack_size": 1
+```
+
+green_bundle
 
 <CodeHeader></CodeHeader>
 
@@ -610,6 +770,148 @@ salmon
 
 </Spoiler>
 
+## storage_item
+
+<Spoiler title="Show">
+
+black_bundle
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:storage_item": {
+    "max_slots": 64,
+    "max_weight_limit": 64,
+    "weight_in_storage_item": 4,
+    "allow_nested_storage_items": true,
+    "banned_items": [
+        "minecraft:shulker_box",
+        "minecraft:undyed_shulker_box"
+    ]
+}
+```
+
+blue_bundle
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:storage_item": {
+    "max_slots": 64,
+    "max_weight_limit": 64,
+    "weight_in_storage_item": 4,
+    "allow_nested_storage_items": true,
+    "banned_items": [
+        "minecraft:shulker_box",
+        "minecraft:undyed_shulker_box"
+    ]
+}
+```
+
+brown_bundle
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:storage_item": {
+    "max_slots": 64,
+    "max_weight_limit": 64,
+    "weight_in_storage_item": 4,
+    "allow_nested_storage_items": true,
+    "banned_items": [
+        "minecraft:shulker_box",
+        "minecraft:undyed_shulker_box"
+    ]
+}
+```
+
+bundle
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:storage_item": {
+    "max_slots": 64,
+    "max_weight_limit": 64,
+    "weight_in_storage_item": 4,
+    "allow_nested_storage_items": true,
+    "banned_items": [
+        "minecraft:shulker_box",
+        "minecraft:undyed_shulker_box"
+    ]
+}
+```
+
+cyan_bundle
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:storage_item": {
+    "max_slots": 64,
+    "max_weight_limit": 64,
+    "weight_in_storage_item": 4,
+    "allow_nested_storage_items": true,
+    "banned_items": [
+        "minecraft:shulker_box",
+        "minecraft:undyed_shulker_box"
+    ]
+}
+```
+
+gray_bundle
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:storage_item": {
+    "max_slots": 64,
+    "max_weight_limit": 64,
+    "weight_in_storage_item": 4,
+    "allow_nested_storage_items": true,
+    "banned_items": [
+        "minecraft:shulker_box",
+        "minecraft:undyed_shulker_box"
+    ]
+}
+```
+
+green_bundle
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:storage_item": {
+    "max_slots": 64,
+    "max_weight_limit": 64,
+    "weight_in_storage_item": 4,
+    "allow_nested_storage_items": true,
+    "banned_items": [
+        "minecraft:shulker_box",
+        "minecraft:undyed_shulker_box"
+    ]
+}
+```
+
+light_blue_bundle
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:storage_item": {
+    "max_slots": 64,
+    "max_weight_limit": 64,
+    "weight_in_storage_item": 4,
+    "allow_nested_storage_items": true,
+    "banned_items": [
+        "minecraft:shulker_box",
+        "minecraft:undyed_shulker_box"
+    ]
+}
+```
+
+</Spoiler>
+
 ## tags
 
 <Spoiler title="Show">
@@ -640,9 +942,7 @@ wind_charge
 "minecraft:throwable": {
     "do_swing_animation": true,
     "launch_power_scale": 1.5,
-    "max_launch_power": 1.5,
-    "default_offset_scale": 0.8,
-    "inside_block_offset_scale": 0.05
+    "max_launch_power": 1.5
 }
 ```
 
@@ -748,3 +1048,4 @@ apple
 ```
 
 </Spoiler>
+

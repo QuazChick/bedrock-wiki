@@ -8,7 +8,7 @@ description: Automatically generated list of entity components used in vanilla.
 
 This page was created with [Wiki Content Generator](https://github.com/Bedrock-OSS/bedrock-wiki-content-generator). If there are issues, contact us on [Bedrock OSS](https://discord.gg/XjV87YN) Discord server.
 Note that to keep this page fast to load and informative, there are not more than 8 example(s) for each component and not more than 3 example(s) from each entity are shown. Namespace `minecraft` was also removed.
-If you want to see full page, you can do it [here](/entities/vuc-full). *Last updated for 1.21.0*
+If you want to see full page, you can do it [here](/entities/vuc-full). *Last updated for 1.21.50*
 
 ## addrider
 
@@ -164,7 +164,7 @@ bee
         "minecraft:oxeye_daisy",
         "minecraft:cornflower",
         "minecraft:lily_of_the_valley",
-        "minecraft:yellow_flower",
+        "minecraft:dandelion",
         "minecraft:wither_rose",
         "minecraft:sunflower",
         "minecraft:lilac",
@@ -331,6 +331,14 @@ bee
 }
 ```
 
+creaking
+
+<CodeHeader>#component_groups/minecraft:neutral</CodeHeader>
+
+```json
+"minecraft:ambient_sound_interval": {}
+```
+
 evocation_illager
 
 <CodeHeader>#component_groups/minecraft:raid_configuration</CodeHeader>
@@ -358,16 +366,6 @@ fox
 ```json
 "minecraft:ambient_sound_interval": {
     "event_name": "sleep"
-}
-```
-
-<CodeHeader>#component_groups/minecraft:fox_ambient_night</CodeHeader>
-
-```json
-"minecraft:ambient_sound_interval": {
-    "event_name": "screech",
-    "value": 80,
-    "range": 160
 }
 ```
 
@@ -434,6 +432,7 @@ bee
     "duration": 25,
     "broadcastAnger": true,
     "broadcastRange": 20,
+    "broadcast_anger_when_dying": false,
     "broadcast_filters": {
         "test": "is_family",
         "operator": "!=",
@@ -890,9 +889,7 @@ bogged
 
 ```json
 "minecraft:attack": {
-    "damage": 3,
-    "effect_name": "slowness",
-    "effect_duration": 10
+    "damage": 3
 }
 ```
 
@@ -1363,6 +1360,15 @@ evocation_illager
             "max_dist": 8,
             "walk_speed_multiplier": 0.6,
             "sprint_speed_multiplier": 1.0
+        },
+        {
+            "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "creaking"
+            },
+            "max_dist": 8,
+            "sprint_speed_multiplier": 1.2
         }
     ]
 }
@@ -2762,7 +2768,7 @@ parrot
 
 ```json
 "minecraft:behavior.find_mount": {
-    "priority": 3,
+    "priority": 4,
     "within_radius": 16,
     "avoid_water": true,
     "start_delay": 100,
@@ -2851,9 +2857,17 @@ breeze
 ```json
 "minecraft:behavior.fire_at_target": {
     "projectile_def": "minecraft:breeze_wind_charge_projectile",
-    "priority": 3,
+    "priority": 2,
+    "filters": {
+        "all_of": [
+            {
+                "test": "is_navigating",
+                "value": false
+            }
+        ]
+    },
     "attack_range": [
-        2,
+        0,
         16
     ],
     "attack_cooldown": 0.5,
@@ -3124,7 +3138,7 @@ parrot
 
 ```json
 "minecraft:behavior.follow_mob": {
-    "priority": 3,
+    "priority": 4,
     "speed_multiplier": 1.0,
     "stop_distance": 3,
     "search_range": 20
@@ -3184,7 +3198,7 @@ parrot
 
 ```json
 "minecraft:behavior.follow_owner": {
-    "priority": 2,
+    "priority": 3,
     "speed_multiplier": 1.0,
     "start_distance": 5,
     "stop_distance": 1
@@ -4436,6 +4450,17 @@ cave_spider
 }
 ```
 
+creaking
+
+<CodeHeader>#component_groups/minecraft:hostile_unobserved</CodeHeader>
+
+```json
+"minecraft:behavior.melee_box_attack": {
+    "priority": 2,
+    "cooldown_time": 2.0
+}
+```
+
 dolphin
 
 <CodeHeader>#component_groups/dolphin_adult</CodeHeader>
@@ -4444,20 +4469,6 @@ dolphin
 "minecraft:behavior.melee_box_attack": {
     "priority": 2,
     "track_target": true
-}
-```
-
-drowned
-
-<CodeHeader>#component_groups/minecraft:melee_mode</CodeHeader>
-
-```json
-"minecraft:behavior.melee_box_attack": {
-    "can_spread_on_fire": true,
-    "priority": 3,
-    "speed_multiplier": 1,
-    "track_target": false,
-    "require_complete_path": true
 }
 ```
 
@@ -4600,7 +4611,7 @@ llama
 
 </Spoiler>
 
-## behavior.move_away_from_target
+## behavior.move_around_target
 
 <Spoiler title="Show">
 
@@ -4609,14 +4620,14 @@ breeze
 <CodeHeader></CodeHeader>
 
 ```json
-"minecraft:behavior.move_away_from_target": {
-    "priority": 2,
+"minecraft:behavior.move_around_target": {
+    "priority": 3,
     "destination_position_range": [
         4.0,
         8.0
     ],
     "movement_speed": 1.2,
-    "destination_pos_spread_degrees": 90,
+    "destination_pos_spread_degrees": 360,
     "filters": {
         "all_of": [
             {
@@ -4626,7 +4637,7 @@ breeze
             {
                 "test": "target_distance",
                 "subject": "self",
-                "value": 4.0,
+                "value": 24.0,
                 "operator": "<="
             }
         ]
@@ -4754,7 +4765,7 @@ bee
         "minecraft:oxeye_daisy",
         "minecraft:cornflower",
         "minecraft:lily_of_the_valley",
-        "minecraft:yellow_flower",
+        "minecraft:dandelion",
         "minecraft:wither_rose",
         "minecraft:sunflower",
         "minecraft:lilac",
@@ -4766,7 +4777,8 @@ bee
         "minecraft:pitcher_plant",
         "minecraft:torchflower",
         "minecraft:cherry_leaves",
-        "minecraft:pink_petals"
+        "minecraft:pink_petals",
+        "minecraft:open_eyeblossom"
     ],
     "on_stay_completed": [
         {
@@ -6438,7 +6450,7 @@ parrot
 
 ```json
 "minecraft:behavior.random_fly": {
-    "priority": 2,
+    "priority": 3,
     "xz_dist": 15,
     "y_dist": 1,
     "y_offset": 0,
@@ -6634,10 +6646,12 @@ sniffer
     "find_valid_position_retries": 5,
     "target_blocks": [
         "minecraft:dirt",
+        "minecraft:coarse_dirt",
         "minecraft:grass",
         "minecraft:podzol",
         "minecraft:dirt_with_roots",
         "minecraft:moss_block",
+        "minecraft:pale_moss_block",
         "minecraft:mud",
         "minecraft:muddy_mangrove_roots"
     ],
@@ -7906,7 +7920,7 @@ parrot
 
 ```json
 "minecraft:behavior.stay_while_sitting": {
-    "priority": 1
+    "priority": 2
 }
 ```
 
@@ -8138,7 +8152,8 @@ evocation_illager
                     "summon_cap": 8,
                     "summon_cap_radius": 16.0,
                     "size": 1.0,
-                    "sound_event": "prepare.summon"
+                    "sound_event": "prepare.summon",
+                    "summon_event": "minecraft:add_damage_timer"
                 }
             ]
         }
@@ -8215,6 +8230,22 @@ tropicalfish
     "priority": 5,
     "idle_time": 5.0,
     "success_rate": 0.1
+}
+```
+
+</Spoiler>
+
+## behavior.swim_up_for_breath
+
+<Spoiler title="Show">
+
+dolphin
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:behavior.swim_up_for_breath": {
+    "priority": 1
 }
 ```
 
@@ -8416,6 +8447,116 @@ iron_golem
 
 </Spoiler>
 
+## behavior.teleport_to_owner
+
+<Spoiler title="Show">
+
+cat
+
+<CodeHeader>#component_groups/minecraft:cat_tame</CodeHeader>
+
+```json
+"minecraft:behavior.teleport_to_owner": {
+    "priority": 0,
+    "filters": {
+        "all_of": [
+            {
+                "test": "owner_distance",
+                "operator": ">",
+                "value": 12
+            },
+            {
+                "test": "is_panicking"
+            }
+        ]
+    }
+}
+```
+
+ocelot
+
+<CodeHeader>#component_groups/minecraft:ocelot_tame</CodeHeader>
+
+```json
+"minecraft:behavior.teleport_to_owner": {
+    "priority": 0,
+    "filters": {
+        "all_of": [
+            {
+                "test": "owner_distance",
+                "operator": ">",
+                "value": 12
+            },
+            {
+                "test": "is_panicking"
+            }
+        ]
+    }
+}
+```
+
+parrot
+
+<CodeHeader>#component_groups/minecraft:parrot_tame</CodeHeader>
+
+```json
+"minecraft:behavior.teleport_to_owner": {
+    "priority": 0,
+    "filters": {
+        "all_of": [
+            {
+                "test": "owner_distance",
+                "operator": ">",
+                "value": 12
+            },
+            {
+                "test": "is_panicking"
+            }
+        ]
+    }
+}
+```
+
+wolf
+
+<CodeHeader>#component_groups/minecraft:wolf_tame</CodeHeader>
+
+```json
+"minecraft:behavior.teleport_to_owner": {
+    "priority": 1,
+    "filters": {
+        "any_of": [
+            {
+                "all_of": [
+                    {
+                        "test": "owner_distance",
+                        "operator": ">",
+                        "value": 12
+                    },
+                    {
+                        "test": "is_panicking"
+                    }
+                ]
+            },
+            {
+                "all_of": [
+                    {
+                        "test": "owner_distance",
+                        "operator": ">",
+                        "value": 24
+                    },
+                    {
+                        "test": "has_target"
+                    }
+                ]
+            }
+        ]
+    }
+}
+```
+
+</Spoiler>
+
 ## behavior.tempt
 
 <Spoiler title="Show">
@@ -8472,7 +8613,7 @@ bee
         "minecraft:oxeye_daisy",
         "minecraft:cornflower",
         "minecraft:lily_of_the_valley",
-        "minecraft:yellow_flower",
+        "minecraft:dandelion",
         "minecraft:wither_rose",
         "minecraft:sunflower",
         "minecraft:lilac",
@@ -8484,7 +8625,8 @@ bee
         "minecraft:pitcher_plant",
         "minecraft:torchflower",
         "minecraft:cherry_leaves",
-        "minecraft:pink_petals"
+        "minecraft:pink_petals",
+        "minecraft:open_eyeblossom"
     ]
 }
 ```
@@ -8609,6 +8751,61 @@ armadillo
     "duration_range": 1.5,
     "on_start": {
         "event": "minecraft:start_unrolling"
+    }
+}
+```
+
+bee
+
+<CodeHeader>#component_groups/add_poison_effect</CodeHeader>
+
+```json
+"minecraft:behavior.timer_flag_1": {
+    "priority": 0,
+    "cooldown_range": 0.0,
+    "duration_range": [
+        0.05,
+        0.05
+    ],
+    "on_end": {
+        "event": "minecraft:on_poison_effect_added",
+        "target": "self"
+    }
+}
+```
+
+<CodeHeader>#component_groups/add_wither_effect</CodeHeader>
+
+```json
+"minecraft:behavior.timer_flag_1": {
+    "priority": 0,
+    "cooldown_range": 0.0,
+    "duration_range": [
+        0.05,
+        0.05
+    ],
+    "on_end": {
+        "event": "minecraft:on_wither_effect_added",
+        "target": "self"
+    }
+}
+```
+
+creaking
+
+<CodeHeader>#component_groups/minecraft:twitching</CodeHeader>
+
+```json
+"minecraft:behavior.timer_flag_1": {
+    "priority": 0,
+    "cooldown_range": 0.0,
+    "duration_range": [
+        2.25,
+        2.25
+    ],
+    "on_end": {
+        "event": "minecraft:crumble",
+        "target": "self"
     }
 }
 ```
@@ -9065,7 +9262,22 @@ piglin
                 "minecraft:trapped_chest",
                 "minecraft:ender_chest",
                 "minecraft:barrel",
-                "minecraft:shulker_box",
+                "minecraft:white_shulker_box",
+                "minecraft:orange_shulker_box",
+                "minecraft:magenta_shulker_box",
+                "minecraft:light_blue_shulker_box",
+                "minecraft:yellow_shulker_box",
+                "minecraft:lime_shulker_box",
+                "minecraft:pink_shulker_box",
+                "minecraft:gray_shulker_box",
+                "minecraft:light_gray_shulker_box",
+                "minecraft:cyan_shulker_box",
+                "minecraft:purple_shulker_box",
+                "minecraft:blue_shulker_box",
+                "minecraft:brown_shulker_box",
+                "minecraft:green_shulker_box",
+                "minecraft:red_shulker_box",
+                "minecraft:black_shulker_box",
                 "minecraft:undyed_shulker_box"
             ],
             "on_block_broken": "important_block_destroyed_event"
@@ -9083,6 +9295,14 @@ piglin
 armadillo
 
 <CodeHeader>#component_groups/minecraft:rolled_up</CodeHeader>
+
+```json
+"minecraft:body_rotation_blocked": {}
+```
+
+creaking
+
+<CodeHeader>#component_groups/minecraft:immobile</CodeHeader>
 
 ```json
 "minecraft:body_rotation_blocked": {}
@@ -9202,7 +9422,7 @@ ravager
         "vine",
         "waterlily",
         "wheat",
-        "yellow_flower",
+        "dandelion",
         "azalea",
         "flowering_azalea",
         "azalea_leaves",
@@ -9214,7 +9434,10 @@ ravager
         "big_dripleaf",
         "spore_blossom",
         "hanging_roots",
-        "mangrove_leaves"
+        "mangrove_leaves",
+        "pale_hanging_moss",
+        "cherry_leaves",
+        "pale_oak_leaves"
     ]
 }
 ```
@@ -9278,8 +9501,8 @@ bee
 
 ```json
 "minecraft:breathable": {
-    "totalSupply": 15,
-    "suffocateTime": 0
+    "totalSupply": 0,
+    "suffocateTime": -1
 }
 ```
 
@@ -9401,7 +9624,7 @@ bee
         "minecraft:oxeye_daisy",
         "minecraft:cornflower",
         "minecraft:lily_of_the_valley",
-        "minecraft:yellow_flower",
+        "minecraft:dandelion",
         "minecraft:wither_rose",
         "minecraft:sunflower",
         "minecraft:lilac",
@@ -9964,6 +10187,20 @@ skeleton_horse
 
 </Spoiler>
 
+## cannot_be_attacked
+
+<Spoiler title="Show">
+
+ghast
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:cannot_be_attacked": {}
+```
+
+</Spoiler>
+
 ## celebrate_hunt
 
 <Spoiler title="Show">
@@ -10397,6 +10634,17 @@ dolphin
 }
 ```
 
+vex
+
+<CodeHeader>#component_groups/minecraft:periodic_damage</CodeHeader>
+
+```json
+"minecraft:damage_over_time": {
+    "damage_per_hurt": 1,
+    "time_between_hurt": 1.0
+}
+```
+
 </Spoiler>
 
 ## damage_sensor
@@ -10531,7 +10779,7 @@ bee
     "triggers": [
         {
             "cause": "fall",
-            "deals_damage": false
+            "deals_damage": "no"
         },
         {
             "on_damage": {
@@ -10541,7 +10789,7 @@ bee
                     "value": "minecraft:sweet_berry_bush"
                 }
             },
-            "deals_damage": false
+            "deals_damage": "no"
         }
     ]
 }
@@ -10689,6 +10937,76 @@ cave_spider
 "minecraft:despawn": {
     "despawn_from_distance": {}
 }
+```
+
+</Spoiler>
+
+## dimension_bound
+
+<Spoiler title="Show">
+
+arrow
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:dimension_bound": {}
+```
+
+creaking
+
+<CodeHeader>#component_groups/minecraft:spawned_by_creaking_heart</CodeHeader>
+
+```json
+"minecraft:dimension_bound": {}
+```
+
+dragon_fireball
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:dimension_bound": {}
+```
+
+ender_dragon
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:dimension_bound": {}
+```
+
+fireball
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:dimension_bound": {}
+```
+
+fishing_hook
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:dimension_bound": {}
+```
+
+small_fireball
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:dimension_bound": {}
+```
+
+thrown_trident
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:dimension_bound": {}
 ```
 
 </Spoiler>
@@ -11927,6 +12245,26 @@ cat
 
 <Spoiler title="Show">
 
+breeze_wind_charge_projectile
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:explode": {
+    "power": 3.0,
+    "particle_effect": "breeze_wind_burst",
+    "sound_effect": "breeze_wind_charge.burst",
+    "knockback_scaling": 0.6,
+    "negates_fall_damage": false,
+    "causes_fire": false,
+    "breaks_blocks": false,
+    "allow_underwater": true,
+    "toggles_blocks": true,
+    "damage_scaling": 0,
+    "max_resistance": 0
+}
+```
+
 creeper
 
 <CodeHeader>#component_groups/minecraft:exploding</CodeHeader>
@@ -12021,19 +12359,6 @@ tnt
 }
 ```
 
-tnt_minecart
-
-<CodeHeader>#component_groups/minecraft:primed_tnt</CodeHeader>
-
-```json
-"minecraft:explode": {
-    "fuse_length": 4,
-    "fuse_lit": true,
-    "power": 3,
-    "causes_fire": false
-}
-```
-
 </Spoiler>
 
 ## fire_immune
@@ -12043,6 +12368,14 @@ tnt_minecart
 blaze
 
 <CodeHeader></CodeHeader>
+
+```json
+"minecraft:fire_immune": {}
+```
+
+creaking
+
+<CodeHeader>#component_groups/minecraft:spawned_by_creaking_heart</CodeHeader>
 
 ```json
 "minecraft:fire_immune": {}
@@ -12094,14 +12427,6 @@ shulker
 
 ```json
 "minecraft:fire_immune": true
-```
-
-strider
-
-<CodeHeader></CodeHeader>
-
-```json
-"minecraft:fire_immune": {}
 ```
 
 </Spoiler>
@@ -12328,6 +12653,17 @@ breeze
 }
 ```
 
+creaking
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:follow_range": {
+    "value": 32,
+    "max": 32
+}
+```
+
 dolphin
 
 <CodeHeader></CodeHeader>
@@ -12358,16 +12694,6 @@ enderman
 "minecraft:follow_range": {
     "value": 64,
     "max": 64
-}
-```
-
-evocation_illager
-
-<CodeHeader></CodeHeader>
-
-```json
-"minecraft:follow_range": {
-    "value": 64
 }
 ```
 
@@ -13023,11 +13349,23 @@ bee
 
 ```json
 "minecraft:home": {
+    "restriction_type": "random_movement",
     "restriction_radius": 22,
     "home_block_list": [
         "minecraft:bee_nest",
         "minecraft:beehive"
     ]
+}
+```
+
+creaking
+
+<CodeHeader>#component_groups/minecraft:spawned_by_creaking_heart</CodeHeader>
+
+```json
+"minecraft:home": {
+    "restriction_type": "all_movement",
+    "restriction_radius": 32
 }
 ```
 
@@ -13282,9 +13620,7 @@ bee
         {
             "filters": {
                 "test": "in_lava",
-                "subject": "self",
-                "operator": "==",
-                "value": true
+                "subject": "self"
             },
             "cause": "lava",
             "damage_per_tick": 4
@@ -13462,6 +13798,20 @@ player
 
 </Spoiler>
 
+## instant_despawn
+
+<Spoiler title="Show">
+
+creaking
+
+<CodeHeader>#component_groups/minecraft:crumbling</CodeHeader>
+
+```json
+"minecraft:instant_despawn": {}
+```
+
+</Spoiler>
+
 ## interact
 
 <Spoiler title="Show">
@@ -13530,6 +13880,67 @@ armadillo
             "spawn_items": {
                 "table": "loot_tables/entities/armadillo_brush.json"
             }
+        }
+    ]
+}
+```
+
+bee
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:interact": {
+    "interactions": [
+        {
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        {
+                            "test": "has_equipment",
+                            "domain": "hand",
+                            "subject": "other",
+                            "value": "minecraft:open_eyeblossom"
+                        }
+                    ]
+                },
+                "event": "fed_open_eyeblossom"
+            },
+            "use_item": true,
+            "particle_on_start": {
+                "particle_type": "food"
+            },
+            "interact_text": "action.interact.feed"
+        },
+        {
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        {
+                            "test": "has_equipment",
+                            "domain": "hand",
+                            "subject": "other",
+                            "value": "minecraft:wither_rose"
+                        }
+                    ]
+                },
+                "event": "fed_wither_rose"
+            },
+            "use_item": true,
+            "particle_on_start": {
+                "particle_type": "food"
+            },
+            "interact_text": "action.interact.feed"
         }
     ]
 }
@@ -13734,79 +14145,6 @@ donkey
             },
             "equip_item_slot": "0",
             "interact_text": "action.interact.equip"
-        }
-    ]
-}
-```
-
-<CodeHeader>#component_groups/minecraft:donkey_unchested</CodeHeader>
-
-```json
-"minecraft:interact": {
-    "interactions": [
-        {
-            "play_sounds": "armor.equip_generic",
-            "on_interact": {
-                "filters": {
-                    "all_of": [
-                        {
-                            "test": "has_equipment",
-                            "subject": "self",
-                            "domain": "inventory",
-                            "operator": "not",
-                            "value": "saddle"
-                        },
-                        {
-                            "test": "has_equipment",
-                            "subject": "other",
-                            "domain": "hand",
-                            "value": "saddle"
-                        },
-                        {
-                            "test": "is_family",
-                            "subject": "other",
-                            "value": "player"
-                        },
-                        {
-                            "test": "is_sneak_held",
-                            "subject": "other",
-                            "value": false
-                        }
-                    ]
-                },
-                "target": "self"
-            },
-            "equip_item_slot": "0",
-            "interact_text": "action.interact.saddle"
-        },
-        {
-            "play_sounds": "armor.equip_generic",
-            "on_interact": {
-                "filters": {
-                    "all_of": [
-                        {
-                            "test": "is_family",
-                            "subject": "other",
-                            "value": "player"
-                        },
-                        {
-                            "test": "is_sneaking",
-                            "subject": "other",
-                            "value": false
-                        },
-                        {
-                            "test": "has_equipment",
-                            "domain": "hand",
-                            "subject": "other",
-                            "value": "chest"
-                        }
-                    ]
-                },
-                "event": "minecraft:on_chest",
-                "target": "self"
-            },
-            "use_item": true,
-            "interact_text": "action.interact.attachchest"
         }
     ]
 }
@@ -14642,6 +14980,24 @@ breeze
 }
 ```
 
+creaking
+
+<CodeHeader>#component_groups/minecraft:mobile</CodeHeader>
+
+```json
+"minecraft:knockback_resistance": {
+    "value": 0.0
+}
+```
+
+<CodeHeader>#component_groups/minecraft:immobile</CodeHeader>
+
+```json
+"minecraft:knockback_resistance": {
+    "value": 1.0
+}
+```
+
 ender_dragon
 
 <CodeHeader></CodeHeader>
@@ -14680,26 +15036,6 @@ ravager
 ```json
 "minecraft:knockback_resistance": {
     "value": 0.75
-}
-```
-
-warden
-
-<CodeHeader></CodeHeader>
-
-```json
-"minecraft:knockback_resistance": {
-    "value": 1.0
-}
-```
-
-zoglin
-
-<CodeHeader></CodeHeader>
-
-```json
-"minecraft:knockback_resistance": {
-    "value": 0.6
 }
 ```
 
@@ -14823,34 +15159,113 @@ chest_boat
 
 </Spoiler>
 
-## lookat
+## looked_at
 
 <Spoiler title="Show">
+
+creaking
+
+<CodeHeader>#component_groups/minecraft:neutral</CodeHeader>
+
+```json
+"minecraft:looked_at": {
+    "search_radius": 12.0,
+    "look_at_locations": [
+        {
+            "location": "head"
+        },
+        {
+            "location": "body"
+        },
+        {
+            "location": "feet",
+            "vertical_offset": 0.5
+        }
+    ],
+    "set_target": "once_and_keep_scanning",
+    "find_players_only": true,
+    "looked_at_cooldown": 0.1,
+    "field_of_view": 120,
+    "scale_fov_by_distance": false,
+    "line_of_sight_obstruction_type": "collision_for_camera",
+    "looked_at_event": {
+        "event": "minecraft:become_hostile",
+        "filter": "self"
+    },
+    "filters": {
+        "test": "actor_health",
+        "subject": "other",
+        "operator": ">",
+        "value": 0
+    }
+}
+```
+
+<CodeHeader>#component_groups/minecraft:hostile</CodeHeader>
+
+```json
+"minecraft:looked_at": {
+    "search_radius": 24.0,
+    "look_at_locations": [
+        {
+            "location": "head"
+        },
+        {
+            "location": "body"
+        },
+        {
+            "location": "feet",
+            "vertical_offset": 0.5
+        }
+    ],
+    "set_target": "never",
+    "find_players_only": true,
+    "looked_at_cooldown": 0.1,
+    "field_of_view": 120,
+    "scale_fov_by_distance": false,
+    "line_of_sight_obstruction_type": "collision_for_camera",
+    "looked_at_event": {
+        "event": "minecraft:on_target_start_looking",
+        "filter": "self"
+    },
+    "not_looked_at_event": {
+        "event": "minecraft:on_target_stop_looking",
+        "filter": "self"
+    },
+    "filters": {
+        "none_of": [
+            {
+                "test": "actor_health",
+                "subject": "target",
+                "value": 0
+            },
+            {
+                "test": "has_equipment",
+                "subject": "other",
+                "domain": "head",
+                "value": "carved_pumpkin"
+            }
+        ]
+    }
+}
+```
 
 enderman
 
 <CodeHeader></CodeHeader>
 
 ```json
-"minecraft:lookat": {
+"minecraft:looked_at": {
     "search_radius": 64.0,
-    "set_target": true,
-    "look_cooldown": 5.0,
+    "set_target": "once_and_stop_scanning",
+    "find_players_only": true,
+    "looked_at_cooldown": 5.0,
     "filters": {
-        "all_of": [
-            {
-                "subject": "other",
-                "test": "is_family",
-                "value": "player"
-            },
-            {
-                "test": "has_equipment",
-                "domain": "head",
-                "subject": "other",
-                "operator": "not",
-                "value": "carved_pumpkin"
-            }
-        ]
+        "test": "has_equipment",
+        "domain": "head",
+        "subject": "other",
+        "operator": "not",
+        "value": "carved_pumpkin"
     }
 }
 ```
@@ -16881,8 +17296,20 @@ iron_golem
             "blocks": [
                 "cobblestone",
                 "stone",
-                "stonebrick",
+                "granite",
+                "polished_granite",
+                "diorite",
+                "polished_diorite",
+                "andesite",
+                "polished_andesite",
+                "stone_bricks",
+                "mossy_stone_bricks",
+                "cracked_stone_bricks",
+                "chiseled_stone_bricks",
                 "sandstone",
+                "cut_sandstone",
+                "chiseled_sandstone",
+                "smooth_sandstone",
                 "mossy_cobblestone",
                 "smooth_stone_slab",
                 "sandstone_slab",
@@ -16891,21 +17318,81 @@ iron_golem
                 "stone_brick_slab",
                 "quartz_slab",
                 "nether_brick_slab",
-                "stone_slab2",
-                "stone_slab3",
-                "stone_slab4",
-                "double_stone_slab",
-                "double_stone_slab2",
-                "double_stone_slab3",
-                "double_stone_slab4",
-                "wooden_slab",
-                "double_wooden_slab",
-                "planks",
+                "red_sandstone_slab",
+                "purpur_slab",
+                "prismarine_slab",
+                "dark_prismarine_slab",
+                "prismarine_brick_slab",
+                "mossy_cobblestone_slab",
+                "smooth_sandstone_slab",
+                "red_nether_brick_slab",
+                "end_stone_brick_slab",
+                "smooth_red_sandstone_slab",
+                "polished_andesite_slab",
+                "andesite_slab",
+                "diorite_slab",
+                "polished_diorite_slab",
+                "granite_slab",
+                "polished_granite_slab",
+                "mossy_stone_brick_slab",
+                "smooth_quartz_slab",
+                "normal_stone_slab",
+                "cut_sandstone_slab",
+                "cut_red_sandstone_slab",
+                "smooth_stone_double_slab",
+                "sandstone_double_slab",
+                "cobblestone_double_slab",
+                "brick_double_slab",
+                "stone_brick_double_slab",
+                "quartz_double_slab",
+                "nether_brick_double_slab",
+                "red_sandstone_double_slab",
+                "purpur_double_slab",
+                "prismarine_double_slab",
+                "dark_prismarine_double_slab",
+                "prismarine_brick_double_slab",
+                "mossy_cobblestone_double_slab",
+                "smooth_sandstone_double_slab",
+                "red_nether_brick_double_slab",
+                "end_stone_brick_double_slab",
+                "smooth_red_sandstone_double_slab",
+                "polished_andesite_double_slab",
+                "andesite_double_slab",
+                "diorite_double_slab",
+                "polished_diorite_double_slab",
+                "granite_double_slab",
+                "polished_granite_double_slab",
+                "mossy_stone_brick_double_slab",
+                "smooth_quartz_double_slab",
+                "normal_stone_double_slab",
+                "cut_sandstone_double_slab",
+                "cut_red_sandstone_double_slab",
+                "oak_slab",
+                "spruce_slab",
+                "birch_slab",
+                "jungle_slab",
+                "acacia_slab",
+                "dark_oak_slab",
+                "oak_double_slab",
+                "spruce_double_slab",
+                "birch_double_slab",
+                "jungle_double_slab",
+                "acacia_double_slab",
+                "dark_oak_double_slab",
+                "oak_planks",
+                "spruce_planks",
+                "birch_planks",
+                "jungle_planks",
+                "acacia_planks",
+                "dark_oak_planks",
                 "brick_block",
                 "nether_brick",
                 "red_nether_brick",
                 "end_bricks",
                 "red_sandstone",
+                "cut_red_sandstone",
+                "chiseled_red_sandstone",
+                "smooth_red_sandstone",
                 "white_stained_glass",
                 "orange_stained_glass",
                 "magenta_stained_glass",
@@ -16992,8 +17479,20 @@ villager_v2
             "blocks": [
                 "cobblestone",
                 "stone",
-                "stonebrick",
+                "granite",
+                "polished_granite",
+                "diorite",
+                "polished_diorite",
+                "andesite",
+                "polished_andesite",
+                "stone_bricks",
+                "mossy_stone_bricks",
+                "cracked_stone_bricks",
+                "chiseled_stone_bricks",
                 "sandstone",
+                "cut_sandstone",
+                "chiseled_sandstone",
+                "smooth_sandstone",
                 "mossy_cobblestone",
                 "smooth_stone_slab",
                 "sandstone_slab",
@@ -17002,21 +17501,81 @@ villager_v2
                 "stone_brick_slab",
                 "quartz_slab",
                 "nether_brick_slab",
-                "stone_slab2",
-                "stone_slab3",
-                "stone_slab4",
-                "double_stone_slab",
-                "double_stone_slab2",
-                "double_stone_slab3",
-                "double_stone_slab4",
-                "wooden_slab",
-                "double_wooden_slab",
-                "planks",
+                "red_sandstone_slab",
+                "purpur_slab",
+                "prismarine_slab",
+                "dark_prismarine_slab",
+                "prismarine_brick_slab",
+                "mossy_cobblestone",
+                "smooth_sandstone_slab",
+                "red_nether_brick_slab",
+                "end_stone_brick_slab",
+                "smooth_red_sandstone_slab",
+                "polished_andesite_slab",
+                "andesite_slab",
+                "diorite_slab",
+                "polished_diorite_slab",
+                "granite_slab",
+                "polished_granite_slab",
+                "mossy_stone_brick_slab",
+                "smooth_quartz_slab",
+                "normal_stone_slab",
+                "cut_sandstone_slab",
+                "cut_red_sandstone_slab",
+                "smooth_stone_double_slab",
+                "sandstone_double_slab",
+                "cobblestone_double_slab",
+                "brick_double_slab",
+                "stone_brick_double_slab",
+                "quartz_double_slab",
+                "nether_brick_double_slab",
+                "red_sandstone_double_slab",
+                "purpur_double_slab",
+                "prismarine_double_slab",
+                "dark_prismarine_double_slab",
+                "prismarine_brick_double_slab",
+                "mossy_cobblestone_double_slab",
+                "smooth_sandstone_double_slab",
+                "red_nether_brick_double_slab",
+                "end_stone_brick_double_slab",
+                "smooth_red_sandstone_double_slab",
+                "polished_andesite_double_slab",
+                "andesite_double_slab",
+                "diorite_double_slab",
+                "polished_diorite_double_slab",
+                "granite_double_slab",
+                "polished_granite_double_slab",
+                "mossy_stone_brick_double_slab",
+                "smooth_quartz_double_slab",
+                "normal_stone_double_slab",
+                "cut_sandstone_double_slab",
+                "cut_red_sandstone_double_slab",
+                "oak_slab",
+                "spruce_slab",
+                "birch_slab",
+                "jungle_slab",
+                "acacia_slab",
+                "dark_oak_slab",
+                "oak_double_slab",
+                "spruce_double_slab",
+                "birch_double_slab",
+                "jungle_double_slab",
+                "acacia_double_slab",
+                "dark_oak_double_slab",
+                "oak_planks",
+                "spruce_planks",
+                "birch_planks",
+                "jungle_planks",
+                "acacia_planks",
+                "dark_oak_planks",
                 "brick_block",
                 "nether_brick",
                 "red_nether_brick",
                 "end_bricks",
                 "red_sandstone",
+                "cut_red_sandstone",
+                "chiseled_red_sandstone",
+                "smooth_red_sandstone",
                 "white_stained_glass",
                 "orange_stained_glass",
                 "magenta_stained_glass",
@@ -17101,8 +17660,20 @@ villager_v2
             "blocks": [
                 "cobblestone",
                 "stone",
-                "stonebrick",
+                "granite",
+                "polished_granite",
+                "diorite",
+                "polished_diorite",
+                "andesite",
+                "polished_andesite",
+                "stone_bricks",
+                "mossy_stone_bricks",
+                "cracked_stone_bricks",
+                "chiseled_stone_bricks",
                 "sandstone",
+                "cut_sandstone",
+                "chiseled_sandstone",
+                "smooth_sandstone",
                 "mossy_cobblestone",
                 "smooth_stone_slab",
                 "sandstone_slab",
@@ -17111,21 +17682,81 @@ villager_v2
                 "stone_brick_slab",
                 "quartz_slab",
                 "nether_brick_slab",
-                "stone_slab2",
-                "stone_slab3",
-                "stone_slab4",
-                "double_stone_slab",
-                "double_stone_slab2",
-                "double_stone_slab3",
-                "double_stone_slab4",
-                "wooden_slab",
-                "double_wooden_slab",
-                "planks",
+                "red_sandstone_slab",
+                "purpur_slab",
+                "prismarine_slab",
+                "dark_prismarine_slab",
+                "prismarine_brick_slab",
+                "mossy_cobblestone_slab",
+                "smooth_sandstone_slab",
+                "red_nether_brick_slab",
+                "end_stone_brick_slab",
+                "smooth_red_sandstone_slab",
+                "polished_andesite_slab",
+                "andesite_slab",
+                "diorite_slab",
+                "polished_diorite_slab",
+                "granite_slab",
+                "polished_granite_slab",
+                "mossy_stone_brick_slab",
+                "smooth_quartz_slab",
+                "normal_stone_slab",
+                "cut_sandstone_slab",
+                "cut_red_sandstone_slab",
+                "smooth_stone_double_slab",
+                "sandstone_double_slab",
+                "cobblestone_double_slab",
+                "brick_double_slab",
+                "stone_brick_double_slab",
+                "quartz_double_slab",
+                "nether_brick_double_slab",
+                "red_sandstone_double_slab",
+                "purpur_double_slab",
+                "prismarine_double_slab",
+                "dark_prismarine_double_slab",
+                "prismarine_brick_double_slab",
+                "mossy_cobblestone_double_slab",
+                "smooth_sandstone_double_slab",
+                "red_nether_brick_double_slab",
+                "end_stone_brick_double_slab",
+                "smooth_red_sandstone_double_slab",
+                "polished_andesite_double_slab",
+                "andesite_double_slab",
+                "diorite_double_slab",
+                "polished_diorite_double_slab",
+                "granite_double_slab",
+                "polished_granite_double_slab",
+                "mossy_stone_brick_double_slab",
+                "smooth_quartz_double_slab",
+                "normal_stone_double_slab",
+                "cut_sandstone_double_slab",
+                "cut_red_sandstone_double_slab",
+                "oak_slab",
+                "spruce_slab",
+                "birch_slab",
+                "jungle_slab",
+                "acacia_slab",
+                "dark_oak_slab",
+                "oak_double_slab",
+                "spruce_double_slab",
+                "birch_double_slab",
+                "jungle_double_slab",
+                "acacia_double_slab",
+                "dark_oak_double_slab",
+                "oak_planks",
+                "spruce_planks",
+                "birch_planks",
+                "jungle_planks",
+                "acacia_planks",
+                "dark_oak_planks",
                 "brick_block",
                 "nether_brick",
                 "red_nether_brick",
                 "end_bricks",
                 "red_sandstone",
+                "cut_red_sandstone",
+                "chiseled_red_sandstone",
+                "smooth_red_sandstone",
                 "white_stained_glass",
                 "orange_stained_glass",
                 "magenta_stained_glass",
@@ -17328,7 +17959,7 @@ breeze_wind_charge_projectile
             "damage": 1,
             "knockback": true
         },
-        "remove_on_hit": {}
+        "wind_burst_on_hit": {}
     },
     "power": 0.7,
     "gravity": 0.0,
@@ -17341,8 +17972,7 @@ breeze_wind_charge_projectile
         "ender_crystal",
         "wind_charge_projectile",
         "breeze_wind_charge_projectile"
-    ],
-    "hit_nearest_passenger": true
+    ]
 }
 ```
 
@@ -19031,6 +19661,11 @@ fox
             "max_amount": 1
         },
         {
+            "item": "minecraft:bundle",
+            "priority": 1,
+            "max_amount": 1
+        },
+        {
             "item": "minecraft:carrot",
             "priority": 0,
             "max_amount": 1
@@ -19448,13 +20083,6 @@ piglin
         },
         {
             "item": "minecraft:golden_shovel",
-            "priority": 2,
-            "admire": true,
-            "pickup_limit": 1,
-            "stored_in_inventory": true
-        },
-        {
-            "item": "minecraft:golden_rail",
             "priority": 2,
             "admire": true,
             "pickup_limit": 1,
@@ -20065,7 +20693,6 @@ ender_dragon
 
 ```json
 "minecraft:shooter": {
-    "type": "dragonfireball",
     "def": "minecraft:dragon_fireball"
 }
 ```
@@ -20318,6 +20945,38 @@ wandering_trader
 ## spell_effects
 
 <Spoiler title="Show">
+
+bee
+
+<CodeHeader>#component_groups/add_poison_effect</CodeHeader>
+
+```json
+"minecraft:spell_effects": {
+    "add_effects": [
+        {
+            "effect": "poison",
+            "duration": 25,
+            "display_on_screen_animation": true
+        }
+    ],
+    "remove_effects": "poison"
+}
+```
+
+<CodeHeader>#component_groups/add_wither_effect</CodeHeader>
+
+```json
+"minecraft:spell_effects": {
+    "add_effects": [
+        {
+            "effect": "wither",
+            "duration": 40,
+            "display_on_screen_animation": true
+        }
+    ],
+    "remove_effects": "wither"
+}
+```
 
 player
 
@@ -21228,6 +21887,28 @@ skeleton
 
 </Spoiler>
 
+## transient
+
+<Spoiler title="Show">
+
+creaking
+
+<CodeHeader>#component_groups/minecraft:spawned_by_creaking_heart</CodeHeader>
+
+```json
+"minecraft:transient": {}
+```
+
+fishing_hook
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:transient": {}
+```
+
+</Spoiler>
+
 ## trust
 
 <Spoiler title="Show">
@@ -21479,6 +22160,17 @@ camel
 }
 ```
 
+creaking
+
+<CodeHeader></CodeHeader>
+
+```json
+"minecraft:variable_max_auto_step": {
+    "base_value": 1.0625,
+    "jump_prevented_value": 0.5625
+}
+```
+
 enderman
 
 <CodeHeader></CodeHeader>
@@ -21635,39 +22327,6 @@ turtle
 ```json
 "minecraft:water_movement": {
     "drag_factor": 0.9
-}
-```
-
-</Spoiler>
-
-## wind_burst
-
-<Spoiler title="Show">
-
-breeze_wind_charge_projectile
-
-<CodeHeader></CodeHeader>
-
-```json
-"minecraft:wind_burst": {
-    "radius": 3.0,
-    "particle_effect": "breeze_wind_burst",
-    "sound_effect": "breeze_wind_charge.burst",
-    "knockback_scaling": 1.0,
-    "negates_fall_damage": false
-}
-```
-
-wind_charge_projectile
-
-<CodeHeader></CodeHeader>
-
-```json
-"minecraft:wind_burst": {
-    "radius": 1.2,
-    "particle_effect": "wind_burst",
-    "sound_effect": "wind_charge.burst",
-    "knockback_scaling": 1.1
 }
 ```
 

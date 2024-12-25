@@ -18,7 +18,7 @@ mentions:
     - LeGend077
     - mark-wiemer
     - TheItsNameless
-    -
+    - ThomasOrs
     - QuazChick
 description: Introduction to JSON UI.
 ---
@@ -27,6 +27,7 @@ description: Introduction to JSON UI.
 
 :::warning
 JSON UI is being deprecated in favor of [Ore UI](https://github.com/Mojang/ore-ui). Note that any add-ons using JSON UI will eventually break in the coming years.
+Unlike JSON UI, Ore UI is hardcoded and cannot be modified by resource packs.
 :::
 
 :::tip

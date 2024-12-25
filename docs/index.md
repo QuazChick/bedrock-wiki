@@ -65,10 +65,10 @@ Learn about the capabilities of custom items, such as durability.
 <Card
   title="Scripting"
   image="/assets/images/homepage/scripting.png"
-  link="/scripting/starting-scripts"
+  link="/scripting/scripting-intro"
 >
 
-[Beginner's Guide](/scripting/starting-scripts) —
+[Beginner's Guide](/scripting/scripting-intro) —
 Learn the basics of the Script APIs that Minecraft offers.
 
 [Custom Commands](/scripting/custom-command) —

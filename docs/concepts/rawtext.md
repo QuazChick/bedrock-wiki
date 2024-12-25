@@ -63,7 +63,7 @@ Send a "Hello everyone!" message to all players in chat:
 3. Unicodes provides a unique number that displays an icon/emoji. Example:
 
 ```json
-/tellraw @a {"rawtext":[{"text":"\u263a"}]}
+/tellraw @a {"rawtext":[{"text":"\ue100"}]}
 ```
 - Output in chat:
     - ![](/assets/images/concepts/emojis/hud/food.png)

@@ -1,5 +1,5 @@
 ---
-title: Math-based Animations
+title: Math-Based Animations
 tags:
     - intermediate
 category: General

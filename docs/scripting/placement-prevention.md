@@ -1,9 +1,10 @@
 ---
-title: "Block Placement Prevention (Stable)"
+title: Block Placement Prevention
+description: Prevent block placement via scripts.
+category: Tutorials
 mentions:
     - JWForever5504
-category: Tutorials
-description: Prevent block placement via scripts.
+    - QuazChick
 ---
 
 The tutorial has been separated into two sections: one for stable methods and one for beta methods. You can now use these sections independently depending on which version of the Script API you are working with.
@@ -22,7 +23,7 @@ Before creating a script, it is recommended to learn the basics of JavaScript, A
 
 Just like other scripts, you need the dependency in your `manifest.json`. We are using the `@minecraft/server` module, specifically version `1.14.0-beta`.
 
-<CodeHeader>manifest.json</CodeHeader>
+<CodeHeader>BP/manifest.json</CodeHeader>
 
 ```json
 {
@@ -120,4 +121,4 @@ The message `You cannot place Bedrock` can be modified or replaced with your own
 
 You can also change the typeId of the block being checked in `event.permutationBeingPlaced.type.id === 'minecraft:bedrock'`. Put the namespace and identifier in place of `minecraft:bedrock`.
 
-To learn more about Script API, you can check out the [wiki](/scripting/starting-scripts) or the [Microsoft Docs](https://learn.microsoft.com/en-us/minecraft/creator/documents/scriptdevelopertools)
+To learn more about Script API, you can check out the [wiki](/scripting/scripting-intro) or the [Microsoft Docs](https://learn.microsoft.com/en-us/minecraft/creator/documents/scriptdevelopertools)

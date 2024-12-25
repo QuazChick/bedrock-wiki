@@ -13,18 +13,19 @@ import FileIcon from "../icons/FileIcon.vue";
 
 <style lang="scss">
 .code-header {
-  border-top-left-radius: var(--border-radius);
-  border-top-right-radius: var(--border-radius);
-
-  border: var(--border);
-  border-bottom: none;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-color);
   margin-top: 0.5em;
   padding: 0.5em;
   padding-right: 6em;
   gap: 0.4em;
 
-  display: flex;
-  align-items: center;
+  border: var(--border);
+  border-bottom: none;
+
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
 
   * {
     flex-shrink: 0;
@@ -41,9 +42,10 @@ import FileIcon from "../icons/FileIcon.vue";
 }
 
 .code-header + [class*="language-"] {
+  margin-top: 0;
+
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  margin-top: 0;
 
   & > .copy {
     display: inline-block;

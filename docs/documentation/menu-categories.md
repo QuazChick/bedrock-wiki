@@ -46,7 +46,7 @@ Currently, setting the category to "none" in a custom item (not block) prevents 
 
 ```json
 {
-    "format_version": "1.21.20",
+    "format_version": "1.21.40",
     "minecraft:block": {
         "description": {
             "identifier": "wiki:balsa_wood",
@@ -65,7 +65,7 @@ Currently, setting the category to "none" in a custom item (not block) prevents 
 
 ```json
 {
-    "format_version": "1.21.10",
+    "format_version": "1.21.40",
     "minecraft:item": {
         "description": {
             "identifier": "wiki:dagger",
@@ -95,7 +95,6 @@ _For use with `menu_category` parameter, `category`._
 _For use with the `menu_category` parameter, `group`._
 
 <!-- page_dumper_start -->
-
 | Creative Categories:              |
 | --------------------------------- |
 | itemGroup.name.anvil              |
@@ -106,6 +105,7 @@ _For use with the `menu_category` parameter, `group`._
 | itemGroup.name.bed                |
 | itemGroup.name.boat               |
 | itemGroup.name.boots              |
+| itemGroup.name.bundles            |
 | itemGroup.name.buttons            |
 | itemGroup.name.candles            |
 | itemGroup.name.chalkboard         |
@@ -147,6 +147,7 @@ _For use with the `menu_category` parameter, `group`._
 | itemGroup.name.monsterStoneEgg    |
 | itemGroup.name.mushroom           |
 | itemGroup.name.netherWartBlock    |
+| itemGroup.name.ominousBottle      |
 | itemGroup.name.ore                |
 | itemGroup.name.permission         |
 | itemGroup.name.pickaxe            |
@@ -180,6 +181,5 @@ _For use with the `menu_category` parameter, `group`._
 | itemGroup.name.wool               |
 | itemGroup.name.woolCarpet         |
 
-_Last updated for 1.21.0_
-
+*Last updated for 1.21.50*
 <!-- page_dumper_end -->

@@ -1,5 +1,5 @@
 ---
-title: Add-on Performance
+title: Add-On Performance
 mentions:
     - SirLich
     - Joelant05

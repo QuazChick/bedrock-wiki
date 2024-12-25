@@ -49,8 +49,8 @@ export default {
   "/knowledge/version-control": "/meta/version-control",
 
   "/scripting/gametest-qna": "/meta/gametest-qna",
-  "/scripting/saving_loading": "/scripting/saving-loading",
   "/scripting/scripting-editor-qna": "/meta/scripting-editor-qna",
+  "/scripting/starting-scripts": "/scripting/scripting-intro",
 
   "/troubleshooting/entities": "/entities/troubleshooting-entities",
   "/troubleshooting/items": "/items/troubleshooting-items",

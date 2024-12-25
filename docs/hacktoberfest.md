@@ -33,7 +33,7 @@ Read the official [Hacktoberfest guide](https://hacktoberfest.com/participation/
 Below is a list of organizations and their projects that are participating in Hacktoberfest.
 
 <CardGrid>
-<Card title="Bedrock-OSS" link="https://github.com/Bedrock-OSS" image="/assets/images/hacktoberfest/bedrockoss.png">
+<Card title="Bedrock OSS" link="https://github.com/Bedrock-OSS" image="/assets/images/hacktoberfest/bedrockoss.png">
 
 [Bedrock Loot Gen](https://github.com/Bedrock-OSS/bedrock-loot-gen) —
 A website for creating Bedrock Edition loot tables.
@@ -44,7 +44,7 @@ A knowledge-sharing website for technical features of Minecraft Bedrock.
 [Regolith](https://github.com/Bedrock-OSS/regolith) —
 An add-on compiler for the Bedrock Edition of Minecraft.
 
-_See all participating Bedrock-OSS projects [here](https://github.com/orgs/Bedrock-OSS/repositories?q=topic%3Ahacktoberfest)._
+_See all participating Bedrock OSS projects [here](https://github.com/orgs/Bedrock-OSS/repositories?q=topic%3Ahacktoberfest)._
 
 </Card>
 <Card title="Blockception" link="https://github.com/Blockception" image="/assets/images/hacktoberfest/blockception.png">
@@ -58,7 +58,7 @@ The JSON validation schema files for Minecraft Bedrock.
 [VSCode Development Extension](https://github.com/Blockception/VSCode-Bedrock-Development-Extension) —
 An extension that is used for Minecraft Bedrock Development.
 
-_See all participating Bedrock-OSS projects [here](https://github.com/orgs/Blockception/repositories?q=topic%3Ahacktoberfest)._
+_See all participating Bedrock OSS projects [here](https://github.com/orgs/Blockception/repositories?q=topic%3Ahacktoberfest)._
 
 </Card>
 <Card title="SirLich" link="https://github.com/SirLich" image="/assets/images/hacktoberfest/sirlich.png">

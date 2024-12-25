@@ -89,9 +89,14 @@ Enchant the held item with Sharpness for all players within one block of (0, 100
 
 ### Volume
 
-Limits the selection of targets to those inside of a cuboid volume. There are three arguments, each determining the size of the box along their respective axes. If at least one argument is defined, any remaining arguments left undefined are assumed to be 0. This selects entities by their feet.
+Limits the selection of targets to those within or intersecting a specified cuboid volume (bounding box). There are three arguments, each determining the size of the box along their respective axes. If at least one argument is defined, any remaining arguments left undefined are assumed to be 0. This selects entities by their hitbox.
 
-The general formula for calculating the volume between two positions can be viewed as: `dx = x2 - x1; dy = y2 - y1; dz = z2 - z1`.
+The general formula for calculating the volume between two positions can be viewed as:
+```
+dx = x2 - x1
+dy = y2 - y1
+dz = z2 - z1
+```
 
 -   `dx=<value>`, `dy=<value>`, and `dz=<value>`—Selects entities inside the given bounding box.
 
