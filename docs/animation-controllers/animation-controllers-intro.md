@@ -241,7 +241,7 @@ Here is the code for the second state machine from above, with three states this
 ## RP Animation Controllers
 
 Resource Pack animation controllers can run things like sounds and particles too.
-Before calling sound or particle in ac, you need to define them in client entity file.
+Before calling sound or particle in an animation controller, you need to define them in client entity file.
 
 <CodeHeader>RP/entities/custom_tnt.json#minecraft:client_entity/description</CodeHeader>
 
@@ -254,7 +254,7 @@ Before calling sound or particle in ac, you need to define them in client entity
 }
 ```
 
-And only then you can call them in ac:
+And only then you can call them in the animation controller:
 
 <CodeHeader>RP/animation_controllers/custom_tnt.animation_controllers.json#controller.animation.custom_tnt</CodeHeader>
 
@@ -288,12 +288,12 @@ And only then you can call them in ac:
 }
 ```
 
-:::warning Warning! Not every particle works there. If you have problems, consider trying another particle. For example, use one from blaze ac.
+:::warning Warning! Not every particle works there. If you have problems, consider trying another particle. For example, use one from the blaze animation controller.
 :::
 
 ## BP Animation Controllers
 
-Behavior Pack animation controllers use the same general format as RP Animation Controllers, except instead of triggering animations, they allow you to trigger commands. In general, they introduce two new fields:
+Behavior Pack animation controllers use the same general format as RP Animation Controllers, except instead of triggering animations, they allow you to trigger commands, events, or execute Molang code. In general, they introduce two new fields:
 
 -   `on_entry`: Commands to play when the state is entered
 -   `on_exit`: Commands to play when the state is exited
@@ -302,7 +302,7 @@ Commands in this context mean three distinct things:
 
 -   A slash command, such as `/say Hello there!`
 -   An event trigger, on the entity, such as: `@s wiki:transform_into_plane`
--   An arbitrary molang expression, such as `v.tickets += 1;`
+-   An arbitrary Molang expression, such as `v.tickets += 1;` (this also works in Resource Pack animation controllers)
 
 Here is an example BP animation controller, which exhibits some of this behavior:
 
