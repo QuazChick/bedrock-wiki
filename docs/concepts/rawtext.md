@@ -184,3 +184,19 @@ And instead of an array, you can use a rawtext component, like so.
 #Output in chat:
 #    Hello Steve and Apple
 ```
+
+*Additional example shared by @CornyFlex:*
+
+```json
+/tellraw @a {"rawtext":[{"translate":"Role: %%%%s","with":{"rawtext":[{"score":{"name":"*","objective":"role"}},{"text":"Member"},{"text":"Moderator"},{"text":"Admin"}]}}]}
+```
+This structure allows you to display different text to the selected players based on scores.
+
+- Output in chat:
+    - Member
+        - When 'role' score of the player equals 1.
+    - Moderator
+        - When 'role' score of the player equals 2.
+    - Admin
+        - When 'role' score of the player equals 3.
+> Note: Score must be a positive integer.
