@@ -6,10 +6,11 @@ mentions:
     - MedicalJewel105
     - ChibiMango
     - zheaEvyline
-description: Officially supported Bedrock-Wiki style guide for add-on creation.
+    - QuazChick
+description: Officially supported Bedrock Wiki style guide for add-on creation.
 ---
 
-This document will present the officially supported Bedrock-Wiki style guide for add-on creation. This guide aims to promote best practices while creating add-ons and create a consistent format for everyone to follow.
+This document will present the officially supported Bedrock Wiki style guide for add-on creation. This guide aims to promote best practices while creating add-ons and create a consistent format for everyone to follow.
 
 :::tip
 The style guide is a living, breathing document, which will evolve as add-on creation evolves. Please get in touch if you think something needs to be updated or changed!
@@ -275,35 +276,56 @@ Own-line comments can be used for organizational purposes but should not store l
 | VSCode  | Visual Studio Code                 |
 | SP      | Skin Pack                          |
 
-## Blocks/Items Format Order
+## Definition Format Orders
 
-Blocks and Items should follow the format order below. This would particularly help with understanding that components that appear later in the file are what will be applied in regards to block permutations.
+Blocks, entities and items should follow the format order below.
 
 ### Blocks
 
--   format_version
--   minecraft:block
-    -   description
-        -   identifier
-        -   menu_category
-        -   states
-        -   traits
-    -   components
-    -   permutations
-        -   condition
-        -   components
+-   `format_version`
+-   `minecraft:block`
+    -   `description`
+        -   `identifier`
+        -   `menu_category`
+            -   `category`
+            -   `group`  
+        -   `states`
+        -   `traits`
+    -   `components`
+    -   `permutations`
+        -   `condition`
+        -   `components`
+
+### Entities
+
+-   `format_version`
+-   `minecraft:entity`
+    -   `description`
+        -   `identifier`
+        -   `spawn_category`
+        -   `is_spawnable`
+        -   `is_summonable`
+        -   `properties`
+    -   `component_groups`
+    -   `components`
+    -   `events`
 
 ### Items
 
--   format_version
--   minecraft:item
-    -   description
-        -   identifier
-        -   menu_category
-    -   components
+-   `format_version`
+-   `minecraft:item`
+    -   `description`
+        -   `identifier`
+        -   `menu_category`
+            -   `category`
+            -   `group`  
+    -   `components`
 
-## Custom Components Variable Name
+## Custom Components
 
-PascalCase should be used with BlockComponent or ItemComponent as a suffix. As an example, `MeltableBlockComponent` rather than `meltable`. This would help to differentiate what we're using in `registerCustomComponent` and what we're using as values elsewhere.
+### Variable Names
+
+PascalCase should be used with `BlockComponent` or `ItemComponent` as a suffix. As an example, `const MeltableBlockComponent = { ... }` rather than `const meltable = { ... }`.
+This helps to differentiate what we're using in `registerCustomComponent` and what we're using as values elsewhere.
 
 
