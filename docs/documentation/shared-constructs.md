@@ -1,13 +1,46 @@
 ---
 title: Shared Constructs
+description: JSON constructs are expressible in multiple locations in the add-ons system.
 nav_order: 1
 mentions:
     - Ciosciaa
     - ThomasOrs
-description: Shared JSON constructs.
+    - QuazChick
 ---
 
-A few JSON constructs are expressible in multiple locations in the add-ons system.
+JSON constructs are expressible in multiple locations in the add-ons system.
+
+## Block Descriptors
+
+Block descriptors can be used to check for blocks that match the specified properties.
+For example, block descriptors are used in the block [placement filter](/blocks/block-components#placement-filter) to determine which types of blocks a custom block can survive on.
+
+<CodeHeader>Identifier Object Example</CodeHeader>
+
+```json
+{
+    "name": "wiki:my_block"
+}
+```
+
+<CodeHeader>Permutation Object Example</CodeHeader>
+
+```json
+{
+    "name": "wiki:my_block",
+    "states": {
+        "wiki:my_state": 5
+    }
+}
+```
+
+<CodeHeader>Tag Object Example</CodeHeader>
+
+```json
+{
+    "tags": "q.any_tag('minecraft:is_axe_item_destructible', 'wiki:my_tag')"
+}
+```
 
 ## Range Objects
 
@@ -17,8 +50,8 @@ Range objects define a spread between two numbers.
 
 ```json
 {
-	"min": 2,
-	"max": 4
+    "min": 2,
+    "max": 4
 }
 ```
 
@@ -32,8 +65,8 @@ Fraction objects define a fraction using a numerator and denominator.
 
 ```json
 {
-	"numerator": 3,
-	"denominator": 5
+    "numerator": 3,
+    "denominator": 5
 }
 ```
 
