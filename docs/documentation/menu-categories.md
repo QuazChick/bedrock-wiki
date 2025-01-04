@@ -90,7 +90,7 @@ _For use with `menu_category` parameter, `category`._
 | nature       | Added to the "Nature" tab.                               |
 | none         | Not added to a tab and only accessible through commands. |
 
-## List of Groups
+## List of Vanilla Groups
 
 _For use with the `menu_category` parameter, `group`._
 
