@@ -1,14 +1,13 @@
 ---
 title: Script Core Features
+description: Introduction to some of the core API mechanics.
 category: Tutorials
-tags:
-    - experimental
 mentions:
     - JaylyDev
     - SmokeyStack
     - ThomasOrs
     - kumja1
-description: Introduction to some of the core API mechanics.
+    - QuazChick
 ---
 
 ::: warning
@@ -232,7 +231,7 @@ More information on all the system methods can be found on the [Game Loops & Tim
 
 ## Saving and Loading data
 
-With the `@minecraft/server` module, developers can define their own custom properties, known as dynamic properties, that can be used and stored within Minecraft. This data is stored specifically in the world's db folder using the behavior pack module UUID.
+With the `@minecraft/server` module, developers can define their own custom properties, known as dynamic properties, that can be used and stored within Minecraft. This data is stored specifically in the world's `db` folder using the behavior pack header UUID.
 
 ![dynamic_properties](/assets/images/gametest/script-server/dynamic_properties.png)
 
