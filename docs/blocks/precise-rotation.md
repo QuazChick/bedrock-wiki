@@ -348,19 +348,19 @@ Insert the following permutations into your block JSON (in the presented order):
 ```json
 "permutations": [
   {
-    "condition": "q.block_property('wiki:rotation') >= 4 || q.block_property('minecraft:block_face') == 'east'",
+    "condition": "q.block_state('wiki:rotation') >= 4 || q.block_state('minecraft:block_face') == 'east'",
     "components": {
       "minecraft:transformation": { "rotation": [0, -90, 0] }
     }
   },
   {
-    "condition": "q.block_property('wiki:rotation') >= 8 || q.block_property('minecraft:block_face') == 'south'",
+    "condition": "q.block_state('wiki:rotation') >= 8 || q.block_state('minecraft:block_face') == 'south'",
     "components": {
       "minecraft:transformation": { "rotation": [0, 180, 0] }
     }
   },
   {
-    "condition": "q.block_property('wiki:rotation') >= 12 || q.block_property('minecraft:block_face') == 'west'",
+    "condition": "q.block_state('wiki:rotation') >= 12 || q.block_state('minecraft:block_face') == 'west'",
     "components": {
       "minecraft:transformation": { "rotation": [0, 90, 0] }
     }
@@ -380,11 +380,11 @@ Add the following component to your block:
 "minecraft:geometry": {
   "identifier": "geometry.shell", // Model created in first step
   "bone_visibility": {
-    "up_0": "q.block_property('minecraft:block_face') == 'up' && !math.mod(q.block_property('wiki:rotation'), 4)",
-    "up_22_5": "q.block_property('minecraft:block_face') == 'up' && !math.mod(q.block_property('wiki:rotation') - 1, 4)",
-    "up_45": "q.block_property('minecraft:block_face') == 'up' && !math.mod(q.block_property('wiki:rotation') - 2, 4)",
-    "up_67_5": "q.block_property('minecraft:block_face') == 'up' && !math.mod(q.block_property('wiki:rotation') - 3, 4)",
-    "side": "q.block_property('minecraft:block_face') != 'up'"
+    "up_0": "q.block_state('minecraft:block_face') == 'up' && !math.mod(q.block_state('wiki:rotation'), 4)",
+    "up_22_5": "q.block_state('minecraft:block_face') == 'up' && !math.mod(q.block_state('wiki:rotation') - 1, 4)",
+    "up_45": "q.block_state('minecraft:block_face') == 'up' && !math.mod(q.block_state('wiki:rotation') - 2, 4)",
+    "up_67_5": "q.block_state('minecraft:block_face') == 'up' && !math.mod(q.block_state('wiki:rotation') - 3, 4)",
+    "side": "q.block_state('minecraft:block_face') != 'up'"
   }
 }
 ```
@@ -397,7 +397,7 @@ If you would like your block to have a different collision/selection box when pl
 
 ```json
 {
-    "condition": "q.block_property('minecraft:block_face') != 'up'",
+    "condition": "q.block_state('minecraft:block_face') != 'up'",
     "components": {
         // Add your collision/selection boxes
         "minecraft:collision_box": {
