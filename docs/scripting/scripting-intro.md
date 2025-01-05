@@ -24,7 +24,7 @@ The Script API is currently in active development, and breaking changes are freq
 
 ## Overview
 
-The Script API (formerly GameTests) is a feature that allows for a new variety of creations, these are built with JavaScript files in the behavior pack folder. Some parts of the Script API are not experimental.
+The Script API (formerly GameTest Framework) is a feature that allows for a new variety of creations, these are built with JavaScript files in the behavior pack folder. Most parts of the Script API are not experimental.
 
 This page will give you an introduction to the 80% of Minecraft's Creator API concepts that you will use on a daily basis.
 
