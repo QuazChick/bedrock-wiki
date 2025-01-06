@@ -396,6 +396,7 @@ Configuration of your block's rendering, including textures and lighting.
 
 -   All instances must have the same render method.
 -   Block faces will unconditionally darken if intersecting another block.
+-   The texture on the `down` face is used for destruction particles.
 
 Material instances can be combined with `RP/blocks.json` entries to create blocks which exhibit opaque-like properties. This is primarily used to enable face culling on [custom glass blocks](/blocks/custom-glass-blocks).
 
@@ -425,8 +426,7 @@ Render methods essentially control how a block appears in the world, much like e
 
 ```json
 "minecraft:material_instances": {
-  // '*' instance required - default instance for your block (also used for destruction particles)
-  // Wildcards follow render controller syntax
+  // '*' instance required - default instance for cube faces
   // Instance names 'up', 'down', 'north', 'east', 'south' and 'west' are built in
   "*": {
     "texture": "texture_name", // Shortname defined in `RP/textures/terrain_textures.json`
