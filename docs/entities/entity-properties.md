@@ -155,7 +155,7 @@ With entity events, you may set the entity property to a value with the `set_pro
     "set_property": {
         "wiki:integer_property_example": 2,
         "wiki:enum_property_example": "second",
-        "wiki:boolean_property_example": "!q.property('wiki:boolean_enum_example')"
+        "wiki:boolean_property_example": "!q.property('wiki:bool_property_example')"
     }
 }
 ```
