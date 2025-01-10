@@ -131,16 +131,16 @@ In Minecraft, scoreboard division is only calculated up to whole numbers and dec
 
 The remaining commands follow the same structure, with only the event labels and interval durations adjusted.
 
-## Defining Events with Limited Intervals
+## Defining Events with Limited Occurances
 
-To limit how many times an event occurs, you need to create a new objective called `intervals` and define how many times that event should occur, as shown below.
+To limit how many times an event occurs, you need to create a new objective called `occurances` and define how many times that event should occur, as shown below.
 
 <CodeHeader></CodeHeader>
 
 ```yaml
-/scoreboard objectives add intervals dummy
-/scoreboard players set ChatMessage intervals 5
-/scoreboard players set SpeedEffect intervals 10
+/scoreboard objectives add occurances dummy
+/scoreboard players set ChatMessage occurances 5
+/scoreboard players set SpeedEffect occurances 10
 ```
 
 Once you have done that, modify your system as shown below.
@@ -156,18 +156,18 @@ scoreboard players operation * events = Timer ticks
 
 ## Chat Message (every 10m)
 scoreboard players operation ChatMessage events %= 2h ticks
-execute if score ChatMessage events matches 0 if score ChatMessage intervals matches 1.. run say Technoblade never dies!
-execute if score ChatMessage events matches 0 if score ChatMessage intervals matches 1.. run scoreboard players remove ChatMessage intervals 1
+execute if score ChatMessage events matches 0 if score ChatMessage occurances matches 1.. run say Technoblade never dies!
+execute if score ChatMessage events matches 0 if score ChatMessage occurances matches 1.. run scoreboard players remove ChatMessage occurances 1
 
 ## Speed Effect (every 30s)
 scoreboard players operation SpeedEffect events %= 30s ticks
-execute if score SpeedEffect events matches 0 if score SpeedEffect intervals matches 1.. run effect @a speed 10 2 true
-execute if score SpeedEffect events matches 0 if score SpeedEffect intervals matches 1.. run scoreboard players remove SpeedEffect intervals 1
+execute if score SpeedEffect events matches 0 if score SpeedEffect occurances matches 1.. run effect @a speed 10 2 true
+execute if score SpeedEffect events matches 0 if score SpeedEffect occurances matches 1.. run scoreboard players remove SpeedEffect occurances 1
 ```
 
 ![Chain of 8 Command Blocks](/assets/images/commands/commandBlockChain/8.png)
 
-## Executing Commands During Timeframe
+## Executing Commands During Intervals
 
 To run commands continuously between the intervals of an event, you may use the technique shown below.
 
@@ -176,14 +176,14 @@ To run commands continuously between the intervals of an event, you may use the 
 ```yaml
 ## Speed Effect (every 30s) + Particle (every tick)
 scoreboard players operation SpeedEffect events %= 30s ticks
-execute if score SpeedEffect intervals matches 1.. as @a at @s run particle minecraft:shulker_bullet ~~~
-execute if score SpeedEffect events matches 0 if score SpeedEffect intervals matches 1.. run effect @a speed 10 2 true
-execute if score SpeedEffect events matches 0 if score SpeedEffect intervals matches 1.. run scoreboard players remove SpeedEffect intervals 1
+execute if score SpeedEffect occurances matches 1.. as @a at @s run particle minecraft:shulker_bullet ~~~
+execute if score SpeedEffect events matches 0 if score SpeedEffect occurances matches 1.. run effect @a speed 10 2 true
+execute if score SpeedEffect events matches 0 if score SpeedEffect occurances matches 1.. run scoreboard players remove SpeedEffect occurances 1
 ```
 
-As shown in line 3, to run commands while the timer is running, all you need to do is remove the "if score" testing if the interval has been reached. And instead, only test if any interval remains to run our commands.
+As shown in line 3, to run commands while the timer is running, all you need to do is remove the "if score" testing if all occurances took place. And instead, only test if any occurance remains, to run our commands.
 
-Let's say we had set the `intervals` for this event to `10`. Then players would also have had particle trails for 300 seconds as repeating a 30s event 10 times will total 300 seconds.
+Let's say we had set the `occurances` for this event to `10`. Then players would've also had a particle trail for 300 seconds as repeating a 30s event 10 times will total 300 seconds.
 
 ## Entity Timers
 
