@@ -21,6 +21,7 @@ mentions:
     'BP/biomes/example.biome.json',
     'BP/blocks/example.block.json',
     'BP/cameras/presets/example.json',
+    'BP/dialogue/example.dialogue.json',
     'BP/entities/example.se.json',
     'BP/feature_rules/example.rule.json',
     'BP/features/example.feature.json',
