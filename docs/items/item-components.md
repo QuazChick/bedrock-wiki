@@ -57,6 +57,10 @@ Type: Boolean
 
 ### Block Placer
 
+:::warning
+The block placer component does not trigger the [`onBeforePlayerPlace`](/blocks/block-events#before-player-place) custom component hook.
+:::
+
 Block Placer item component. Items with this component will place a block when used. Released from experiment in format version 1.20.10.
 
 When used in Survival Mode, the item will be consumed.
