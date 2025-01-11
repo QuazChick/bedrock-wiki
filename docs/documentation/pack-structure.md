@@ -15,6 +15,7 @@ mentions:
 ---
 
 <FolderView :paths="[
+    'BP/aim_assist/presets/example.json',
     'BP/animation_controllers/example.ac.json',
     'BP/animations/example.animation.json',
     'BP/biomes/example.biome.json',
@@ -25,6 +26,7 @@ mentions:
     'BP/features/example.feature.json',
     'BP/functions/example.mcfunction',
     'BP/functions/tick.json',
+    'BP/item_catalog/crafting_item_catalog.json',
     'BP/items/example.item.json',
     'BP/loot_tables/example.loot.json',
     'BP/recipes/example.recipe.json',
@@ -35,6 +37,10 @@ mentions:
     'BP/texts/\*.lang',
     'BP/trading/example.trade.json',
     'BP/trading/economy_trades/example.trade.json',
+    'BP/worldgen/jigsaw_structures/example.json',
+    'BP/worldgen/processors/example.json',
+    'BP/worldgen/structure_sets/example.json',
+    'BP/worldgen/template_pools/example.json',
     'BP/manifest.json',
     'BP/pack_icon.png',
     'RP/animation_controllers/example.ac.json',
