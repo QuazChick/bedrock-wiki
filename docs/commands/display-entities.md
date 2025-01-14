@@ -4,6 +4,7 @@ category: Techniques
 mention:
     - BedrockCommands
     - zheaEvyline
+nav_order: 4
 description: A guide to creating block display entities on Bedrock purely using commands.
 ---
 
@@ -21,7 +22,8 @@ In a traditional sense, you may refer to them as block display entities or simpl
 
 :::info NOTE
 
-- This method uses 1 fox per block display. Therefore, too many foxes (like any entity) can contribute to server lag. - - Players will still be able to pass through them, as well as interact with them (if not restricted)
+- This method uses 1 fox per block display. Therefore, too many foxes (like any entity) can contribute to server lag.
+- Players will still be able to pass through them, as well as interact with them (if not restricted)
 
 :::
 
