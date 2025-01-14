@@ -1,55 +1,86 @@
 ---
 title: Custom Crafter
-description: How to make a mock custom crafting systom with commands
-category: Guides
-tags: [easy, guide]
+category: Useful Creations
+tags: [easy]
+mentions:
+    - TwigYT
+description: Command to simulate a crafting table using droppers.
 ---
 
 ## Introduction
 
-This is a guide on how to make a custom crafting systom with jest two command blocks. Some use cases could be a way to "craft" tools or weapons with a custom name and enchantments for a server or for a adventure map.
+In this guide, you will learn how to simulate a crafting table using droppers to essentially create a "custom crafting" system with only one command! Some use cases include: A way to craft weapons with enchantments or a custom name for a server or an adventure map.
 
-_**This systom was originally created by CrunchyCookie. All credit for this systom goes to him. You can find his video [here](https://www.youtube.com/watch?v=pzQzldaSORs).**_
+Note: The position of the custom crafter in this guide is fixed. For a more dynamic approach which allows you to place it anywhere in the world, you may check out @CrunchyCookie's video on [Custom Crafting](https://www.youtube.com/watch?v=pzQzldaSORs) on YouTube.
 
-:::warning
-This is not an actual way to make custom crafting recipes. This is a creative and roundabout way to make custom crafting using the clone command and droppers. For custom crafting recipes that use the crafting table, [see this wiki page](../loot/recipes).
+:::tip
+To create custom crafting recipes that use the crafting table, see this wiki page [here](../loot/recipes).
 :::
+
+## Setup
+
+For this system, you will require two droppers per custom recipe item you want to add:
+
+1. Dropper containing the Recipe.
+2. Dropper containing the Recipe Output.
+
+Example:
+<WikiImage
+    src="/assets/images/commands/custom_crafter/recipe.png"
+    alt="alternative text"
+    width="200"
+    pixelated
+/> <WikiImage
+    src="/assets/images/commands/custom_crafter/recipe_output.png"
+    alt="alternative text"
+    width="200"
+    pixelated
+/>
+
+These two droppers are normally placed near your command blocks, or in a place which cannot be accessed by players other than operators.
+
+To complete the setup, place down one final dropper where you want players to be able to perform custom crafting. This will be used as your custom **crafter**.
 
 ## System
 
-:::info Note
-Every time we use the word `<crafter>`, we imply the coordinates of the dropper that is uesd as a crafter. If you see the word `<crafterX>`, `<crafterY>`, or `<crafterZ>` we imply the X.Y.Z coordinates of your dropper.
-:::
+<CodeHeader>BP/functions/custom_crafting.mcfunction</CodeHeader>
 
-1. Place a dropper facing down. This will be used to impersonate the vanilla crafter and will be refer to in the rest of this page as "crafter".
-2. Place a repeating command block sideways and paste this command in: `execute if blocks ~ ~1 ~ ~ ~1 ~ <crafter> masked run playsound random.orb @a[x=<crafterX>, y=<crafterY>, z=<crafterZ>, r=6]`
-3. Place a chain command block in front of the repeating command block and set it to conditional. Then paste this command in: `clone ~ ~1 ~ ~ ~1 ~ <crafter>`
-4. Place 2 droppers above the command blocks facing down. Fill the dropper above the repeating command block with the custom recipe you've made. Then fill the second dropper with the crafted item. (Tip: place the crafted item in the middle slot in the second dropper. Makes it look nice.)
+```yaml
+## If Recipe Matches Crafter: Clone Recipe Output to Crafter
+execute if blocks <recipe> <recipe> <crafter> masked run clone <recipe_out> <recipe_output> <crafter>
+```
+![commandBlockChain1](/assets/images/commands/commandBlockChain/1.png)
 
-At the end of this you should have some thing like this:
+**Definitions:**
+- `<crafter>` — input (x,y,z) coordinates for the dropper that will be used as the **crafter**.
+- `<recipe>` — input (x,y,z) coordinates for the dropper which contains your **recipe**.
+- `<recipe_output>` — input (x,y,z) coordinates for the dropper which contains the **output** for your recipe.
 
+For convenience, you may download the .mcstructure sample shared by @TwigYT:
 <WikiImage
     src="/assets/images/commands/customCrafterEnd.png"
     alt="alternative text"
     width=800
 />
 
-## Explanation
-
-Command 1: `execute if blocks ~ ~1 ~ ~ ~1 ~ <crafter> masked run playsound random.orb @a[x=<crafterX>, y=<crafterY>, z=<crafterZ>, r=6]`
-
-Every single in game tick the repeating command block is checking if the dropper one block above it has the same state and content as the dropper the player interacts with. If the 2 blocks are the same, the playsound command is run and we move on to the next commmand block.
-
-Command 2: `clone ~ ~1 ~ ~ ~1 ~ <crafter>`
-
-Because this command block is conditional, it won't activate until the command block behind it succeeds. When this command block activate it runs a clone command that clones the block that is one block above it to the position of the other dropper.
-
-Here is an example structure:
-
 <Button link="/assets/packs/structures/customCrafter/customCrafterExample.mcstructure" download>
-    Download MCSTRUCTURE
+    Download Sample MCSTRUCTURE
 </Button>
 
-:::info Note
-You still have to replace the `<crafter>` in the commands with the coordinates of the input dropper that the player will be interacting with.
-:::
+> Note: After importing the structure using a structure block, you will still need to replace the values in the command blocks as defined above.
+
+## Tips
+
+You may add a playsound command to slightly enhance the crafting experience like so:
+
+<CodeHeader>BP/functions/custom_crafting.mcfunction</CodeHeader>
+
+```yaml
+## Play Sound Upon Crafting (optional)
+execute if blocks <recipe> <recipe> <crafter> masked positioned <crafter> run playsound smithing_table.use @a [r=7]
+## If Recipe Matches Crafter: Clone Recipe Output to Crafter
+execute if blocks <recipe> <recipe> <crafter> masked run clone <recipe_out> <recipe_output> <crafter>
+```
+![commandBlockChain2](/assets/images/commands/commandBlockChain/2.png)
+
+To take it a step further, you may also use [MBE](/commands/block-entities) or [Fox MBE](/commands/display-entities) to give the dropper the texture of a crafting table or a smithing table as an overlay.

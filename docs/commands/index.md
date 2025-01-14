@@ -5,8 +5,6 @@ categories:
       color: green
     - title: Commands
       color: green
-    - title: Guides
-      color: green
     - title: On Event Systems
       color: blue
     - title: Scoreboard Systems
@@ -15,4 +13,6 @@ categories:
       color: orange
     - title: Functions
       color: blue
+    - title: Useful Creations
+      color: yellow
 ---
