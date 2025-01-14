@@ -103,15 +103,14 @@ With FMBE, you can edit the display position, size, angle, and more using client
 
 ### Editing Values
 To edit values, use the following command structure:  
-- `playanimation @e[type=fox,tag=FMBE] animation.player.attack.positions none 0 "" wiki:setvariable`
+- `/playanimation @e[type=fox,tag=FMBE] animation.player.attack.positions none 0 "" wiki:setvariable`
+
 Write the molang code for the variable you want to edit inside the double quotes and assign the value.
 
 Example, to set `xrot` to 35, `ypos` to 16, and `scale` to 1.5:
-```yaml
-/playanimation @e[type=fox,tag=FMBE] animation.player.attack.positions none 0 "v.xrot=35;v.ypos=16;v.scale=1.5;" setvariable
-```  
+- `/playanimation @e[type=fox,tag=FMBE] animation.player.attack.positions none 0 "v.xrot=35;v.ypos=16;v.scale=1.5;" setvariable`
 
-Molang also allows for more complex animations using various queries and operators. To learn more about Molang, refer to: **[Molang Documentation](https://bedrock.dev/docs/stable/Molang)**.
+Molang also allows for more complex animations using various queries and operators. To learn more about Molang, refer to the **[Molang Documentation](https://bedrock.dev/docs/stable/Molang)**.
 
 ### Saving & Loading FMBE
 
