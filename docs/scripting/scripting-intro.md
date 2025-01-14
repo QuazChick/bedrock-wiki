@@ -48,12 +48,6 @@ In the behavior pack manifest, you need to add a `script` module and set an `ent
 
 Additionally, dependencies will need to be set based on modules used. To import and use script API modules, you must specify dependencies using the `module_name` and `version`. In this example, the `@minecraft/server` module is used.
 
-:::warning
-There is a bug where you cannot apply resource pack into dependencies with script modules.
-
-This problem causes Minecraft to stop the scripts from running and throws error related to "Unknown dependency".
-:::
-
 <CodeHeader>BP/manifest.json</CodeHeader>
 
 ```json
