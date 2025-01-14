@@ -28,13 +28,12 @@ Example:
 <WikiImage
     src="/assets/images/commands/custom_crafter/recipe.png"
     alt="alternative text"
-    width="420"
+    width="200"
     pixelated
-/>
-<WikiImage
+/> <WikiImage
     src="/assets/images/commands/custom_crafter/recipe_output.png"
     alt="alternative text"
-    width="420"
+    width="200"
     pixelated
 />
 
