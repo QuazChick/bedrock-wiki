@@ -154,8 +154,8 @@ Type: Array
 <CodeHeader>minecraft:item > components</CodeHeader>
 
 ```json
-"minecraft:custom_component": [
-    "wiki:custom_component"
+"minecraft:custom_components": [
+    "wiki:custom_components"
 ]
 ```
 
