@@ -1,8 +1,8 @@
 ---
 title: Custom Crafter
 description: How to make a mock custom crafting systom with commands
-category: Guides
-tags: [easy, guide]
+category: Useful Creations
+tags: easy
 ---
 
 ## Introduction
