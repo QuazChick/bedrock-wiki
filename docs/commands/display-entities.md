@@ -1,5 +1,5 @@
 ---
-title: FMBE: A New Way to Create Display Entities
+title: FMBE - A New Way to Create Display Entities
 category: Techniques
 mention:
     - BedrockCommands
@@ -119,7 +119,7 @@ Note: The structure name `wiki` can be changed to your preference.
 
 ### Stoping FMBE Sounds
 
-To remove fox sounds from the FMBE, you can use these commands:
+To remove fox sounds from the FMBE, you may use these commands:
 
 <CodeHeader>BP/functions/fmbe/stopsound.mcfunction</CodeHeader>
 
@@ -135,6 +135,7 @@ stopsound @a mob.fox.bite
 stopsound @a mob.fox.ambient
 stopsound @a mob.fox.aggro
 ```
+![commandBlockChain10](/assets/images/commands/commandBlockChain/10.png)
 
 ## Simplified FMBE
 
