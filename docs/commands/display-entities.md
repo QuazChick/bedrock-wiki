@@ -90,7 +90,7 @@ With FMBE, you can edit the display position, size, angle, and more using client
     - `v.ybasepos`
     - `v.zbasepos`
 
-:::note NOTE
+:::info NOTE
 
 - `basepos` variables move the position without affecting the center of rotation, meaning they are dependent on angles. (e.g., `v.zbasepos=16` behaves like `^^^1` in relative coordinates).
 - `pos` and `basepos` values are measured in 1/16 block units (16 = 1 full block).
