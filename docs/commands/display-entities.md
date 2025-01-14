@@ -13,13 +13,17 @@ description: A guide to creating block display entities on Bedrock purely using 
 
 In this page, we will learn how to create block display entities in Minecraft Bedrock purely using commands.
 
-The first person to develop such a technique was u/MaxedOut_10, who used only Vanilla commands. His technique offers less flexibility but is much simpler, using armor stands. To check out his method, you may refer to the ["MBE - Max's Block Entity](/commands/block-entities) page.
+The first person to develop such a technique was [u/Maxed_Out10](https://www.reddit.com/user/Maxed_Out10/), who used only Vanilla commands. His technique offers less flexibility but is much simpler, using armor stands. To check out his method, you may refer to the ["MBE - Max's Block Entity"](/commands/block-entities) page.
 
 Inspired by Max's Block Entity (MBE), command experts @pipi_Spamton, @siratama, and their team from the Japanese Commands community, have devised a new technique for creating block display entities in Minecraft Bedrock which offers more flexibility and customization. This method is based on the same principles as MBE, but instead of armor stands, it effectively uses the bone structure of foxes to render the block displays.
 
-In a traditional sense, you may refer to them as block display entities or simply "display entities". However, in recognition of u/MaxedOut_10, they are more popularly known as "Fox MBE" (FMBE) in the Bedrock communities.
+In a traditional sense, you may refer to them as block display entities or simply "display entities". However, in recognition of [u/Maxed_Out10](https://www.reddit.com/user/Maxed_Out10/), they are more popularly known as "Fox MBE" (FMBE) in the Bedrock communities.
 
-**Important:** This method uses 1 fox per block display. Therefore, too many foxes (like any entity) can contribute to server lag. Players will still be able to pass through them, as well as interact with them (if not restricted)
+:::info NOTE
+
+- This method uses 1 fox per block display. Therefore, too many foxes (like any entity) can contribute to server lag. - - Players will still be able to pass through them, as well as interact with them (if not restricted)
+
+:::
 
 ## Video Demonstration
 
@@ -90,7 +94,7 @@ With FMBE, you can edit the display position, size, angle, and more using client
     - `v.ybasepos`
     - `v.zbasepos`
 
-:::info NOTE
+:::tip NOTE
 
 - `basepos` variables move the position without affecting the center of rotation, meaning they are dependent on angles. (e.g., `v.zbasepos=16` behaves like `^^^1` in relative coordinates).
 - `pos` and `basepos` values are measured in 1/16 block units (16 = 1 full block).
@@ -102,8 +106,10 @@ To edit values, use the following command structure:
 - `playanimation @e[type=fox,tag=FMBE] animation.player.attack.positions none 0 "" wiki:setvariable`
 Write the molang code for the variable you want to edit inside the double quotes and assign the value.
 
-Example: To set `xrot` to 35, `ypos` to 16, and `scale` to 1.5:  
-- `playanimation @e[type=fox,tag=FMBE] animation.player.attack.positions none 0 "v.xrot=35;v.ypos=16;v.scale=1.5;" setvariable`  
+Example, to set `xrot` to 35, `ypos` to 16, and `scale` to 1.5:
+```yaml
+/playanimation @e[type=fox,tag=FMBE] animation.player.attack.positions none 0 "v.xrot=35;v.ypos=16;v.scale=1.5;" setvariable
+```  
 
 Molang also allows for more complex animations using various queries and operators. To learn more about Molang, refer to: **[Molang Documentation](https://bedrock.dev/docs/stable/Molang)**.
 
