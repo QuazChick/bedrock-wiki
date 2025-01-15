@@ -1,7 +1,7 @@
 ---
 title: FMBE - A New Way to Create Display Entities
 category: Techniques
-mention:
+mentions:
     - BedrockCommands
     - zheaEvyline
 nav_order: 4
