@@ -1,7 +1,7 @@
 ---
 title: Comparing And Retrieving Scores
 category: Scoreboard Systems
-mention:
+mentions:
     - BedrockCommands
     - zheaEvyline
 description: Learn to test for targets of matching scores / targets with the highest or lowest score.
