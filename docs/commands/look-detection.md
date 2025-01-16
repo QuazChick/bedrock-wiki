@@ -1,7 +1,7 @@
 ---
 title: Look Detection
 category: Techniques
-mention:
+mentions:
   - BedrockCommands
   - AjaxGb
   - Plagiatus

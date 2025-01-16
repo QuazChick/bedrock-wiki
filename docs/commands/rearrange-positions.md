@@ -1,7 +1,7 @@
 ---
 title: Multiplayer Position Rearrangement
 category: Functions
-mention:
+mentions:
     - BedrockCommands
     - zheaEvyline
     - jeanmajid

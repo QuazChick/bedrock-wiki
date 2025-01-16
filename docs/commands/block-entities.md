@@ -1,7 +1,7 @@
 ---
 title: MBE - Max's Block Entity
 category: Techniques
-mention:
+mentions:
     - BedrockCommands
     - zheaEvyline
 nav_order: 3

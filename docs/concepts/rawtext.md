@@ -1,6 +1,6 @@
 ---
 title: Rawtext
-mention:
+mentions:
   - BedrockCommands
   - GTB3NW
   - SpacebarNinja
@@ -162,7 +162,7 @@ In the example above, it outputs "`%s joined the game`". For a name to appear in
 `%%s` can be used multiple times. They are filled in the order as shown.
 
 ```json
-/tellraw @a {"rawtext":{"translate":"Hello %%s and %%s", "with":["Steve","Alex"]}]}
+/tellraw @a {"rawtext":[{"translate":"Hello %%s and %%s", "with":["Steve","Alex"]}]}
 #Output in chat:
 #    Hello Steve and Alex
 ```
@@ -200,3 +200,11 @@ This structure allows you to display different text to the selected players base
     - Admin
         - When 'role' score of the player equals 3.
 > Note: Score must be a positive integer.
+
+**How It Works:**
+
+- At "`%%%%s`", the first `%%` is left invalid because no argument (either "s" or an integer) is provided. As a result, it cannot display a value from the array.
+- For the second `%%`, the argument "s" is provided, which displays the first slot in the array (a `{score}`).
+- Since there is no space between the first `%%` and the `{score}` (`%%s`), the `{score}` is interpreted as the integer argument for the first `%%`, making it valid.
+- This allows the score to dynamically change the index of the slot to be displayed.
+
