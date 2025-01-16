@@ -62,6 +62,8 @@ This section will list the format versions used in the vanilla game, alongside h
     - The '⭐' is the recommended *stable* version.
     - The '🚀' is the recommended *experimental* version, where applicable.
 
+_Last Updated for 1.21.50_
+
 ### Resource Pack
 
 | Resource Pack        | Version  | Count |
