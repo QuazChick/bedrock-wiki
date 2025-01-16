@@ -256,7 +256,7 @@ Possible equipment slot are as follows:
 
 ### Test for items within the player's inventory
 
-Formatted like: `t.val = 0; t.i = 0; loop(27, {t.val = q.is_item_name_any('slot.inventory', t.i, 'namespace:item_name'); t.val ? {return t.val;}; t.i = t.i+1;});`
+Formatted like: `t.val = 0; t.i = 0; loop(27, {t.val = q.is_item_name_any('slot.inventory', t.i, 'namespace:item_name'); t.val ? break; t.i = t.i+1;});`
 
 Replace `namespace:item_name` with any item you wish to check for. This simply loops through all 27 slots of the inventory and returns `1.0` if it has found any slot that has the specified item provided. Note that the hotbar is in a different slot from the main inventory slot so you will have to check that separately.
 
