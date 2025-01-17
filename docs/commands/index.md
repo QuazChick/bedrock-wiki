@@ -11,8 +11,6 @@ categories:
       color: blue
     - title: Techniques
       color: orange
-    - title: Functions
-      color: blue
     - title: Useful Creations
       color: yellow
 ---
