@@ -1,10 +1,11 @@
 ---
 title: Multiplayer Position Rearrangement
-category: Functions
+category: Useful Creations
 mentions:
     - BedrockCommands
     - zheaEvyline
     - jeanmajid
+tags: [mcfunction]
 description: Randomly relocate all selected targets among each other, ensuring none remain in their original position.
 ---
 
