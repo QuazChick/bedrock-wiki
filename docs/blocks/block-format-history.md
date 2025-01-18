@@ -7,6 +7,14 @@ mentions:
     - QuazChick
 ---
 
+:::info <Label color="green">Versioned</Label> CHANGES
+The file's `format_version` field must be updated for versioned changes to take effect.
+:::
+
+:::info <Tag name="experimental" /> CHANGES
+An experiment must be enabled in your world for experimental changes to take effect.
+:::
+
 ## 1.21.60
 
 ### Components
