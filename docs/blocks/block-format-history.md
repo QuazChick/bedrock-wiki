@@ -17,6 +17,13 @@ An experiment must be enabled in your world for experimental changes to take eff
 
 ## 1.21.60
 
+### Description
+
+<Label color="green">Versioned</Label>
+
+-   Updated `menu_category`
+    -   Updated `group` parameter to require a namespace e.g. `minecraft:itemGroup.name.concrete`
+
 ### Components
 
 <Label color="green">Versioned</Label>
