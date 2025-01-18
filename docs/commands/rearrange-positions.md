@@ -5,7 +5,8 @@ mentions:
     - BedrockCommands
     - zheaEvyline
     - jeanmajid
-tags: [mcfunction]
+tags:
+    - function
 description: Randomly relocate all selected targets among each other, ensuring none remain in their original position.
 ---
 
