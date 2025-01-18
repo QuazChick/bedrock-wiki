@@ -16,7 +16,7 @@ mentions:
 -   Released `minecraft:item_visual` from experimental
 -   Released `minecraft:liquid_detection` from experimental
 -   Updated `minecraft:material_instances`
-    -   Updated `ambient_occlusion` instance parameter to require a float which determines ambient occlusion intensity.
+    -   Released float value support for `ambient_occlusion` from experimental
 
 ## 1.21.50
 
@@ -42,7 +42,7 @@ mentions:
         -   `on_liquid_touches` determines what happens when the liquid type flows into the block.
         -   `stops_liquid_flowing_from_direction` determines an array of directions that the liquid cannot flow out of this block from.
 -   Updated `minecraft:material_instances`
-    -   Updated `ambient_occlusion` instance parameter to require a float which determines ambient occlusion intensity.
+    -   Updated `ambient_occlusion` instance parameter to support a float which determines ambient occlusion intensity (0.0-10.0).
 
 ## 1.21.40
 
