@@ -20,6 +20,10 @@ export default {
   expert: {
     color: "red",
   },
+  function: {
+    color: "blue",
+    sidebar: true,
+  },
   guide: {
     color: "green",
     sidebar: true,
@@ -47,9 +51,5 @@ export default {
     sidebar: {
       text: "Scripts",
     },
-  },
-  system: {
-    color: "blue",
-    sidebar: true,
   },
 } satisfies Tags;

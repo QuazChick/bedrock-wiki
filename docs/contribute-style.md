@@ -76,7 +76,7 @@ If you're just looking for existing tags, here is the list of tags that this wik
 -   <Tag name="method" />
 -   <Tag name="outdated" />
 -   <Tag name="scripting" />
--   <Tag name="system" />
+-   <Tag name="function" />
 
 ### Content
 

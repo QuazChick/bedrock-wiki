@@ -1,7 +1,8 @@
 ---
 title: Custom Crafter
 category: Useful Creations
-tags: [easy]
+tags:
+    - easy
 mentions:
     - TwigYT
 description: Command to simulate a crafting table using droppers.
