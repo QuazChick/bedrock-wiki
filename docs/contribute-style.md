@@ -69,6 +69,7 @@ If you're just looking for existing tags, here is the list of tags that this wik
 -   <Tag name="easy" />
 -   <Tag name="experimental" />
 -   <Tag name="expert" />
+-   <Tag name="function" />
 -   <Tag name="guide" />
 -   <Tag name="help" />
 -   <Tag name="info" />
@@ -76,7 +77,6 @@ If you're just looking for existing tags, here is the list of tags that this wik
 -   <Tag name="method" />
 -   <Tag name="outdated" />
 -   <Tag name="scripting" />
--   <Tag name="function" />
 
 ### Content
 
