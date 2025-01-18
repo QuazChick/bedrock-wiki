@@ -227,7 +227,7 @@ Limits the selection of targets by experience levels. Only players can have EXP,
 **Examples:**
 
 Give all players who have nine or less levels a gold ingot:
--   `/give @a[lm=9] iron_ingot`
+-   `/give @a[lm=9] gold_ingot`
  
 Give all players who have ten or more levels a gold ingot:
 -   `/give @a[l=10] gold_ingot`
