@@ -48,7 +48,7 @@ export default {
       text: "Scripts",
     },
   },
-  mcfunction: {
+  function: {
     color: "blue",
     sidebar: true,
   },
