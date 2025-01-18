@@ -123,3 +123,4 @@ _Last Updated for 1.21.50_
 | Spawn Rules | 1.17.0 ⭐  |     1 |
 | Spawn Rules | 1.11.0     |     1 |
 | Spawn Rules | 1.8.0      |    51 |
+| Trade Table | 1.18.10    |     1 |
