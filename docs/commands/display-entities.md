@@ -39,7 +39,7 @@ In a traditional sense, you may refer to them as block display entities or simpl
 
 ```yaml
 ### Reposition and Define FMBE Scale
-playanimation @e[type=fox,tag=FMBE] animation.player.sleeping none 0 "" wiki:move
+playanimation @e[type=fox,tag=FMBE] animation.player.sleeping none 0 "" controller.animation.fox.move
 playanimation @e[type=fox,tag=FMBE] animation.creeper.swelling none 0 "v.xbasepos=v.xbasepos??0;v.ybasepos=v.ybasepos??0;v.zbasepos=v.zbasepos??0;v.xpos=v.xpos??0;v.ypos=v.ypos??0;v.zpos=v.zpos??0;v.xrot=v.xrot??0;v.yrot=v.yrot??0;v.zrot=v.zrot??0;v.scale=v.scale??1;v.xzscale=v.xzscale??1;v.yscale=v.yscale??1;v.swelling_scale1=2.1385*math.sqrt(v.xzscale)*math.sqrt(v.scale);v.swelling_scale2=2.1385*math.sqrt(v.yscale)*math.sqrt(v.scale);" wiki:scale
 playanimation @e[type=fox,tag=FMBE] animation.ender_dragon.neck_head_movement none 0 "v.head_rotation_x=0;v.head_rotation_y=0;v.head_rotation_z=0;v.head_position_x=(v.xbasepos*3741/8000)*math.sqrt(v.xzscale)*math.sqrt(v.scale);v.head_position_y=(10.6925+v.ybasepos*3741/8000)*math.sqrt(v.yscale)*math.sqrt(v.scale);v.head_position_z=(17.108-v.zbasepos*3741/8000)*math.sqrt(v.xzscale)*math.sqrt(v.scale);" wiki:shift_pos
 
@@ -62,7 +62,9 @@ playanimation @e[type=fox,tag=FMBE] animation.parrot.dance none 0 "v.dance.x=-v.
 Note: Providing a controller name allows us to stack animations without overwriting the previous one. Example:
 - `wiki:scale` (where `wiki` is a namespace).
 
-Using the same controller names above isn't required. However, it can help avoid collisions with other playanimation commands.
+Please ensure the controller name in the first command is `controller.animation.fox.move`.
+
+For rest of the commands, using the same controller names above isn't required. However, it can help avoid collisions with other playanimation commands.
 
 ## How to Use FMBE
 
@@ -152,7 +154,7 @@ This is a compressed three-command version of the system above. If you do not wi
 
 ```yaml
 ## Reposition and Define FMBE Scale
-playanimation @e[type=fox,tag=FMBE] animation.player.sleeping none 0 "" wiki:move
+playanimation @e[type=fox,tag=FMBE] animation.player.sleeping none 0 "" controller.animation.fox.move
 playanimation @e[type=fox,tag=FMBE] animation.creeper.swelling none 0 "v.scale=1;v.adscale=math.sqrt(v.scale);v.adscaled=2.1385*v.adscale;v.xbasepos=0;v.ybasepos=0;v.zbasepos=0;v.xpos=0;v.ypos=0;v.zpos=0;v.xrot=q.life_time*0;v.yrot=q.life_time*0;v.zrot=q.life_time*20;v.swelling_scale1=v.adscaled;v.swelling_scale2=v.adscaled;" wiki:scale
 
 ## Define FMBE Position & Rotation
