@@ -90,6 +90,16 @@ An experiment must be enabled in your world for experimental changes to take eff
 -   Released `minecraft:entity_fall_on` from experimental
 -   Released `minecraft:tick` from experimental
 
+## 1.21.0
+
+### Components
+
+<Label color="green">Versioned</Label>
+
+-   Updated `minecraft:transformation`
+    -   Added `scale_pivot` parameter
+    -   Added `rotation_pivot` parameter
+
 ## 1.20.80
 
 <Tag name="experimental" />
