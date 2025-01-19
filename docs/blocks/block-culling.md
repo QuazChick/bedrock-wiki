@@ -39,7 +39,7 @@ They are then applied to block models in your block's [`minecraft:geometry`](/bl
 
 ```json
 "minecraft:geometry": {
-    "indentifier": "geometry.lamp", // Model indentifier
+    "identifier": "geometry.lamp", // Model indentifier
     "culling": "wiki:lamp_culling" // Block culling rules identifier
 }
 ```
