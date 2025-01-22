@@ -13,7 +13,7 @@ description: Some useful playanimation commands
 
 In this page, we will look at some `/playanimation` commands that can be applied to almost any entity, making them versatile and useful for various scenarios.
 
-Before diving into the commands, we recommend reviewing the [Minecraft Wiki Playanimation Command Guide](https://minecraft.wiki/w/Commands/playanimation) to understand the basics of how the command works.
+Before diving into the commands, we highly recommend reading the [Minecraft Wiki Playanimation Command Guide](https://minecraft.wiki/w/Commands/playanimation) to understand the basics of how the command works. Reviewing the [Molang Documentation](https://bedrock.dev/docs/stable/Molang) is also recommended.
 
 ## Syntax
 
@@ -30,18 +30,30 @@ Before diving into the commands, we recommend reviewing the [Minecraft Wiki Play
 ### Body Animations
 
 1. Rotate the body of the entity along the Y-axis (excluding limbs and head):
-    - `/playanimation @a animation.player.attack.rotations none 0 "v.attack_body_rot_y=0;" wiki:body_yrot`
+    ```yaml
+    /playanimation @a animation.player.attack.rotations none 0 "v.attack_body_rot_y=0;" wiki:body_yrot
+    ```
 2. Rotate the body of the entity along the Z-axis (excluding limbs and head):
-    - `/playanimation @a animation.wolf.shaking none 0 "v.body_rot_z=0;" wiki:body_zrot`
+    ```yaml
+    /playanimation @a animation.wolf.shaking none 0 "v.body_rot_z=0;" wiki:body_zrot
+    ```
+
 
 ### Root Animations
 
 1. Rotate the entire entity along the X-axis and Z-axis:
-    - `/playanimation @a animation.ender_dragon.setup none 0 "v.clamped_pitch=0;v.clamped_roll=0;" wiki:root_xrot_yrot`
+    ```yaml
+    /playanimation @a animation.ender_dragon.setup none 0 "v.clamped_pitch=0;v.clamped_roll=0;" wiki:root_xrot_yrot
+    ```
 2. Offset the entire entity's position along the X, Y, and Z axes:
-    - `/playanimation @a animation.minecart.move none 0 "v.rail_offset.x=0;v.rail_offset.y=0;v.rail_offset.z=0;" wiki:root_pos`
+    ```yaml
+    /playanimation @a animation.minecart.move none 0 "v.rail_offset.x=0;v.rail_offset.y=0;v.rail_offset.z=0;" wiki:root_pos
+    ```
 
 ### Head Animations
 
 1. Offset or rotate the entity's head:
-    - `/playanimation @a animation.ender_dragon.neck_head_movement none 0 "v.head_position_x=0;v.head_position_y=0;v.head_position_z=0;v.head_rotation_x=0;v.head_rotation_y=0;v.head_rotation_z=0;" wiki:head_pos_rot`
+    ```yaml
+    /playanimation @a animation.ender_dragon.neck_head_movement none 0 "v.head_position_x=0;v.head_position_y=0;v.head_position_z=0;v.head_rotation_x=0;v.head_rotation_y=0;v.head_rotation_z=0;" wiki:head_pos_rot
+    ```
+
