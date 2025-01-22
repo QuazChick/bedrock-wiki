@@ -43,7 +43,7 @@ export default defineConfigWithTheme<ThemeConfig>({
       appId: "N9ZHAYJQII",
       apiKey: "a664f5a5da631810a08e1a48554fe523",
       indexName: "wiki-bedrock",
-      placeholder: "Search Bedrock Wiki...",
+      placeholder: "Search Bedrock Wiki…",
     },
 
     navigation: [
