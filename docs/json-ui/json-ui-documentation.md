@@ -23,6 +23,7 @@ mentions:
     - Gotemba912
     - QuazChick
     - 1cce
+    - MinecraftBedrockArabic
 description: Documentation for JSON UI.
 ---
 
@@ -220,7 +221,7 @@ Use of `notify_on_ellipses`. Mostly used with hardcoded texts.
 | uv                          |                 Vector [u, v]                 |                 | Start position of the texture mapping                                                                                                                                                                                                                                                      |
 | uv_size                     |            Vector [width, height]             |                 | Size of the texture mapping                                                                                                                                                                                                                                                                |
 | texture_file_system         |                    string                     | `InUserPackage` | Source to get the texture. <br> Possible values: <br> `InUserPackage` <br> `InAppPackage` <br> `RawPath` <br> `RawPersistent` <br> `InSettingsDir` <br> `InExternalDir` <br> `InServerPackage` <br> `InDataDir` <br> `InUserDir` <br> `InWorldDir` <br> `StoreCache` <br> Usage is Unknown |
-| nineslice_size              | int, Vector [x, y] or Vector [x0, y0, x1, y1] |                 | 9-slice. A method that divides an texture into 9 pieces. When resized the corners will stay in place and the rest will stretch                                                                                                                                                             |
+| nineslice_size              | int or Vector [x0, y0, x1, y1] |                 | 9-slice. A method that divides an texture into 9 pieces. When resized the corners will stay in place and the rest will stretch                                                                                                                                                             |
 | tiled                       |                boolean or enum                |                 | If the texture will tile when the size of the UI element is bigger than the texture size. <br> Possible values: <br> `true`/`false` <br> `x` <br> `y`                                                                                                                                      |
 | tiled_scale                 |                Vector [sX, sY]                |     `false`     | Scale of the tile textures                                                                                                                                                                                                                                                                 |
 | clip_direction              |                     enum                      |                 | Start point position for the `clip_ratio`. If `down`, the image will begin to appear from the bottom. <br> Possible values: <br> `left` <br> `right` <br> `up` <br> `down` <br> `center`                                                                                                   |
