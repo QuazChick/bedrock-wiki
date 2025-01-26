@@ -30,11 +30,11 @@ Currently, two types of buttons are available: toggles and standard buttons. Alt
     "$toggle_default_state|default": false,
 
     "toggle_name": "$toggle_name", // Adviseable to make toggle name's be different on each toggles
-    "toggle_default_state": "$toggle_default_state" // Is boolean, the default state of toggle
+    "toggle_default_state": "$toggle_default_state", // Is boolean, the default state of toggle
 
     "sound_name": "random.click", // Sound when a toggle is clicked
-    "sound_volume": 1.0 // Sound volume
-    "sound_pitch": 1.0 // Sound pitch
+    "sound_volume": 1.0, // Sound volume
+    "sound_pitch": 1.0, // Sound pitch
 
     "checked_control": "@namespace.img_element", // When toggle is checked
     "unchecked_control": "@namespace.img_element", // When toggle is unchecked
@@ -48,8 +48,8 @@ Currently, two types of buttons are available: toggles and standard buttons. Alt
     "$use_grouped_toggle|default": false,
     "$toggle_group_index|default": 0,
 
-    "radio_toggle_group": "$use_grouped_toggle" // Is boolean, when used will allow grouped toggles on which case only one toggle can be toggled
-    "toggle_group_forced_index": "$toggle_group_index" // It's indices of each toggle that differentiates one to the other
+    "radio_toggle_group": "$use_grouped_toggle", // Is boolean, when used will allow grouped toggles on which case only one toggle can be toggled
+    "toggle_group_forced_index": "$toggle_group_index", // It's indices of each toggle that differentiates one to the other
 
     // Button mapping to do something when the toggle is clicked
     // It can also be used for keybinding
@@ -83,7 +83,7 @@ Although the structure may initially seem complex, it is relatively straightforw
 
   "controls": [
     {
-      "$toggle_state_reference@$template_toggle"
+      "$toggle_state_reference@$template_toggle": {}
     }
   ]
 }
