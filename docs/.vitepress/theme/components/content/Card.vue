@@ -37,6 +37,10 @@ const props = defineProps<{
     align-items: center;
     gap: 1em;
 
+    .wiki-image {
+      margin: 0;
+    }
+
     h2 {
       line-height: 1;
     }

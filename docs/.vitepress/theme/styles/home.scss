@@ -14,10 +14,11 @@
       "icon title"
       "icon description";
 
-    & > img {
+    & > .wiki-image {
       grid-area: icon;
 
       width: 100px;
+      margin: 0;
     }
 
     & > h1 {
@@ -36,7 +37,7 @@
         "icon title"
         "description description";
 
-      & > img {
+      & > .wiki-image {
         width: 60px;
       }
     }
