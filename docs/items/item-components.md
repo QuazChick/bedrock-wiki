@@ -830,7 +830,7 @@ _Released from experiment `Bundles` for format versions 1.21.40 and higher._
 
 Type: Object
 
--   `allow_nesed_storage_items`: Boolean
+-   `allow_nested_storage_items`: Boolean
     -   Determines whether other storage items can be placed into the container.
 -   `allowed_items`: Array
     -   Defines the items that are exclusively allowed in the container.
