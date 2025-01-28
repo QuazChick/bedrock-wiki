@@ -588,31 +588,35 @@ If you'd like to manually include a tag at a certain point in your page, using t
 
 ### WikiImage
 
-Default method to add an image is as following:
-`![](/assets/images/...)`
-WikiImage is a alternative way to add an image in your article, providing more parameters than a regular markdown image, including pixelated rendering.
-Note that images go to `docs/public/assets/images/` folder, but their path in components defined without `docs/public`.
+The default method to add an image is looks like the following: `![](/assets/images/...)`
+
+WikiImage is a alternative way to add an image in your article, providing more parameters than a regular markdown image, including pixelated rendering and captions.
+
+Note that images go in `docs/public/assets/images/` folder, but their path is defined without the `docs/public` prefix.
 
 ```md
 <WikiImage
     src="/assets/images/homepage/wikilogo.png"
     alt="alternative text"
+    caption="Such a beautiful image!"
     width="420"
     pixelated
 />
 ```
 
 <WikiImage
-    src='/assets/images/homepage/wikilogo.png'
-    alt='alternative text'
+    src="/assets/images/homepage/wikilogo.png"
+    alt="alternative text"
+    caption="Such a beautiful image!"
+    width="420"
     pixelated
-    width=420
 />
 
 | Attribute | Required | Type    | Note                                                                                                        |
 | --------- | -------- | ------- | ----------------------------------------------------------------------------------------------------------- |
 | src       | Yes      | String  | Link to the image to show.                                                                                  |
 | alt       | Yes      | String  | Text to show if the browser can't load the image and for accessibility purposes e.g. use of screen readers. |
+| caption   | No       | String  | Text to show below the image as a caption.                                                                  |
 | width     | No       | String  | Width of the image. If only the width is included, the height will automatically scale.                     |
 | height    | No       | String  | Height of the image. If only the height is included, the width will automatically scale.                    |
 | pixelated | No       | Boolean | Whether the image should be pixelated.                                                                      |
