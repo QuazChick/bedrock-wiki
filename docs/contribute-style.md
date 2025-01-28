@@ -146,7 +146,7 @@ Then, open the link given in the terminal and you are done!
 The wiki uses Markdown, a powerful text-formatting syntax.
 To learn more about Markdown, visit the official [Markdown Guide](https://www.markdownguide.org/basic-syntax)!
 
-We won't teach you the whole Markdow language, but there are some things that you need to pay attention to!
+We won't teach you the whole Markdown language, but there are some things that you need to pay attention to!
 
 ### Containers
 
