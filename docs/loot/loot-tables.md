@@ -194,22 +194,22 @@ All [conditions](#) on entries in a tiered pool are ignored. Conditions on the p
 ### Entries
 Entries are the selectable units of a pool. Three different types of entries are available.
 
-```json
-
-```
-
 #### Item Entries
 Item entries are the fundamental entry type for selecting loot. Item entries refer to
 
 ```json
-
+"type": "item",
+"name": "minecraft:apple",
+"weight": 1
 ```
 
 #### Loot Table Entries
 Loot hierarchies can be formed using loot table entries.
 
 ```json
-
+"type": "loot_table",
+"name": "loot_tables/custom/example.json"
+"weight": 1
 ```
 
 #### Empty Entries
