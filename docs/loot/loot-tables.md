@@ -110,7 +110,8 @@ A traditional weighted random pool selects items based on relative weight, choos
 The roll count for a weighted random pool may be altered based on the player's luck using the optional `"bonus_rolls"` property.
 
 ```json
-
+"bonus_rolls": 3,
+"bonus_chance": 0.095
 ```
 
 ##### Entry Weighting
