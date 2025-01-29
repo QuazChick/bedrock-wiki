@@ -15,6 +15,7 @@ mentions:
     - Noruaric
     - JaylyDev
     - zheaEvyline
+    - phoenixr-codes
 description: Useful links for developing add-ons.
 ---
 
@@ -88,6 +89,7 @@ Important links have a ⭐.
 -   [Structure Editor](https://mcbe-essentials.github.io/structure-editor/)
 -   [Trade Table Generator](https://mcbe-essentials.github.io/trade-table-editor/)
 -   [World Packager](https://mcbe-essentials.github.io/world-packager/)
+-   [NBT Explorer](https://phoenixr-codes.github.io/mcnbt/)
 
 ## Documentation
 
