@@ -16,6 +16,7 @@ mentions:
     - ThomasOrs
     - t3hero
     - QuazChick
+    - MaragiDev
 ---
 
 :::warning
@@ -339,8 +340,54 @@ Copy this code into the following field, and press **Convert**. The symbol on th
 -   To position an emoji towards the left or right, simply add any pixel of 5-10% opacity to its side (within its own slot), opposite to the direction you want to move it.
     -   Ex: to move an emoji to the right by 2 pixels, add any 5-10% opacity pixel connecting to it, anywhere on its left-most side and add another one to the left of that pixel.
 
-_Note: the following steps are only for emojis that are not fit to its slot width (smaller than its slot size.)_
+_Note: the following steps are only for emojis that do not fit to its slot width (smaller than its slot size.)_
 
 ### Glyph Separation Space
 
 Sometimes, it appears that if you put 2 glyphs near to each other, there will be a couple of empty pixels between them. The only fix for it is to scale the glyph (png file) itself. Ex: 256×256 → 512×512
+
+### Resizing the Emoji
+To resize the emoji, change the resolution of the glyph (png file) to 512×512, the reason you should double the resolution is because then you will have doubled the amount of pixels, and so therefore, more room for editing, Once you have done this, in a image editor program of your choise just select the new emoji you have created, and size it down and center it in the middle of the emoji slot, it should then give your emoji more space around it when you use the character associated with it in the game.
+
+### Understanding the Hex System
+The glyph (png file)'s name contains the first part of the hex code for the character, for example, the glyph's name could be `glyph_E1`, we are using `E1` because it has more space,
+you can download this and use it as a guide to make sure your emoji doesnt come outside of its own designated emoji slot,
+
+<WikiImage
+    src="/assets/images/concepts/emojis/custom/annotated/glyph_E1.png"
+    caption="RP/font/glyph_E1.png"
+    width="512"
+    pixelated
+/>
+
+As you can see in the image, the rows and columns have numbers and letters, the numbers correspond with the second part of the hex character code, you can use the unicode character code point to make it easyer to understand, lets say we are adding something at `10`.
+
+The unicode character code point for this would simply be `U+E110`, using this translater that i have slightly modified, you can use it to get the actual character to copy and paste into minecraft to see the emoji at the designated slot in the png file.
+
+If your using development_resource_packs you can use `/reload all` to easily reload the behaviour packs and the resource packs you have in the minecraft world.
+
+<div markdown="0">
+    <form>
+        <input
+            id="hexValue"
+            placeholder="Hex value"
+            class="button"
+            style="background: none; outline: none;"
+        />
+        <input
+            id="result"
+            placeholder="Result"
+            readonly
+            class="button"
+            style="background: none; outline: none; margin-inline: 0.5em;"
+        />
+        <button
+            type="button"
+            class="button"
+            style="cursor: pointer;"
+            onclick="document.getElementById('result').value = String.fromCodePoint(parseInt(document.getElementById('hexValue').value.replace('U+', ''), 16))"
+        >
+            Convert
+        </button>
+    </form>
+</div>
