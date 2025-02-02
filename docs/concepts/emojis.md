@@ -360,7 +360,7 @@ you can download this and use it as a guide to make sure your emoji doesnt come 
     pixelated
 />
 
-As you can see in the image, the rows and columns have numbers and letters, the numbers correspond with the second part of the hex character code, you can use the unicode character code point to make it easyer to understand, lets say we are adding something at `10`.
+As you can see in the image, the rows and columns have numbers and letters. The numbers correspond to the second part of the hex character code. You can use the unicode character code point to make it easier to understand. Let's say we are adding something at `10`.
 
 The unicode character code point for this would simply be `U+E110`. Using this translator, which I have slightly modified, you can obtain the actual character to copy and paste into Minecraft to see the emoji in its designated slot in the PNG file.
 
