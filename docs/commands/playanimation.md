@@ -15,16 +15,12 @@ In Bedrock, the `/playanimation` command allows entities to play animations. You
 
 ## Syntax
 
-<CodeHeader></CodeHeader>
-
-```yaml
-/playanimation <entity: target> <animation: string> [next_state: string] [blend_out_time: float] [stop_expression: string] [controller: string]
-```
+`/playanimation <entity: target> <animation: string> [next_state: string] [blend_out_time: float] [stop_expression: string] [controller: string]`
 
 **Definitions:**
 
-- ` <> ` Angle brackets mean the variable is required.
-- ` [] ` Square brackets mean the variable is optional.
+` <> ` Angle brackets mean the variable is required.<br>
+` [] ` Square brackets mean the variable is optional.
 
 - `<entity: target>` Specifies the entity that will play the animation.  
 - `<animation: string>` Specifies the animation to be played.  
@@ -135,7 +131,8 @@ To remove the above animations, you must **overwrite** the animation controller 
 2. The condition `1` (true) forces a transition to `none`.  
 3. Since `none` does not exist, the animation is canceled.  
 
-### **Why Not Directly Use `none` as the Animation?**  
+**Why Not Directly Use `none` as the Animation?**
+
 - You can **transition** to `none`, but you **cannot** directly set `none` as the animation.  
 - The animation name must be valid; otherwise, the command might not work properly.  
 
