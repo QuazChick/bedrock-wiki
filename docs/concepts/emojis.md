@@ -21,6 +21,8 @@ mentions:
 
 :::warning
 Modifying texture of vanilla emojis and symbols on this page are incompatible with Nintendo Switch platform!
+
+Emojis are not supported by Ore UI screens.
 :::
 
 Minecraft has a bunch of hard-coded [Private Use Unicode symbols](https://en.wikipedia.org/wiki/Private_Use_Areas) that it automatically converts to Emoji-like symbols.
@@ -29,6 +31,8 @@ These can be used anywhere where normal letters can - signs, books, item names, 
 Below you can find platform specific Emoji's, as well as general symbols. Copy/paste the "box" character under the Letter colum directly into Minecraft. You can also use the input key using /titleraw or /tellraw.
 
 There will be instructions for creating custom emoji at the bottom.
+
+## Vanilla Emojis
 
 ### HUD
 
@@ -241,7 +245,7 @@ Below are the results of default keybindings. All text below, including "Unassig
 | Drop             | :\_input_key.drop:           | Q                                                            | Unassigned                                                | ![](/assets/images/concepts/emojis/xbox/dpad_down.png)     | ![](/assets/images/concepts/emojis/switch/dpad_down.png)     | ![](/assets/images/concepts/emojis/playstation/dpad_down.png)     |
 | Code Builder     | :\_input_key.codeBuilder:    | Unassigned                                                   | Unassigned                                                | Unassigned                                                 | Unassigned                                                   | Unassigned                                                        |
 
-## Custom Emoji
+## Custom Emojis
 
 ::: warning
 This method is not officially supported. Use with caution on the Marketplace!
@@ -292,17 +296,12 @@ Your filepath should look like this:
 
 ### Using the Emojis In-Game
 
-Once you have your custom emojis inside the `glyph_E0.png` or `glyph_E1.png`, you need to obtain it's corresponding letter/symbol which you will be able to copy-paste to display the emoji in-game.
+Once you have your custom emojis inside the `glyph_E0.png` or `glyph_E1.png`, you need to obtain it's corresponding letter/symbol which you will be able to copy-paste to display the emoji in-game using the converter below.
 
-_You can obtain the letter/symbol with the help of this [Glyph Web Tool](https://nhanaz.github.io/glyph/) made by @NhanAZ_
+The first two characters of the input are either `E0` or `E1`, depending on which file you added emojis to.
 
-### Finding the Correct Hex
-
-Alternatively, you may insert the character "code" of the emoji into the converter below to obtain it's corresponding letter/symbol.
-
-The first two characters are either `E0` or `E1`, depending on which file you added emojis to.
-
-The next two characters are the position inside the image like `<row><column>`, where each character is a number in hexadecimal numeral system. You can find this number by referencing the images above. For example, the top-right square in `E0` is `0F`, and the bottom right is `FF`.
+The next two characters are the position inside the image in the format `<row><column>`, where each character is a number in hexadecimal numeral system.
+You can find this number by referencing the images above. For example, the top-right square in `E0` is `0F`, and the bottom right is `FF`.
 
 So after you are done, it might look like `E102` (`E1` + `02`).
 
@@ -348,46 +347,3 @@ Sometimes, it appears that if you put 2 glyphs near to each other, there will be
 
 ### Resizing the Emoji
 To resize the emoji, change the resolution of the glyph (PNG file) to 512×512. The reason for doubling the resolution is that it increases the number of pixels, providing more room for editing. Once you've done this, open an image editor of your choice, select the new emoji, resize it, and center it within the emoji slot. This will give the emoji more space around it when used in the game.
-
-### Understanding the Hex System
-The glyph (PNG file) name contains the first part of the hex code for the character. For example, the glyph's name could be `glyph_E1`. We use `E1` because it has more space.
-You can download this and use it as a guide to make sure your emoji does not extend beyond its own designated emoji slot.
-
-<WikiImage
-    src="/assets/images/concepts/emojis/custom/annotated/glyph_E1.png"
-    caption="RP/font/glyph_E1.png"
-    width="512"
-    pixelated
-/>
-
-As you can see in the image, the rows and columns have numbers and letters. The numbers correspond to the second part of the hex character code. You can use the unicode character code point to make it easier to understand. Let's say we are adding something at `10`.
-
-The unicode character code point for this would simply be `U+E110`. Using this translator, which I have slightly modified, you can obtain the actual character to copy and paste into Minecraft to see the emoji in its designated slot in the PNG file.
-
-If you're using `development_resource_packs`, you can use `/reload all` to easily reload the behaviour packs and resource packs in your Minecraft world.
-
-<div markdown="0">
-    <form>
-        <input
-            id="hexValue"
-            placeholder="Hex value"
-            class="button"
-            style="background: none; outline: none;"
-        />
-        <input
-            id="result"
-            placeholder="Result"
-            readonly
-            class="button"
-            style="background: none; outline: none; margin-inline: 0.5em;"
-        />
-        <button
-            type="button"
-            class="button"
-            style="cursor: pointer;"
-            onclick="document.getElementById('result').value = String.fromCodePoint(parseInt(document.getElementById('hexValue').value.replace('U+', ''), 16))"
-        >
-            Convert
-        </button>
-    </form>
-</div>
