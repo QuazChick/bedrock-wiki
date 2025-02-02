@@ -351,7 +351,7 @@ To resize the emoji, change the resolution of the glyph (png file) to 512×512, 
 
 ### Understanding the Hex System
 The glyph (png file)'s name contains the first part of the hex code for the character, for example, the glyph's name could be `glyph_E1`, we are using `E1` because it has more space,
-you can download this and use it as a guide to make sure your emoji doesnt come outside of its own designated emoji slot,
+You can download this and use it as a guide to make sure your emoji does not extend beyond its own designated emoji slot.
 
 <WikiImage
     src="/assets/images/concepts/emojis/custom/annotated/glyph_E1.png"
