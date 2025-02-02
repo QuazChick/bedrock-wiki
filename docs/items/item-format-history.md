@@ -277,3 +277,9 @@ An experiment must be enabled in your world for experimental changes to take eff
 -   Removed `minecraft:dye_powder`
 -   Updated `minecraft:repairable`
     -   Removed `on_repaired` trigger parameter
+
+---
+
+:::danger UNDOCUMENTED
+Format changes in versions prior to `1.20.0` haven't been listed yet.
+:::
