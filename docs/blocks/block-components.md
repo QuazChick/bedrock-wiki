@@ -267,7 +267,7 @@ Type: Double
 
 ### Geometry
 
-The description identifier of the geometry to use to render this block. This identifier must match an existing geometry identifier in any of the loaded resource packs or be one of the currently supported Vanilla identifiers: `minecraft:geometry.full_block` or `minecraft:geometry.cross`.
+The description identifier of the geometry to use to render this block. This identifier must match an existing geometry identifier in any of the loaded resource packs or refer to one of the currently supported [vanilla models](/blocks/vanilla-block-models).
 
 **Custom block model limitations:**
 
