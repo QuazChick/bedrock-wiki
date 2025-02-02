@@ -51,7 +51,7 @@ An experiment must be enabled in your world for experimental changes to take eff
 
 -   Added `minecraft:compostable`
     -   Allows this item to be used in a composter.
-    -   Contains `compost_chance` which determines how likely the compost level is to increase as a percentage (0-100).
+    -   Contains `composting_chance` which determines how likely the compost level is to increase as a percentage (0-100).
 
 ## 1.21.40
 
