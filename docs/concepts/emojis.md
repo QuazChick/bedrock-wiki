@@ -340,7 +340,7 @@ Copy this code into the following field, and press **Convert**. The symbol on th
 -   To position an emoji towards the left or right, simply add any pixel of 5-10% opacity to its side (within its own slot), opposite to the direction you want to move it.
     -   Ex: to move an emoji to the right by 2 pixels, add any 5-10% opacity pixel connecting to it, anywhere on its left-most side and add another one to the left of that pixel.
 
-_Note: the following steps are only for emojis that do not fit to its slot width (smaller than its slot size.)_
+_Note: The following steps apply only to emojis that do not fill their slot width (i.e., are smaller than the slot size)._
 
 ### Glyph Separation Space
 
