@@ -100,14 +100,14 @@ Each animation controller can play only one animation at a time. By using multip
 
 <CodeHeader></CodeHeader>
 
-```
+```yaml
 /playanimation @a animation.player.riding.legs none 0 "0" wiki:rideleg
 ```
 This command overlays the **riding legs** animation with the **pigling dance** animation:
 
 <CodeHeader></CodeHeader>
 
-```
+```yaml
 /playanimation @a animation.piglin.celebrate_hunt_special none 0 "0" wiki:dance
 ```
 Here, `wiki:rideleg` and `wiki:dance` are used as controller names, but any name like `"a"` or `"b"` is also valid. However, you **cannot** use the same name for multiple controllers (e.g., both as `"a"`).  
