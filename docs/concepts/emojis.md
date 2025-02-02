@@ -364,7 +364,7 @@ As you can see in the image, the rows and columns have numbers and letters, the 
 
 The unicode character code point for this would simply be `U+E110`, using this translater that i have slightly modified, you can use it to get the actual character to copy and paste into minecraft to see the emoji at the designated slot in the png file.
 
-If your using development_resource_packs you can use `/reload all` to easily reload the behaviour packs and the resource packs you have in the minecraft world.
+If you're using `development_resource_packs`, you can use `/reload all` to easily reload the behaviour packs and resource packs in your Minecraft world.
 
 <div markdown="0">
     <form>
