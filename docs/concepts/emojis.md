@@ -347,7 +347,7 @@ _Note: The following steps apply only to emojis that do not fill their slot widt
 Sometimes, it appears that if you put 2 glyphs near to each other, there will be a couple of empty pixels between them. The only fix for it is to scale the glyph (png file) itself. Ex: 256×256 → 512×512
 
 ### Resizing the Emoji
-To resize the emoji, change the resolution of the glyph (png file) to 512×512, the reason you should double the resolution is because then you will have doubled the amount of pixels, and so therefore, more room for editing, Once you have done this, in a image editor program of your choise just select the new emoji you have created, and size it down and center it in the middle of the emoji slot, it should then give your emoji more space around it when you use the character associated with it in the game.
+To resize the emoji, change the resolution of the glyph (PNG file) to 512×512. The reason for doubling the resolution is that it increases the number of pixels, providing more room for editing. Once you've done this, open an image editor of your choice, select the new emoji, resize it, and center it within the emoji slot. This will give the emoji more space around it when used in the game.
 
 ### Understanding the Hex System
 The glyph (PNG file) name contains the first part of the hex code for the character. For example, the glyph's name could be `glyph_E1`. We use `E1` because it has more space.
