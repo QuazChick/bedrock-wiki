@@ -333,6 +333,8 @@ Copy this code into the following field, and press **Convert**. The symbol on th
     </form>
 </div>
 
+_Alternatively, you can obtain the letter/symbol with the help of this [Glyph Web Tool](https://nhanaz.github.io/glyph/) made by @NhanAZ._
+
 ### Emoji Positioning
 
 -   To position an emoji upwards/downwards, simply move it up/down within its own emoji slot.
