@@ -225,7 +225,7 @@ You can **shorten `variable` to `v`**:
 <CodeHeader></CodeHeader>
 
 ```yaml
-/playanimation @a animation.parrot.moving none 0 "v.wing_flap=10;" wiki:body.ypos
+/playanimation @a animation.parrot.moving none 0 "v.wing_flap=10;" wiki:body_ypos
 ```
 
 `variable.wing_flap` **and** `v.wing_flap` **are the same**.
