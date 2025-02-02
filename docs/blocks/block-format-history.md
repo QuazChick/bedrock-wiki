@@ -22,6 +22,11 @@ An experiment must be enabled in your world for experimental changes to take eff
 -   Added `minecraft:replaceable`
     -   An empty object which allows this block to be replaced by attempting to place another block in its position.
     -   Does not allow the block to be replaced by a block of the same permutation.
+-   Updated `minecraft:map_color`
+    -   Can now be defined as an object containing the following parameters:
+        -   `color` which is the base HEX string color of this block on a map.
+        -   `tint_method` which allows the `color` to be tinted based on the biome the block is in.
+            -   There are currently 6 supported tint methods: `none`,`birch_foliage`, `default_foliage`, `evergreen_foliage`, `grass` and `water`.
 
 ## 1.21.60
 
