@@ -15,6 +15,14 @@ The file's `format_version` field must be updated for versioned changes to take 
 An experiment must be enabled in your world for experimental changes to take effect.
 :::
 
+## 1.21.70
+
+### Components
+
+-   Added `minecraft:replaceable`
+    -   An empty object which allows this block to be replaced by attempting to place another block in its position.
+    -   Does not allow the block to be replaced by a block of the same permutation.
+
 ## 1.21.60
 
 ### Description
