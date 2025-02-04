@@ -120,7 +120,7 @@ export default class FaceSelectionPlains {
 
     Creates a new `FaceSelectionPlains` instance.
 
-      <Spoiler title="Parameters">
+    <Spoiler title="Parameters">
 
     - **plains**: `Object[]`
 
@@ -138,7 +138,7 @@ export default class FaceSelectionPlains {
 
             Custom name to easily identify this plain when it is selected.
 
-      </Spoiler>
+    </Spoiler>
 
 - #### getSelected
 
@@ -148,7 +148,7 @@ export default class FaceSelectionPlains {
 
     Returns the involved plain's array index, or name if provided. If no plain is selected, `undefined` is returned.
 
-      <Spoiler title="Parameters">
+    <Spoiler title="Parameters">
 
     - **selection**: `Object`
 
@@ -174,7 +174,7 @@ export default class FaceSelectionPlains {
 
             Vertical axis goes `bottom -> top` rather than `top -> bottom` if true.
 
-      </Spoiler>
+    </Spoiler>
 
 ### Usage
 
@@ -317,7 +317,7 @@ export default class SelectionBoxes {
 
     Creates a new `SelectionBoxes` instance.
 
-      <Spoiler title="Parameters">
+    <Spoiler title="Parameters">
 
     - **boxes**: `Object[]`
 
@@ -335,7 +335,7 @@ export default class SelectionBoxes {
 
             Custom name to easily identify this box when it is selected.
 
-      </Spoiler>
+    </Spoiler>
 
 - #### getSelected
 
@@ -347,7 +347,7 @@ export default class SelectionBoxes {
 
     Returns the involved box's array index, or name if provided. If no box is selected, `undefined` is returned.
 
-      <Spoiler title="Parameters">
+    <Spoiler title="Parameters">
 
     - **faceLocation**: [`Vector3`](https://learn.microsoft.com/minecraft/creator/scriptapi/minecraft/server/vector3)
 
@@ -369,7 +369,7 @@ export default class SelectionBoxes {
 
             Z axis extends `south -> north` rather than `north -> south` if true.
 
-      </Spoiler>
+    </Spoiler>
 
 ### Usage
 
