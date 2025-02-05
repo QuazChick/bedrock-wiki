@@ -66,9 +66,9 @@ Below is the **minimum** behavior-side code to get a custom block into the creat
 
 ### Block Description
 
--   Defines the block's `identifier` - a unique ID in the format of `namespace:identifier`.
--   Configures which `menu_category` the block is placed into.
-    -   Also takes the optional parameters `group` and `is_hidden_in_commands`.
+- Defines the block's `identifier` - a unique ID in the format of `namespace:identifier`.
+- Configures which `menu_category` the block is placed into.
+    - Also takes the optional parameters `group` and `is_hidden_in_commands`.
 
 _The block description is also home to [states](/blocks/block-states) and [traits](/blocks/block-traits), which are covered in their own pages._
 
@@ -107,13 +107,13 @@ Let's configure our own functionality!
 }
 ```
 
--   [`minecraft:destructible_by_mining`](/blocks/block-components#destructible-by-mining) defines how long the player will need to mine the block until it breaks. Currently, it isn't possible to set different destroy times for different tools.
--   [`minecraft:destructible_by_explosion`](/blocks/block-components#destructible-by-explosion) defines the resistance to explosions. The higher the value, the lower the chance of destruction.
--   [`minecraft:friction`](/blocks/block-components#friction) defines how much friction the block has. For example, soul sand has a high value for friction, so it slows the players. Ice has a lower friction value, so it has a slippery effect. The friction of classic blocks such as wood or stone is `0.4`.
--   [`minecraft:map_color`](/blocks/block-components#map-color) is the hex color code that will be displayed on a Minecraft map to represent this block. `#ffffff` means white. You can get hex codes for other colors [here](https://www.google.com/search?q=hex+color+picker).
--   [`minecraft:light_dampening`](/blocks/block-components#light-dampening) defines how much light will be blocked from passing through.
--   [`minecraft:light_emission`](/blocks/block-components#light-emission) defines the light level the block will output.
--   [`minecraft:loot`](/blocks/block-components#loot) defines a loot table path for the block to drop. If this is removed, then the block will drop itself. You can learn more about loot tables [here](/loot/loot-tables).
+- [`minecraft:destructible_by_mining`](/blocks/block-components#destructible-by-mining) defines how long the player will need to mine the block until it breaks. Currently, it isn't possible to set different destroy times for different tools.
+- [`minecraft:destructible_by_explosion`](/blocks/block-components#destructible-by-explosion) defines the resistance to explosions. The higher the value, the lower the chance of destruction.
+- [`minecraft:friction`](/blocks/block-components#friction) defines how much friction the block has. For example, soul sand has a high value for friction, so it slows the players. Ice has a lower friction value, so it has a slippery effect. The friction of classic blocks such as wood or stone is `0.4`.
+- [`minecraft:map_color`](/blocks/block-components#map-color) is the hex color code that will be displayed on a Minecraft map to represent this block. `#ffffff` means white. You can get hex codes for other colors [here](https://www.google.com/search?q=hex+color+picker).
+- [`minecraft:light_dampening`](/blocks/block-components#light-dampening) defines how much light will be blocked from passing through.
+- [`minecraft:light_emission`](/blocks/block-components#light-emission) defines the light level the block will output.
+- [`minecraft:loot`](/blocks/block-components#loot) defines a loot table path for the block to drop. If this is removed, then the block will drop itself. You can learn more about loot tables [here](/loot/loot-tables).
 
 _Browse more block components [here](/blocks/block-components)!_
 
@@ -154,7 +154,7 @@ Now, we need to link the texture shortname to an image file path in `RP/textures
     "num_mip_levels": 4, // Quality of texture when viewed from a distance or at an angle
     "texture_data": {
         // Our texture shortname:
-        "custom_block": {
+        "wiki:custom_block": {
             "textures": "textures/blocks/custom_block" // Link to an image file name
         }
     }
@@ -165,7 +165,7 @@ Now, we need to link the texture shortname to an image file path in `RP/textures
 
 Textures can also be applied per face. For example, a custom "compass block" could use the following ✨stunning✨ textures:
 
--   `textures/blocks/compass_block_down.png`
+- `textures/blocks/compass_block_down.png`
 
     <WikiImage
         src="/assets/images/blocks/blocks-intro/compass_block_down.png"
@@ -173,11 +173,15 @@ Textures can also be applied per face. For example, a custom "compass block" cou
         width="64"
     />
 
--   `textures/blocks/compass_block_up.png`
+- `textures/blocks/compass_block_up.png`
 
-    <WikiImage src="/assets/images/blocks/blocks-intro/compass_block_up.png" pixelated width="64" />
+    <WikiImage
+        src="/assets/images/blocks/blocks-intro/compass_block_up.png"
+        pixelated
+        width="64"
+    />
 
--   `textures/blocks/compass_block_north.png`
+- `textures/blocks/compass_block_north.png`
 
     <WikiImage
         src="/assets/images/blocks/blocks-intro/compass_block_north.png"
@@ -185,7 +189,7 @@ Textures can also be applied per face. For example, a custom "compass block" cou
         width="64"
     />
 
--   `textures/blocks/compass_block_east.png`
+- `textures/blocks/compass_block_east.png`
 
     <WikiImage
         src="/assets/images/blocks/blocks-intro/compass_block_east.png"
@@ -193,7 +197,7 @@ Textures can also be applied per face. For example, a custom "compass block" cou
         width="64"
     />
 
--   `textures/blocks/compass_block_south.png`
+- `textures/blocks/compass_block_south.png`
 
     <WikiImage
         src="/assets/images/blocks/blocks-intro/compass_block_south.png"
@@ -201,7 +205,7 @@ Textures can also be applied per face. For example, a custom "compass block" cou
         width="64"
     />
 
--   `textures/blocks/compass_block_west.png`
+- `textures/blocks/compass_block_west.png`
 
     <WikiImage
         src="/assets/images/blocks/blocks-intro/compass_block_west.png"
@@ -218,12 +222,12 @@ The `blocks.json` entry would look like this:
     "format_version": "1.21.40",
     "wiki:compass_block": {
         "textures": {
-            "down": "compass_block_down",
-            "up": "compass_block_up",
-            "north": "compass_block_north",
-            "east": "compass_block_east",
-            "south": "compass_block_south",
-            "west": "compass_block_west"
+            "down": "wiki:compass_block_down",
+            "up": "wiki:compass_block_up",
+            "north": "wiki:compass_block_north",
+            "east": "wiki:compass_block_east",
+            "south": "wiki:compass_block_south",
+            "west": "wiki:compass_block_west"
         }
     }
 }
@@ -236,22 +240,22 @@ Or, if you're using [material instances](/blocks/block-components#material-insta
 ```json
 "minecraft:material_instances": {
   "*": {
-    "texture": "compass_block_down" // This texture appears in destruction particles
+    "texture": "wiki:compass_block_down" // This texture appears in destruction particles
   },
   "up": {
-    "texture": "compass_block_up"
+    "texture": "wiki:compass_block_up"
   },
   "north": {
-    "texture": "compass_block_north"
+    "texture": "wiki:compass_block_north"
   },
   "east": {
-    "texture": "compass_block_east"
+    "texture": "wiki:compass_block_east"
   },
   "south": {
-    "texture": "compass_block_south"
+    "texture": "wiki:compass_block_south"
   },
   "west": {
-    "texture": "compass_block_west"
+    "texture": "wiki:compass_block_west"
   }
 }
 ```
@@ -267,22 +271,22 @@ With the following `terrain_texture.json` data:
     "padding": 8,
     "num_mip_levels": 4,
     "texture_data": {
-        "compass_block_down": {
+        "wiki:compass_block_down": {
             "textures": "textures/blocks/compass_block_down"
         },
-        "compass_block_up": {
+        "wiki:compass_block_up": {
             "textures": "textures/blocks/compass_block_up"
         },
-        "compass_block_north": {
+        "wiki:compass_block_north": {
             "textures": "textures/blocks/compass_block_north"
         },
-        "compass_block_east": {
+        "wiki:compass_block_east": {
             "textures": "textures/blocks/compass_block_east"
         },
-        "compass_block_west": {
+        "wiki:compass_block_west": {
             "textures": "textures/blocks/compass_block_west"
         },
-        "compass_block_south": {
+        "wiki:compass_block_south": {
             "textures": "textures/blocks/compass_block_south"
         }
     }
@@ -306,9 +310,9 @@ You can learn more about translation [here](/concepts/text-and-translations).
 
 In this page, you've learnt about the following:
 
--   [x] Basic features of blocks
--   [x] How to apply a texture to all block faces
--   [x] How to apply textures per face
+- [x] Basic features of blocks
+- [x] How to apply a texture to all block faces
+- [x] How to apply textures per face
 
 ...but it's only the beginning, see what else you could do below!
 

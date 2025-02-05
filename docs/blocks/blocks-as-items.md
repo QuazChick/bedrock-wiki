@@ -43,7 +43,7 @@ One example of a situation where replacing the block item is necessary is with f
             "minecraft:geometry": "minecraft:geometry.cross",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "daffodil",
+                    "texture": "wiki:daffodil",
                     "render_method": "alpha_test"
                 }
             }
@@ -66,7 +66,7 @@ One example of a situation where replacing the block item is necessary is with f
             }
         },
         "components": {
-            "minecraft:icon": "daffodil",
+            "minecraft:icon": "wiki:daffodil",
             "minecraft:block_placer": {
                 "block": "wiki:daffodil",
                 "replace_block_item": true
